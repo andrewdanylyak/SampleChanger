@@ -1,0 +1,10 @@
+C:\MyData\Repos\MicrochipStudio\AAEC018.280.002_F\test_program\unit_test_sample_changer\bin\Debug\unit_test_sample_changer.exe.config
+C:\MyData\Repos\MicrochipStudio\AAEC018.280.002_F\test_program\unit_test_sample_changer\bin\Debug\unit_test_sample_changer.exe
+C:\MyData\Repos\MicrochipStudio\AAEC018.280.002_F\test_program\unit_test_sample_changer\bin\Debug\unit_test_sample_changer.pdb
+C:\MyData\Repos\MicrochipStudio\AAEC018.280.002_F\test_program\unit_test_sample_changer\obj\Debug\unit_test_sample_changer.csproj.AssemblyReference.cache
+C:\MyData\Repos\MicrochipStudio\AAEC018.280.002_F\test_program\unit_test_sample_changer\obj\Debug\unit_test_sample_changer.Form1.resources
+C:\MyData\Repos\MicrochipStudio\AAEC018.280.002_F\test_program\unit_test_sample_changer\obj\Debug\unit_test_sample_changer.Properties.Resources.resources
+C:\MyData\Repos\MicrochipStudio\AAEC018.280.002_F\test_program\unit_test_sample_changer\obj\Debug\unit_test_sample_changer.csproj.GenerateResource.cache
+C:\MyData\Repos\MicrochipStudio\AAEC018.280.002_F\test_program\unit_test_sample_changer\obj\Debug\unit_test_sample_changer.csproj.CoreCompileInputs.cache
+C:\MyData\Repos\MicrochipStudio\AAEC018.280.002_F\test_program\unit_test_sample_changer\obj\Debug\unit_test_sample_changer.exe
+C:\MyData\Repos\MicrochipStudio\AAEC018.280.002_F\test_program\unit_test_sample_changer\obj\Debug\unit_test_sample_changer.pdb

@@ -1,0 +1,3784 @@
+
+AAEC018.280.002_F.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000001c  00800100  00001a54  00001ae8  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00001a54  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000162  0080011c  0080011c  00001b04  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00001b04  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001b34  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000238  00000000  00000000  00001b70  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000015ea  00000000  00000000  00001da8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000c79  00000000  00000000  00003392  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000017cc  00000000  00000000  0000400b  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000860  00000000  00000000  000057d8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000d16  00000000  00000000  00006038  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00001071  00000000  00000000  00006d4e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000001c8  00000000  00000000  00007dbf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 44 00 	jmp	0x88	; 0x88 <__ctors_end>
+       4:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+       8:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+       c:	0c 94 cf 05 	jmp	0xb9e	; 0xb9e <__vector_3>
+      10:	0c 94 58 06 	jmp	0xcb0	; 0xcb0 <__vector_4>
+      14:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      18:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      1c:	0c 94 d8 0c 	jmp	0x19b0	; 0x19b0 <__vector_7>
+      20:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      24:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      28:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      2c:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      30:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      34:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      38:	0c 94 88 0c 	jmp	0x1910	; 0x1910 <__vector_14>
+      3c:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      40:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      44:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      48:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      4c:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      50:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      54:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      58:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      5c:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      60:	0c 94 b9 08 	jmp	0x1172	; 0x1172 <__vector_24>
+      64:	0c 94 61 00 	jmp	0xc2	; 0xc2 <__bad_interrupt>
+      68:	46 04       	cpc	r4, r6
+      6a:	31 03       	mulsu	r19, r17
+      6c:	45 03       	mulsu	r20, r21
+      6e:	5e 03       	fmul	r21, r22
+      70:	a3 03       	fmuls	r18, r19
+      72:	b0 03       	fmuls	r19, r16
+      74:	d9 03       	fmulsu	r21, r17
+      76:	e7 03       	fmuls	r22, r23
+      78:	03 04       	cpc	r0, r3
+      7a:	9d 0b       	sbc	r25, r29
+      7c:	25 0a       	sbc	r2, r21
+      7e:	f0 0a       	sbc	r15, r16
+      80:	0e 0b       	sbc	r16, r30
+      82:	28 0b       	sbc	r18, r24
+      84:	4a 0b       	sbc	r20, r26
+      86:	9d 0b       	sbc	r25, r29
+
+00000088 <__ctors_end>:
+      88:	11 24       	eor	r1, r1
+      8a:	1f be       	out	0x3f, r1	; 63
+      8c:	cf ef       	ldi	r28, 0xFF	; 255
+      8e:	d4 e0       	ldi	r29, 0x04	; 4
+      90:	de bf       	out	0x3e, r29	; 62
+      92:	cd bf       	out	0x3d, r28	; 61
+
+00000094 <__do_copy_data>:
+      94:	11 e0       	ldi	r17, 0x01	; 1
+      96:	a0 e0       	ldi	r26, 0x00	; 0
+      98:	b1 e0       	ldi	r27, 0x01	; 1
+      9a:	e4 e5       	ldi	r30, 0x54	; 84
+      9c:	fa e1       	ldi	r31, 0x1A	; 26
+      9e:	02 c0       	rjmp	.+4      	; 0xa4 <__do_copy_data+0x10>
+      a0:	05 90       	lpm	r0, Z+
+      a2:	0d 92       	st	X+, r0
+      a4:	ac 31       	cpi	r26, 0x1C	; 28
+      a6:	b1 07       	cpc	r27, r17
+      a8:	d9 f7       	brne	.-10     	; 0xa0 <__do_copy_data+0xc>
+
+000000aa <__do_clear_bss>:
+      aa:	22 e0       	ldi	r18, 0x02	; 2
+      ac:	ac e1       	ldi	r26, 0x1C	; 28
+      ae:	b1 e0       	ldi	r27, 0x01	; 1
+      b0:	01 c0       	rjmp	.+2      	; 0xb4 <.do_clear_bss_start>
+
+000000b2 <.do_clear_bss_loop>:
+      b2:	1d 92       	st	X+, r1
+
+000000b4 <.do_clear_bss_start>:
+      b4:	ae 37       	cpi	r26, 0x7E	; 126
+      b6:	b2 07       	cpc	r27, r18
+      b8:	e1 f7       	brne	.-8      	; 0xb2 <.do_clear_bss_loop>
+      ba:	0e 94 27 0c 	call	0x184e	; 0x184e <main>
+      be:	0c 94 28 0d 	jmp	0x1a50	; 0x1a50 <_exit>
+
+000000c2 <__bad_interrupt>:
+      c2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000c6 <init_cell>:
+
+ #include "includes.h"
+
+ volatile tCellStructure CellStructure;
+
+ void init_cell(){
+      c6:	cf 93       	push	r28
+      c8:	df 93       	push	r29
+      ca:	cd b7       	in	r28, 0x3d	; 61
+      cc:	de b7       	in	r29, 0x3e	; 62
+	CellStructure.state = CellOk;
+      ce:	10 92 2e 01 	sts	0x012E, r1	; 0x80012e <CellStructure>
+	CellStructure.cell_motor_pwm = 0;
+      d2:	10 92 2f 01 	sts	0x012F, r1	; 0x80012f <CellStructure+0x1>
+ }
+      d6:	00 00       	nop
+      d8:	df 91       	pop	r29
+      da:	cf 91       	pop	r28
+      dc:	08 95       	ret
+
+000000de <cell_update_control_values>:
+
+ void cell_update_control_values(bool park, uint8_t motor_pwm){
+      de:	cf 93       	push	r28
+      e0:	df 93       	push	r29
+      e2:	00 d0       	rcall	.+0      	; 0xe4 <cell_update_control_values+0x6>
+      e4:	cd b7       	in	r28, 0x3d	; 61
+      e6:	de b7       	in	r29, 0x3e	; 62
+      e8:	89 83       	std	Y+1, r24	; 0x01
+      ea:	6a 83       	std	Y+2, r22	; 0x02
+	if(park){
+      ec:	89 81       	ldd	r24, Y+1	; 0x01
+      ee:	88 23       	and	r24, r24
+      f0:	79 f0       	breq	.+30     	; 0x110 <cell_update_control_values+0x32>
+		CellStructure.state = CellPark;
+      f2:	83 e0       	ldi	r24, 0x03	; 3
+      f4:	80 93 2e 01 	sts	0x012E, r24	; 0x80012e <CellStructure>
+		CellStructure.cell_motor_pwm = 0;
+      f8:	10 92 2f 01 	sts	0x012F, r1	; 0x80012f <CellStructure+0x1>
+		PORTD |= (1 << PD7);														//brake pin
+      fc:	8b e2       	ldi	r24, 0x2B	; 43
+      fe:	90 e0       	ldi	r25, 0x00	; 0
+     100:	2b e2       	ldi	r18, 0x2B	; 43
+     102:	30 e0       	ldi	r19, 0x00	; 0
+     104:	f9 01       	movw	r30, r18
+     106:	20 81       	ld	r18, Z
+     108:	20 68       	ori	r18, 0x80	; 128
+     10a:	fc 01       	movw	r30, r24
+     10c:	20 83       	st	Z, r18
+		CellStructure.cell_motor_pwm = motor_pwm;
+		CellStructure.state = CellRotate;
+		PORTD &= ~(1 << PD7);														//brake pin
+		PORTB |= (1 << PB0);														//direction pin
+	}
+}
+     10e:	18 c0       	rjmp	.+48     	; 0x140 <cell_update_control_values+0x62>
+		CellStructure.state = CellPark;
+		CellStructure.cell_motor_pwm = 0;
+		PORTD |= (1 << PD7);														//brake pin
+	}
+	else{
+		CellStructure.cell_motor_pwm = motor_pwm;
+     110:	8a 81       	ldd	r24, Y+2	; 0x02
+     112:	80 93 2f 01 	sts	0x012F, r24	; 0x80012f <CellStructure+0x1>
+		CellStructure.state = CellRotate;
+     116:	82 e0       	ldi	r24, 0x02	; 2
+     118:	80 93 2e 01 	sts	0x012E, r24	; 0x80012e <CellStructure>
+		PORTD &= ~(1 << PD7);														//brake pin
+     11c:	8b e2       	ldi	r24, 0x2B	; 43
+     11e:	90 e0       	ldi	r25, 0x00	; 0
+     120:	2b e2       	ldi	r18, 0x2B	; 43
+     122:	30 e0       	ldi	r19, 0x00	; 0
+     124:	f9 01       	movw	r30, r18
+     126:	20 81       	ld	r18, Z
+     128:	2f 77       	andi	r18, 0x7F	; 127
+     12a:	fc 01       	movw	r30, r24
+     12c:	20 83       	st	Z, r18
+		PORTB |= (1 << PB0);														//direction pin
+     12e:	85 e2       	ldi	r24, 0x25	; 37
+     130:	90 e0       	ldi	r25, 0x00	; 0
+     132:	25 e2       	ldi	r18, 0x25	; 37
+     134:	30 e0       	ldi	r19, 0x00	; 0
+     136:	f9 01       	movw	r30, r18
+     138:	20 81       	ld	r18, Z
+     13a:	21 60       	ori	r18, 0x01	; 1
+     13c:	fc 01       	movw	r30, r24
+     13e:	20 83       	st	Z, r18
+	}
+}
+     140:	00 00       	nop
+     142:	0f 90       	pop	r0
+     144:	0f 90       	pop	r0
+     146:	df 91       	pop	r29
+     148:	cf 91       	pop	r28
+     14a:	08 95       	ret
+
+0000014c <get_cell_state>:
+
+ tCellState get_cell_state(){
+     14c:	cf 93       	push	r28
+     14e:	df 93       	push	r29
+     150:	cd b7       	in	r28, 0x3d	; 61
+     152:	de b7       	in	r29, 0x3e	; 62
+	return CellStructure.state;
+     154:	80 91 2e 01 	lds	r24, 0x012E	; 0x80012e <CellStructure>
+}
+     158:	df 91       	pop	r29
+     15a:	cf 91       	pop	r28
+     15c:	08 95       	ret
+
+0000015e <cell_isr_routine>:
+
+ void cell_isr_routine(){
+     15e:	cf 93       	push	r28
+     160:	df 93       	push	r29
+     162:	cd b7       	in	r28, 0x3d	; 61
+     164:	de b7       	in	r29, 0x3e	; 62
+ static uint8_t cell_pwm_counter = 0;
+ static tSoftPwmState cell_pwm_state = 0;
+ switch(cell_pwm_state){
+     166:	80 91 1c 01 	lds	r24, 0x011C	; 0x80011c <__data_end>
+     16a:	88 2f       	mov	r24, r24
+     16c:	90 e0       	ldi	r25, 0x00	; 0
+     16e:	81 30       	cpi	r24, 0x01	; 1
+     170:	91 05       	cpc	r25, r1
+     172:	a1 f1       	breq	.+104    	; 0x1dc <cell_isr_routine+0x7e>
+     174:	82 30       	cpi	r24, 0x02	; 2
+     176:	91 05       	cpc	r25, r1
+     178:	09 f4       	brne	.+2      	; 0x17c <cell_isr_routine+0x1e>
+     17a:	4f c0       	rjmp	.+158    	; 0x21a <__EEPROM_REGION_LENGTH__+0x1a>
+     17c:	89 2b       	or	r24, r25
+     17e:	09 f0       	breq	.+2      	; 0x182 <cell_isr_routine+0x24>
+     180:	59 c0       	rjmp	.+178    	; 0x234 <__EEPROM_REGION_LENGTH__+0x34>
+		 case pwmSetUpdate:
+			 if(CellStructure.cell_motor_pwm == 0){
+     182:	80 91 2f 01 	lds	r24, 0x012F	; 0x80012f <CellStructure+0x1>
+     186:	88 23       	and	r24, r24
+     188:	51 f4       	brne	.+20     	; 0x19e <cell_isr_routine+0x40>
+				 PORTD &= ~(1 << PD5);											//cell motor pin
+     18a:	8b e2       	ldi	r24, 0x2B	; 43
+     18c:	90 e0       	ldi	r25, 0x00	; 0
+     18e:	2b e2       	ldi	r18, 0x2B	; 43
+     190:	30 e0       	ldi	r19, 0x00	; 0
+     192:	f9 01       	movw	r30, r18
+     194:	20 81       	ld	r18, Z
+     196:	2f 7d       	andi	r18, 0xDF	; 223
+     198:	fc 01       	movw	r30, r24
+     19a:	20 83       	st	Z, r18
+				 return;
+     19c:	4b c0       	rjmp	.+150    	; 0x234 <__EEPROM_REGION_LENGTH__+0x34>
+			 }
+			 if(CellStructure.cell_motor_pwm>= 100){
+     19e:	80 91 2f 01 	lds	r24, 0x012F	; 0x80012f <CellStructure+0x1>
+     1a2:	84 36       	cpi	r24, 0x64	; 100
+     1a4:	50 f0       	brcs	.+20     	; 0x1ba <cell_isr_routine+0x5c>
+				 PORTD |= (1 << PD5);												//cell motor pin
+     1a6:	8b e2       	ldi	r24, 0x2B	; 43
+     1a8:	90 e0       	ldi	r25, 0x00	; 0
+     1aa:	2b e2       	ldi	r18, 0x2B	; 43
+     1ac:	30 e0       	ldi	r19, 0x00	; 0
+     1ae:	f9 01       	movw	r30, r18
+     1b0:	20 81       	ld	r18, Z
+     1b2:	20 62       	ori	r18, 0x20	; 32
+     1b4:	fc 01       	movw	r30, r24
+     1b6:	20 83       	st	Z, r18
+				 return;
+     1b8:	3d c0       	rjmp	.+122    	; 0x234 <__EEPROM_REGION_LENGTH__+0x34>
+			 }
+			 PORTD |= (1 << PD5);													//cell motor pin
+     1ba:	8b e2       	ldi	r24, 0x2B	; 43
+     1bc:	90 e0       	ldi	r25, 0x00	; 0
+     1be:	2b e2       	ldi	r18, 0x2B	; 43
+     1c0:	30 e0       	ldi	r19, 0x00	; 0
+     1c2:	f9 01       	movw	r30, r18
+     1c4:	20 81       	ld	r18, Z
+     1c6:	20 62       	ori	r18, 0x20	; 32
+     1c8:	fc 01       	movw	r30, r24
+     1ca:	20 83       	st	Z, r18
+			 cell_pwm_counter = CellStructure.cell_motor_pwm;
+     1cc:	80 91 2f 01 	lds	r24, 0x012F	; 0x80012f <CellStructure+0x1>
+     1d0:	80 93 1d 01 	sts	0x011D, r24	; 0x80011d <cell_pwm_counter.2034>
+			 cell_pwm_state = pwmClear;
+     1d4:	81 e0       	ldi	r24, 0x01	; 1
+     1d6:	80 93 1c 01 	sts	0x011C, r24	; 0x80011c <__data_end>
+			 break;
+     1da:	2c c0       	rjmp	.+88     	; 0x234 <__EEPROM_REGION_LENGTH__+0x34>
+		 case pwmClear:
+			 if(cell_pwm_counter)
+     1dc:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <cell_pwm_counter.2034>
+     1e0:	88 23       	and	r24, r24
+     1e2:	31 f0       	breq	.+12     	; 0x1f0 <cell_isr_routine+0x92>
+			 cell_pwm_counter--;
+     1e4:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <cell_pwm_counter.2034>
+     1e8:	81 50       	subi	r24, 0x01	; 1
+     1ea:	80 93 1d 01 	sts	0x011D, r24	; 0x80011d <cell_pwm_counter.2034>
+			 else{
+				 PORTD &= ~(1 << PD5);											//cell motor pin
+				 cell_pwm_counter = 100 - CellStructure.cell_motor_pwm;
+				 cell_pwm_state = pwmReset;
+			 }
+			 break;
+     1ee:	22 c0       	rjmp	.+68     	; 0x234 <__EEPROM_REGION_LENGTH__+0x34>
+			 break;
+		 case pwmClear:
+			 if(cell_pwm_counter)
+			 cell_pwm_counter--;
+			 else{
+				 PORTD &= ~(1 << PD5);											//cell motor pin
+     1f0:	8b e2       	ldi	r24, 0x2B	; 43
+     1f2:	90 e0       	ldi	r25, 0x00	; 0
+     1f4:	2b e2       	ldi	r18, 0x2B	; 43
+     1f6:	30 e0       	ldi	r19, 0x00	; 0
+     1f8:	f9 01       	movw	r30, r18
+     1fa:	20 81       	ld	r18, Z
+     1fc:	2f 7d       	andi	r18, 0xDF	; 223
+     1fe:	fc 01       	movw	r30, r24
+     200:	20 83       	st	Z, r18
+				 cell_pwm_counter = 100 - CellStructure.cell_motor_pwm;
+     202:	80 91 2f 01 	lds	r24, 0x012F	; 0x80012f <CellStructure+0x1>
+     206:	94 e6       	ldi	r25, 0x64	; 100
+     208:	f9 2f       	mov	r31, r25
+     20a:	f8 1b       	sub	r31, r24
+     20c:	8f 2f       	mov	r24, r31
+     20e:	80 93 1d 01 	sts	0x011D, r24	; 0x80011d <cell_pwm_counter.2034>
+				 cell_pwm_state = pwmReset;
+     212:	82 e0       	ldi	r24, 0x02	; 2
+     214:	80 93 1c 01 	sts	0x011C, r24	; 0x80011c <__data_end>
+			 }
+			 break;
+     218:	0d c0       	rjmp	.+26     	; 0x234 <__EEPROM_REGION_LENGTH__+0x34>
+		 case pwmReset:
+			 if(cell_pwm_counter)
+     21a:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <cell_pwm_counter.2034>
+     21e:	88 23       	and	r24, r24
+     220:	31 f0       	breq	.+12     	; 0x22e <__EEPROM_REGION_LENGTH__+0x2e>
+			 cell_pwm_counter--;
+     222:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <cell_pwm_counter.2034>
+     226:	81 50       	subi	r24, 0x01	; 1
+     228:	80 93 1d 01 	sts	0x011D, r24	; 0x80011d <cell_pwm_counter.2034>
+			 else
+			 cell_pwm_state = pwmSetUpdate;
+			 break;
+     22c:	03 c0       	rjmp	.+6      	; 0x234 <__EEPROM_REGION_LENGTH__+0x34>
+			 break;
+		 case pwmReset:
+			 if(cell_pwm_counter)
+			 cell_pwm_counter--;
+			 else
+			 cell_pwm_state = pwmSetUpdate;
+     22e:	10 92 1c 01 	sts	0x011C, r1	; 0x80011c <__data_end>
+			 break;
+     232:	00 00       	nop
+	 }
+     234:	df 91       	pop	r29
+     236:	cf 91       	pop	r28
+     238:	08 95       	ret
+
+0000023a <init_disk>:
+	DiskStrukture.delayed_stop = true;
+ }
+
+ uint32_t disk_get_sin_cos(){
+	return DiskStrukture.sin_cos_counter;
+ }
+     23a:	cf 93       	push	r28
+     23c:	df 93       	push	r29
+     23e:	cd b7       	in	r28, 0x3d	; 61
+     240:	de b7       	in	r29, 0x3e	; 62
+     242:	10 92 33 01 	sts	0x0133, r1	; 0x800133 <DiskStrukture+0x3>
+     246:	84 e6       	ldi	r24, 0x64	; 100
+     248:	80 93 36 01 	sts	0x0136, r24	; 0x800136 <DiskStrukture+0x6>
+     24c:	84 e6       	ldi	r24, 0x64	; 100
+     24e:	80 93 35 01 	sts	0x0135, r24	; 0x800135 <DiskStrukture+0x5>
+     252:	10 92 3c 01 	sts	0x013C, r1	; 0x80013c <DiskStrukture+0xc>
+     256:	10 92 3d 01 	sts	0x013D, r1	; 0x80013d <DiskStrukture+0xd>
+     25a:	10 92 3e 01 	sts	0x013E, r1	; 0x80013e <DiskStrukture+0xe>
+     25e:	10 92 3f 01 	sts	0x013F, r1	; 0x80013f <DiskStrukture+0xf>
+     262:	8c e3       	ldi	r24, 0x3C	; 60
+     264:	80 93 34 01 	sts	0x0134, r24	; 0x800134 <DiskStrukture+0x4>
+     268:	88 e6       	ldi	r24, 0x68	; 104
+     26a:	90 e0       	ldi	r25, 0x00	; 0
+     26c:	28 e6       	ldi	r18, 0x68	; 104
+     26e:	30 e0       	ldi	r19, 0x00	; 0
+     270:	f9 01       	movw	r30, r18
+     272:	20 81       	ld	r18, Z
+     274:	23 60       	ori	r18, 0x03	; 3
+     276:	fc 01       	movw	r30, r24
+     278:	20 83       	st	Z, r18
+     27a:	8b e6       	ldi	r24, 0x6B	; 107
+     27c:	90 e0       	ldi	r25, 0x00	; 0
+     27e:	2b e6       	ldi	r18, 0x6B	; 107
+     280:	30 e0       	ldi	r19, 0x00	; 0
+     282:	f9 01       	movw	r30, r18
+     284:	20 81       	ld	r18, Z
+     286:	20 6c       	ori	r18, 0xC0	; 192
+     288:	fc 01       	movw	r30, r24
+     28a:	20 83       	st	Z, r18
+     28c:	8c e6       	ldi	r24, 0x6C	; 108
+     28e:	90 e0       	ldi	r25, 0x00	; 0
+     290:	2c e6       	ldi	r18, 0x6C	; 108
+     292:	30 e0       	ldi	r19, 0x00	; 0
+     294:	f9 01       	movw	r30, r18
+     296:	20 81       	ld	r18, Z
+     298:	21 60       	ori	r18, 0x01	; 1
+     29a:	fc 01       	movw	r30, r24
+     29c:	20 83       	st	Z, r18
+     29e:	00 00       	nop
+     2a0:	df 91       	pop	r29
+     2a2:	cf 91       	pop	r28
+     2a4:	08 95       	ret
+
+000002a6 <init_disk_power_on_value>:
+     2a6:	cf 93       	push	r28
+     2a8:	df 93       	push	r29
+     2aa:	cd b7       	in	r28, 0x3d	; 61
+     2ac:	de b7       	in	r29, 0x3e	; 62
+     2ae:	0e 94 0d 02 	call	0x41a	; 0x41a <get_disk_label_position>
+     2b2:	80 93 41 01 	sts	0x0141, r24	; 0x800141 <DiskStrukture+0x11>
+     2b6:	00 00       	nop
+     2b8:	df 91       	pop	r29
+     2ba:	cf 91       	pop	r28
+     2bc:	08 95       	ret
+
+000002be <isr_calibrate_motor_pwm>:
+     2be:	ef 92       	push	r14
+     2c0:	ff 92       	push	r15
+     2c2:	0f 93       	push	r16
+     2c4:	1f 93       	push	r17
+     2c6:	cf 93       	push	r28
+     2c8:	df 93       	push	r29
+     2ca:	00 d0       	rcall	.+0      	; 0x2cc <isr_calibrate_motor_pwm+0xe>
+     2cc:	00 d0       	rcall	.+0      	; 0x2ce <isr_calibrate_motor_pwm+0x10>
+     2ce:	cd b7       	in	r28, 0x3d	; 61
+     2d0:	de b7       	in	r29, 0x3e	; 62
+     2d2:	19 82       	std	Y+1, r1	; 0x01
+     2d4:	1a 82       	std	Y+2, r1	; 0x02
+     2d6:	1b 82       	std	Y+3, r1	; 0x03
+     2d8:	1c 82       	std	Y+4, r1	; 0x04
+     2da:	80 91 1e 01 	lds	r24, 0x011E	; 0x80011e <counter.2030>
+     2de:	90 91 1f 01 	lds	r25, 0x011F	; 0x80011f <counter.2030+0x1>
+     2e2:	0a 97       	sbiw	r24, 0x0a	; 10
+     2e4:	70 f4       	brcc	.+28     	; 0x302 <isr_calibrate_motor_pwm+0x44>
+     2e6:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     2ea:	88 23       	and	r24, r24
+     2ec:	51 f0       	breq	.+20     	; 0x302 <isr_calibrate_motor_pwm+0x44>
+     2ee:	80 91 1e 01 	lds	r24, 0x011E	; 0x80011e <counter.2030>
+     2f2:	90 91 1f 01 	lds	r25, 0x011F	; 0x80011f <counter.2030+0x1>
+     2f6:	01 96       	adiw	r24, 0x01	; 1
+     2f8:	90 93 1f 01 	sts	0x011F, r25	; 0x80011f <counter.2030+0x1>
+     2fc:	80 93 1e 01 	sts	0x011E, r24	; 0x80011e <counter.2030>
+     300:	80 c0       	rjmp	.+256    	; 0x402 <__DATA_REGION_LENGTH__+0x2>
+     302:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     306:	88 23       	and	r24, r24
+     308:	09 f4       	brne	.+2      	; 0x30c <isr_calibrate_motor_pwm+0x4e>
+     30a:	7b c0       	rjmp	.+246    	; 0x402 <__DATA_REGION_LENGTH__+0x2>
+     30c:	20 91 38 01 	lds	r18, 0x0138	; 0x800138 <DiskStrukture+0x8>
+     310:	30 91 39 01 	lds	r19, 0x0139	; 0x800139 <DiskStrukture+0x9>
+     314:	40 91 3a 01 	lds	r20, 0x013A	; 0x80013a <DiskStrukture+0xa>
+     318:	50 91 3b 01 	lds	r21, 0x013B	; 0x80013b <DiskStrukture+0xb>
+     31c:	80 91 3c 01 	lds	r24, 0x013C	; 0x80013c <DiskStrukture+0xc>
+     320:	90 91 3d 01 	lds	r25, 0x013D	; 0x80013d <DiskStrukture+0xd>
+     324:	a0 91 3e 01 	lds	r26, 0x013E	; 0x80013e <DiskStrukture+0xe>
+     328:	b0 91 3f 01 	lds	r27, 0x013F	; 0x80013f <DiskStrukture+0xf>
+     32c:	79 01       	movw	r14, r18
+     32e:	8a 01       	movw	r16, r20
+     330:	e8 1a       	sub	r14, r24
+     332:	f9 0a       	sbc	r15, r25
+     334:	0a 0b       	sbc	r16, r26
+     336:	1b 0b       	sbc	r17, r27
+     338:	d8 01       	movw	r26, r16
+     33a:	c7 01       	movw	r24, r14
+     33c:	89 83       	std	Y+1, r24	; 0x01
+     33e:	9a 83       	std	Y+2, r25	; 0x02
+     340:	ab 83       	std	Y+3, r26	; 0x03
+     342:	bc 83       	std	Y+4, r27	; 0x04
+     344:	80 91 38 01 	lds	r24, 0x0138	; 0x800138 <DiskStrukture+0x8>
+     348:	90 91 39 01 	lds	r25, 0x0139	; 0x800139 <DiskStrukture+0x9>
+     34c:	a0 91 3a 01 	lds	r26, 0x013A	; 0x80013a <DiskStrukture+0xa>
+     350:	b0 91 3b 01 	lds	r27, 0x013B	; 0x80013b <DiskStrukture+0xb>
+     354:	80 93 3c 01 	sts	0x013C, r24	; 0x80013c <DiskStrukture+0xc>
+     358:	90 93 3d 01 	sts	0x013D, r25	; 0x80013d <DiskStrukture+0xd>
+     35c:	a0 93 3e 01 	sts	0x013E, r26	; 0x80013e <DiskStrukture+0xe>
+     360:	b0 93 3f 01 	sts	0x013F, r27	; 0x80013f <DiskStrukture+0xf>
+     364:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <DiskStrukture+0x17>
+     368:	82 30       	cpi	r24, 0x02	; 2
+     36a:	28 f1       	brcs	.+74     	; 0x3b6 <isr_calibrate_motor_pwm+0xf8>
+     36c:	89 81       	ldd	r24, Y+1	; 0x01
+     36e:	9a 81       	ldd	r25, Y+2	; 0x02
+     370:	ab 81       	ldd	r26, Y+3	; 0x03
+     372:	bc 81       	ldd	r27, Y+4	; 0x04
+     374:	86 35       	cpi	r24, 0x56	; 86
+     376:	91 05       	cpc	r25, r1
+     378:	a1 05       	cpc	r26, r1
+     37a:	b1 05       	cpc	r27, r1
+     37c:	48 f0       	brcs	.+18     	; 0x390 <isr_calibrate_motor_pwm+0xd2>
+     37e:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     382:	8b 30       	cpi	r24, 0x0B	; 11
+     384:	28 f0       	brcs	.+10     	; 0x390 <isr_calibrate_motor_pwm+0xd2>
+     386:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     38a:	81 50       	subi	r24, 0x01	; 1
+     38c:	80 93 33 01 	sts	0x0133, r24	; 0x800133 <DiskStrukture+0x3>
+     390:	89 81       	ldd	r24, Y+1	; 0x01
+     392:	9a 81       	ldd	r25, Y+2	; 0x02
+     394:	ab 81       	ldd	r26, Y+3	; 0x03
+     396:	bc 81       	ldd	r27, Y+4	; 0x04
+     398:	8b 34       	cpi	r24, 0x4B	; 75
+     39a:	91 05       	cpc	r25, r1
+     39c:	a1 05       	cpc	r26, r1
+     39e:	b1 05       	cpc	r27, r1
+     3a0:	60 f5       	brcc	.+88     	; 0x3fa <isr_calibrate_motor_pwm+0x13c>
+     3a2:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     3a6:	84 36       	cpi	r24, 0x64	; 100
+     3a8:	40 f5       	brcc	.+80     	; 0x3fa <isr_calibrate_motor_pwm+0x13c>
+     3aa:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     3ae:	8f 5f       	subi	r24, 0xFF	; 255
+     3b0:	80 93 33 01 	sts	0x0133, r24	; 0x800133 <DiskStrukture+0x3>
+     3b4:	22 c0       	rjmp	.+68     	; 0x3fa <isr_calibrate_motor_pwm+0x13c>
+     3b6:	89 81       	ldd	r24, Y+1	; 0x01
+     3b8:	9a 81       	ldd	r25, Y+2	; 0x02
+     3ba:	ab 81       	ldd	r26, Y+3	; 0x03
+     3bc:	bc 81       	ldd	r27, Y+4	; 0x04
+     3be:	84 97       	sbiw	r24, 0x24	; 36
+     3c0:	a1 05       	cpc	r26, r1
+     3c2:	b1 05       	cpc	r27, r1
+     3c4:	48 f0       	brcs	.+18     	; 0x3d8 <isr_calibrate_motor_pwm+0x11a>
+     3c6:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     3ca:	86 30       	cpi	r24, 0x06	; 6
+     3cc:	28 f0       	brcs	.+10     	; 0x3d8 <isr_calibrate_motor_pwm+0x11a>
+     3ce:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     3d2:	81 50       	subi	r24, 0x01	; 1
+     3d4:	80 93 33 01 	sts	0x0133, r24	; 0x800133 <DiskStrukture+0x3>
+     3d8:	89 81       	ldd	r24, Y+1	; 0x01
+     3da:	9a 81       	ldd	r25, Y+2	; 0x02
+     3dc:	ab 81       	ldd	r26, Y+3	; 0x03
+     3de:	bc 81       	ldd	r27, Y+4	; 0x04
+     3e0:	83 97       	sbiw	r24, 0x23	; 35
+     3e2:	a1 05       	cpc	r26, r1
+     3e4:	b1 05       	cpc	r27, r1
+     3e6:	48 f4       	brcc	.+18     	; 0x3fa <isr_calibrate_motor_pwm+0x13c>
+     3e8:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     3ec:	84 36       	cpi	r24, 0x64	; 100
+     3ee:	28 f4       	brcc	.+10     	; 0x3fa <isr_calibrate_motor_pwm+0x13c>
+     3f0:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     3f4:	8f 5f       	subi	r24, 0xFF	; 255
+     3f6:	80 93 33 01 	sts	0x0133, r24	; 0x800133 <DiskStrukture+0x3>
+     3fa:	10 92 1f 01 	sts	0x011F, r1	; 0x80011f <counter.2030+0x1>
+     3fe:	10 92 1e 01 	sts	0x011E, r1	; 0x80011e <counter.2030>
+     402:	00 00       	nop
+     404:	0f 90       	pop	r0
+     406:	0f 90       	pop	r0
+     408:	0f 90       	pop	r0
+     40a:	0f 90       	pop	r0
+     40c:	df 91       	pop	r29
+     40e:	cf 91       	pop	r28
+     410:	1f 91       	pop	r17
+     412:	0f 91       	pop	r16
+     414:	ff 90       	pop	r15
+     416:	ef 90       	pop	r14
+     418:	08 95       	ret
+
+0000041a <get_disk_label_position>:
+     41a:	cf 93       	push	r28
+     41c:	df 93       	push	r29
+     41e:	1f 92       	push	r1
+     420:	cd b7       	in	r28, 0x3d	; 61
+     422:	de b7       	in	r29, 0x3e	; 62
+     424:	86 e2       	ldi	r24, 0x26	; 38
+     426:	90 e0       	ldi	r25, 0x00	; 0
+     428:	fc 01       	movw	r30, r24
+     42a:	80 81       	ld	r24, Z
+     42c:	88 2f       	mov	r24, r24
+     42e:	90 e0       	ldi	r25, 0x00	; 0
+     430:	81 70       	andi	r24, 0x01	; 1
+     432:	99 27       	eor	r25, r25
+     434:	89 2b       	or	r24, r25
+     436:	11 f0       	breq	.+4      	; 0x43c <get_disk_label_position+0x22>
+     438:	8f ef       	ldi	r24, 0xFF	; 255
+     43a:	1b c0       	rjmp	.+54     	; 0x472 <get_disk_label_position+0x58>
+     43c:	89 e2       	ldi	r24, 0x29	; 41
+     43e:	90 e0       	ldi	r25, 0x00	; 0
+     440:	fc 01       	movw	r30, r24
+     442:	80 81       	ld	r24, Z
+     444:	87 70       	andi	r24, 0x07	; 7
+     446:	89 83       	std	Y+1, r24	; 0x01
+     448:	89 e2       	ldi	r24, 0x29	; 41
+     44a:	90 e0       	ldi	r25, 0x00	; 0
+     44c:	fc 01       	movw	r30, r24
+     44e:	80 81       	ld	r24, Z
+     450:	88 2f       	mov	r24, r24
+     452:	90 e0       	ldi	r25, 0x00	; 0
+     454:	80 71       	andi	r24, 0x10	; 16
+     456:	99 27       	eor	r25, r25
+     458:	95 95       	asr	r25
+     45a:	87 95       	ror	r24
+     45c:	98 2f       	mov	r25, r24
+     45e:	89 81       	ldd	r24, Y+1	; 0x01
+     460:	89 2b       	or	r24, r25
+     462:	89 83       	std	Y+1, r24	; 0x01
+     464:	9f e0       	ldi	r25, 0x0F	; 15
+     466:	89 81       	ldd	r24, Y+1	; 0x01
+     468:	f9 2f       	mov	r31, r25
+     46a:	f8 1b       	sub	r31, r24
+     46c:	8f 2f       	mov	r24, r31
+     46e:	89 83       	std	Y+1, r24	; 0x01
+     470:	89 81       	ldd	r24, Y+1	; 0x01
+     472:	0f 90       	pop	r0
+     474:	df 91       	pop	r29
+     476:	cf 91       	pop	r28
+     478:	08 95       	ret
+
+0000047a <disk_set_left_rotation>:
+     47a:	cf 93       	push	r28
+     47c:	df 93       	push	r29
+     47e:	1f 92       	push	r1
+     480:	cd b7       	in	r28, 0x3d	; 61
+     482:	de b7       	in	r29, 0x3e	; 62
+     484:	89 83       	std	Y+1, r24	; 0x01
+     486:	10 92 44 01 	sts	0x0144, r1	; 0x800144 <DiskStrukture+0x14>
+     48a:	0e 94 a4 02 	call	0x548	; 0x548 <reset_sin_cos>
+     48e:	10 92 45 01 	sts	0x0145, r1	; 0x800145 <DiskStrukture+0x15>
+     492:	8b e2       	ldi	r24, 0x2B	; 43
+     494:	90 e0       	ldi	r25, 0x00	; 0
+     496:	2b e2       	ldi	r18, 0x2B	; 43
+     498:	30 e0       	ldi	r19, 0x00	; 0
+     49a:	f9 01       	movw	r30, r18
+     49c:	20 81       	ld	r18, Z
+     49e:	2f 77       	andi	r18, 0x7F	; 127
+     4a0:	fc 01       	movw	r30, r24
+     4a2:	20 83       	st	Z, r18
+     4a4:	85 e2       	ldi	r24, 0x25	; 37
+     4a6:	90 e0       	ldi	r25, 0x00	; 0
+     4a8:	25 e2       	ldi	r18, 0x25	; 37
+     4aa:	30 e0       	ldi	r19, 0x00	; 0
+     4ac:	f9 01       	movw	r30, r18
+     4ae:	20 81       	ld	r18, Z
+     4b0:	21 60       	ori	r18, 0x01	; 1
+     4b2:	fc 01       	movw	r30, r24
+     4b4:	20 83       	st	Z, r18
+     4b6:	89 81       	ldd	r24, Y+1	; 0x01
+     4b8:	80 93 33 01 	sts	0x0133, r24	; 0x800133 <DiskStrukture+0x3>
+     4bc:	00 00       	nop
+     4be:	0f 90       	pop	r0
+     4c0:	df 91       	pop	r29
+     4c2:	cf 91       	pop	r28
+     4c4:	08 95       	ret
+
+000004c6 <disk_set_right_rotation>:
+     4c6:	cf 93       	push	r28
+     4c8:	df 93       	push	r29
+     4ca:	1f 92       	push	r1
+     4cc:	cd b7       	in	r28, 0x3d	; 61
+     4ce:	de b7       	in	r29, 0x3e	; 62
+     4d0:	89 83       	std	Y+1, r24	; 0x01
+     4d2:	81 e0       	ldi	r24, 0x01	; 1
+     4d4:	80 93 44 01 	sts	0x0144, r24	; 0x800144 <DiskStrukture+0x14>
+     4d8:	0e 94 a4 02 	call	0x548	; 0x548 <reset_sin_cos>
+     4dc:	10 92 45 01 	sts	0x0145, r1	; 0x800145 <DiskStrukture+0x15>
+     4e0:	8b e2       	ldi	r24, 0x2B	; 43
+     4e2:	90 e0       	ldi	r25, 0x00	; 0
+     4e4:	2b e2       	ldi	r18, 0x2B	; 43
+     4e6:	30 e0       	ldi	r19, 0x00	; 0
+     4e8:	f9 01       	movw	r30, r18
+     4ea:	20 81       	ld	r18, Z
+     4ec:	2f 77       	andi	r18, 0x7F	; 127
+     4ee:	fc 01       	movw	r30, r24
+     4f0:	20 83       	st	Z, r18
+     4f2:	85 e2       	ldi	r24, 0x25	; 37
+     4f4:	90 e0       	ldi	r25, 0x00	; 0
+     4f6:	25 e2       	ldi	r18, 0x25	; 37
+     4f8:	30 e0       	ldi	r19, 0x00	; 0
+     4fa:	f9 01       	movw	r30, r18
+     4fc:	20 81       	ld	r18, Z
+     4fe:	2e 7f       	andi	r18, 0xFE	; 254
+     500:	fc 01       	movw	r30, r24
+     502:	20 83       	st	Z, r18
+     504:	89 81       	ldd	r24, Y+1	; 0x01
+     506:	80 93 33 01 	sts	0x0133, r24	; 0x800133 <DiskStrukture+0x3>
+     50a:	00 00       	nop
+     50c:	0f 90       	pop	r0
+     50e:	df 91       	pop	r29
+     510:	cf 91       	pop	r28
+     512:	08 95       	ret
+
+00000514 <set_disk_enable_disk_rotation>:
+     514:	cf 93       	push	r28
+     516:	df 93       	push	r29
+     518:	cd b7       	in	r28, 0x3d	; 61
+     51a:	de b7       	in	r29, 0x3e	; 62
+     51c:	10 92 46 01 	sts	0x0146, r1	; 0x800146 <DiskStrukture+0x16>
+     520:	81 e0       	ldi	r24, 0x01	; 1
+     522:	80 93 40 01 	sts	0x0140, r24	; 0x800140 <DiskStrukture+0x10>
+     526:	00 00       	nop
+     528:	df 91       	pop	r29
+     52a:	cf 91       	pop	r28
+     52c:	08 95       	ret
+
+0000052e <disk_stop_rotation>:
+     52e:	cf 93       	push	r28
+     530:	df 93       	push	r29
+     532:	cd b7       	in	r28, 0x3d	; 61
+     534:	de b7       	in	r29, 0x3e	; 62
+     536:	0e 94 a4 02 	call	0x548	; 0x548 <reset_sin_cos>
+     53a:	81 e0       	ldi	r24, 0x01	; 1
+     53c:	80 93 45 01 	sts	0x0145, r24	; 0x800145 <DiskStrukture+0x15>
+     540:	00 00       	nop
+     542:	df 91       	pop	r29
+     544:	cf 91       	pop	r28
+     546:	08 95       	ret
+
+00000548 <reset_sin_cos>:
+
+void reset_sin_cos(){
+     548:	cf 93       	push	r28
+     54a:	df 93       	push	r29
+     54c:	cd b7       	in	r28, 0x3d	; 61
+     54e:	de b7       	in	r29, 0x3e	; 62
+	DiskStrukture.sin_cos_counter = 0;
+     550:	10 92 38 01 	sts	0x0138, r1	; 0x800138 <DiskStrukture+0x8>
+     554:	10 92 39 01 	sts	0x0139, r1	; 0x800139 <DiskStrukture+0x9>
+     558:	10 92 3a 01 	sts	0x013A, r1	; 0x80013a <DiskStrukture+0xa>
+     55c:	10 92 3b 01 	sts	0x013B, r1	; 0x80013b <DiskStrukture+0xb>
+	DiskStrukture.prev_sin_cos_counter = 0;
+     560:	10 92 3c 01 	sts	0x013C, r1	; 0x80013c <DiskStrukture+0xc>
+     564:	10 92 3d 01 	sts	0x013D, r1	; 0x80013d <DiskStrukture+0xd>
+     568:	10 92 3e 01 	sts	0x013E, r1	; 0x80013e <DiskStrukture+0xe>
+     56c:	10 92 3f 01 	sts	0x013F, r1	; 0x80013f <DiskStrukture+0xf>
+}
+     570:	00 00       	nop
+     572:	df 91       	pop	r29
+     574:	cf 91       	pop	r28
+     576:	08 95       	ret
+
+00000578 <get_disk_state>:
+
+ tDiskState get_disk_state(){
+     578:	cf 93       	push	r28
+     57a:	df 93       	push	r29
+     57c:	cd b7       	in	r28, 0x3d	; 61
+     57e:	de b7       	in	r29, 0x3e	; 62
+	return DiskStrukture.state;
+     580:	80 91 30 01 	lds	r24, 0x0130	; 0x800130 <DiskStrukture>
+ }
+     584:	df 91       	pop	r29
+     586:	cf 91       	pop	r28
+     588:	08 95       	ret
+
+0000058a <disk_set_new_position>:
+
+ void disk_set_new_position(uint8_t pos){
+     58a:	cf 93       	push	r28
+     58c:	df 93       	push	r29
+     58e:	1f 92       	push	r1
+     590:	cd b7       	in	r28, 0x3d	; 61
+     592:	de b7       	in	r29, 0x3e	; 62
+     594:	89 83       	std	Y+1, r24	; 0x01
+	if(get_disk_busy()){
+     596:	0e 94 4a 04 	call	0x894	; 0x894 <get_disk_busy>
+     59a:	88 23       	and	r24, r24
+     59c:	09 f0       	breq	.+2      	; 0x5a0 <disk_set_new_position+0x16>
+     59e:	41 c0       	rjmp	.+130    	; 0x622 <disk_set_new_position+0x98>
+		return;
+	}
+	if((pos == 16)&&(get_lift_state() == Lift_UP)){
+     5a0:	89 81       	ldd	r24, Y+1	; 0x01
+     5a2:	80 31       	cpi	r24, 0x10	; 16
+     5a4:	21 f5       	brne	.+72     	; 0x5ee <disk_set_new_position+0x64>
+     5a6:	0e 94 aa 0b 	call	0x1754	; 0x1754 <get_lift_state>
+     5aa:	82 30       	cpi	r24, 0x02	; 2
+     5ac:	01 f5       	brne	.+64     	; 0x5ee <disk_set_new_position+0x64>
+		if((PIND&(1 << PD7)) == (1 << PD7)){
+     5ae:	89 e2       	ldi	r24, 0x29	; 41
+     5b0:	90 e0       	ldi	r25, 0x00	; 0
+     5b2:	fc 01       	movw	r30, r24
+     5b4:	80 81       	ld	r24, Z
+     5b6:	88 23       	and	r24, r24
+     5b8:	74 f4       	brge	.+28     	; 0x5d6 <disk_set_new_position+0x4c>
+			PORTD &= ~(1 << PD7);
+     5ba:	8b e2       	ldi	r24, 0x2B	; 43
+     5bc:	90 e0       	ldi	r25, 0x00	; 0
+     5be:	2b e2       	ldi	r18, 0x2B	; 43
+     5c0:	30 e0       	ldi	r19, 0x00	; 0
+     5c2:	f9 01       	movw	r30, r18
+     5c4:	20 81       	ld	r18, Z
+     5c6:	2f 77       	andi	r18, 0x7F	; 127
+     5c8:	fc 01       	movw	r30, r24
+     5ca:	20 83       	st	Z, r18
+			DiskStrukture.motor_pwm = DiskStrukture.motor_const_PWM;
+     5cc:	80 91 34 01 	lds	r24, 0x0134	; 0x800134 <DiskStrukture+0x4>
+     5d0:	80 93 33 01 	sts	0x0133, r24	; 0x800133 <DiskStrukture+0x3>
+		}
+		else{
+			PORTD	|=	(1 << PD7);
+			DiskStrukture.motor_pwm = 0;
+		}
+		return;
+     5d4:	27 c0       	rjmp	.+78     	; 0x624 <disk_set_new_position+0x9a>
+		if((PIND&(1 << PD7)) == (1 << PD7)){
+			PORTD &= ~(1 << PD7);
+			DiskStrukture.motor_pwm = DiskStrukture.motor_const_PWM;
+		}
+		else{
+			PORTD	|=	(1 << PD7);
+     5d6:	8b e2       	ldi	r24, 0x2B	; 43
+     5d8:	90 e0       	ldi	r25, 0x00	; 0
+     5da:	2b e2       	ldi	r18, 0x2B	; 43
+     5dc:	30 e0       	ldi	r19, 0x00	; 0
+     5de:	f9 01       	movw	r30, r18
+     5e0:	20 81       	ld	r18, Z
+     5e2:	20 68       	ori	r18, 0x80	; 128
+     5e4:	fc 01       	movw	r30, r24
+     5e6:	20 83       	st	Z, r18
+			DiskStrukture.motor_pwm = 0;
+     5e8:	10 92 33 01 	sts	0x0133, r1	; 0x800133 <DiskStrukture+0x3>
+		}
+		return;
+     5ec:	1b c0       	rjmp	.+54     	; 0x624 <disk_set_new_position+0x9a>
+	}
+	if((get_disk_label_position() == 0xff)||(get_disk_label_position() == pos)){
+     5ee:	0e 94 0d 02 	call	0x41a	; 0x41a <get_disk_label_position>
+     5f2:	8f 3f       	cpi	r24, 0xFF	; 255
+     5f4:	31 f0       	breq	.+12     	; 0x602 <disk_set_new_position+0x78>
+     5f6:	0e 94 0d 02 	call	0x41a	; 0x41a <get_disk_label_position>
+     5fa:	98 2f       	mov	r25, r24
+     5fc:	89 81       	ldd	r24, Y+1	; 0x01
+     5fe:	98 17       	cp	r25, r24
+     600:	31 f4       	brne	.+12     	; 0x60e <disk_set_new_position+0x84>
+		DiskStrukture.state = DiskReady;
+     602:	81 e0       	ldi	r24, 0x01	; 1
+     604:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <DiskStrukture>
+		DiskStrukture.state_mashine = stmDiskIddle;
+     608:	10 92 37 01 	sts	0x0137, r1	; 0x800137 <DiskStrukture+0x7>
+		return;
+     60c:	0b c0       	rjmp	.+22     	; 0x624 <disk_set_new_position+0x9a>
+	}
+	DiskStrukture.new_position = pos;
+     60e:	89 81       	ldd	r24, Y+1	; 0x01
+     610:	80 93 42 01 	sts	0x0142, r24	; 0x800142 <DiskStrukture+0x12>
+	DiskStrukture.state_mashine = stmDiskStart;
+     614:	81 e0       	ldi	r24, 0x01	; 1
+     616:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <DiskStrukture+0x7>
+	DiskStrukture.new_command = true;
+     61a:	81 e0       	ldi	r24, 0x01	; 1
+     61c:	80 93 43 01 	sts	0x0143, r24	; 0x800143 <DiskStrukture+0x13>
+     620:	01 c0       	rjmp	.+2      	; 0x624 <disk_set_new_position+0x9a>
+	return DiskStrukture.state;
+ }
+
+ void disk_set_new_position(uint8_t pos){
+	if(get_disk_busy()){
+		return;
+     622:	00 00       	nop
+		return;
+	}
+	DiskStrukture.new_position = pos;
+	DiskStrukture.state_mashine = stmDiskStart;
+	DiskStrukture.new_command = true;
+ }
+     624:	0f 90       	pop	r0
+     626:	df 91       	pop	r29
+     628:	cf 91       	pop	r28
+     62a:	08 95       	ret
+
+0000062c <disk_isr_working_cycle>:
+
+ void disk_isr_working_cycle(){
+     62c:	cf 93       	push	r28
+     62e:	df 93       	push	r29
+     630:	cd b7       	in	r28, 0x3d	; 61
+     632:	de b7       	in	r29, 0x3e	; 62
+	static uint16_t delay_before = 0;
+	switch(DiskStrukture.state_mashine){
+     634:	80 91 37 01 	lds	r24, 0x0137	; 0x800137 <DiskStrukture+0x7>
+     638:	88 2f       	mov	r24, r24
+     63a:	90 e0       	ldi	r25, 0x00	; 0
+     63c:	09 2e       	mov	r0, r25
+     63e:	00 0c       	add	r0, r0
+     640:	aa 0b       	sbc	r26, r26
+     642:	bb 0b       	sbc	r27, r27
+     644:	40 e0       	ldi	r20, 0x00	; 0
+     646:	50 e0       	ldi	r21, 0x00	; 0
+     648:	28 e0       	ldi	r18, 0x08	; 8
+     64a:	30 e0       	ldi	r19, 0x00	; 0
+     64c:	84 1b       	sub	r24, r20
+     64e:	95 0b       	sbc	r25, r21
+     650:	28 17       	cp	r18, r24
+     652:	39 07       	cpc	r19, r25
+     654:	08 f4       	brcc	.+2      	; 0x658 <disk_isr_working_cycle+0x2c>
+     656:	fb c0       	rjmp	.+502    	; 0x84e <disk_isr_working_cycle+0x222>
+     658:	8c 5c       	subi	r24, 0xCC	; 204
+     65a:	9f 4f       	sbci	r25, 0xFF	; 255
+     65c:	fc 01       	movw	r30, r24
+     65e:	0c 94 0b 0d 	jmp	0x1a16	; 0x1a16 <__tablejump2__>
+		case stmDiskIddle:
+			return;
+		case stmDiskStart:
+			DiskStrukture.timeout = DISK_TIMEOUT;
+     662:	88 e9       	ldi	r24, 0x98	; 152
+     664:	9a e3       	ldi	r25, 0x3A	; 58
+     666:	90 93 32 01 	sts	0x0132, r25	; 0x800132 <DiskStrukture+0x2>
+     66a:	80 93 31 01 	sts	0x0131, r24	; 0x800131 <DiskStrukture+0x1>
+			if(get_lift_state() != Lift_UP)
+     66e:	0e 94 aa 0b 	call	0x1754	; 0x1754 <get_lift_state>
+     672:	82 30       	cpi	r24, 0x02	; 2
+     674:	19 f0       	breq	.+6      	; 0x67c <disk_isr_working_cycle+0x50>
+				set_new_lift_position(LiftCommandUp);
+     676:	81 e0       	ldi	r24, 0x01	; 1
+     678:	0e 94 f1 09 	call	0x13e2	; 0x13e2 <set_new_lift_position>
+			DiskStrukture.state_mashine = stmDiskUp;
+     67c:	82 e0       	ldi	r24, 0x02	; 2
+     67e:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <DiskStrukture+0x7>
+			DiskStrukture.state = DiskMooving;
+     682:	83 e0       	ldi	r24, 0x03	; 3
+     684:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <DiskStrukture>
+			break;
+     688:	e2 c0       	rjmp	.+452    	; 0x84e <disk_isr_working_cycle+0x222>
+		case stmDiskUp:
+			if(!check_lift_bussy()&&(get_lift_state() != Lift_ERROR))
+     68a:	0e 94 a1 0b 	call	0x1742	; 0x1742 <check_lift_bussy>
+     68e:	98 2f       	mov	r25, r24
+     690:	81 e0       	ldi	r24, 0x01	; 1
+     692:	89 27       	eor	r24, r25
+     694:	88 23       	and	r24, r24
+     696:	39 f0       	breq	.+14     	; 0x6a6 <disk_isr_working_cycle+0x7a>
+     698:	0e 94 aa 0b 	call	0x1754	; 0x1754 <get_lift_state>
+     69c:	83 30       	cpi	r24, 0x03	; 3
+     69e:	19 f0       	breq	.+6      	; 0x6a6 <disk_isr_working_cycle+0x7a>
+				DiskStrukture.state_mashine = stmDiskCheckPosition;
+     6a0:	83 e0       	ldi	r24, 0x03	; 3
+     6a2:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <DiskStrukture+0x7>
+			if(DiskStrukture.timeout == 0)
+     6a6:	80 91 31 01 	lds	r24, 0x0131	; 0x800131 <DiskStrukture+0x1>
+     6aa:	90 91 32 01 	lds	r25, 0x0132	; 0x800132 <DiskStrukture+0x2>
+     6ae:	89 2b       	or	r24, r25
+     6b0:	09 f0       	breq	.+2      	; 0x6b4 <disk_isr_working_cycle+0x88>
+     6b2:	c4 c0       	rjmp	.+392    	; 0x83c <disk_isr_working_cycle+0x210>
+				DiskStrukture.state_mashine = stmDiskError;
+     6b4:	88 e0       	ldi	r24, 0x08	; 8
+     6b6:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <DiskStrukture+0x7>
+			break;
+     6ba:	c0 c0       	rjmp	.+384    	; 0x83c <disk_isr_working_cycle+0x210>
+		case stmDiskCheckPosition:
+			DiskStrukture.current_position = get_disk_label_position();
+     6bc:	0e 94 0d 02 	call	0x41a	; 0x41a <get_disk_label_position>
+     6c0:	80 93 41 01 	sts	0x0141, r24	; 0x800141 <DiskStrukture+0x11>
+			if(check_rotation_side(DiskStrukture) == RotationRight){
+     6c4:	2d b7       	in	r18, 0x3d	; 61
+     6c6:	3e b7       	in	r19, 0x3e	; 62
+     6c8:	28 51       	subi	r18, 0x18	; 24
+     6ca:	31 09       	sbc	r19, r1
+     6cc:	0f b6       	in	r0, 0x3f	; 63
+     6ce:	f8 94       	cli
+     6d0:	3e bf       	out	0x3e, r19	; 62
+     6d2:	0f be       	out	0x3f, r0	; 63
+     6d4:	2d bf       	out	0x3d, r18	; 61
+     6d6:	8d b7       	in	r24, 0x3d	; 61
+     6d8:	9e b7       	in	r25, 0x3e	; 62
+     6da:	01 96       	adiw	r24, 0x01	; 1
+     6dc:	28 e1       	ldi	r18, 0x18	; 24
+     6de:	e0 e3       	ldi	r30, 0x30	; 48
+     6e0:	f1 e0       	ldi	r31, 0x01	; 1
+     6e2:	dc 01       	movw	r26, r24
+     6e4:	01 90       	ld	r0, Z+
+     6e6:	0d 92       	st	X+, r0
+     6e8:	2a 95       	dec	r18
+     6ea:	e1 f7       	brne	.-8      	; 0x6e4 <disk_isr_working_cycle+0xb8>
+     6ec:	0e 94 53 04 	call	0x8a6	; 0x8a6 <check_rotation_side>
+     6f0:	ed b7       	in	r30, 0x3d	; 61
+     6f2:	fe b7       	in	r31, 0x3e	; 62
+     6f4:	78 96       	adiw	r30, 0x18	; 24
+     6f6:	0f b6       	in	r0, 0x3f	; 63
+     6f8:	f8 94       	cli
+     6fa:	de bf       	out	0x3e, r29	; 62
+     6fc:	0f be       	out	0x3f, r0	; 63
+     6fe:	cd bf       	out	0x3d, r28	; 61
+     700:	81 30       	cpi	r24, 0x01	; 1
+     702:	61 f4       	brne	.+24     	; 0x71c <disk_isr_working_cycle+0xf0>
+				if(DiskStrukture.delta > 1)
+     704:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <DiskStrukture+0x17>
+     708:	82 30       	cpi	r24, 0x02	; 2
+     70a:	20 f0       	brcs	.+8      	; 0x714 <disk_isr_working_cycle+0xe8>
+					disk_set_right_rotation(DISK_PWM);
+     70c:	8c e3       	ldi	r24, 0x3C	; 60
+     70e:	0e 94 63 02 	call	0x4c6	; 0x4c6 <disk_set_right_rotation>
+     712:	0f c0       	rjmp	.+30     	; 0x732 <disk_isr_working_cycle+0x106>
+				else
+					disk_set_right_rotation(DISK_PWM_SLOW);
+     714:	82 e3       	ldi	r24, 0x32	; 50
+     716:	0e 94 63 02 	call	0x4c6	; 0x4c6 <disk_set_right_rotation>
+     71a:	0b c0       	rjmp	.+22     	; 0x732 <disk_isr_working_cycle+0x106>
+			}
+			else{
+				if(DiskStrukture.delta > 1)
+     71c:	80 91 47 01 	lds	r24, 0x0147	; 0x800147 <DiskStrukture+0x17>
+     720:	82 30       	cpi	r24, 0x02	; 2
+     722:	20 f0       	brcs	.+8      	; 0x72c <disk_isr_working_cycle+0x100>
+					disk_set_left_rotation(DISK_PWM);
+     724:	8c e3       	ldi	r24, 0x3C	; 60
+     726:	0e 94 3d 02 	call	0x47a	; 0x47a <disk_set_left_rotation>
+     72a:	03 c0       	rjmp	.+6      	; 0x732 <disk_isr_working_cycle+0x106>
+				else
+					disk_set_left_rotation(DISK_PWM_SLOW);
+     72c:	82 e3       	ldi	r24, 0x32	; 50
+     72e:	0e 94 3d 02 	call	0x47a	; 0x47a <disk_set_left_rotation>
+			}
+			delay_before = DISK_DELAY_BS;
+     732:	8a ef       	ldi	r24, 0xFA	; 250
+     734:	90 e0       	ldi	r25, 0x00	; 0
+     736:	90 93 21 01 	sts	0x0121, r25	; 0x800121 <delay_before.2056+0x1>
+     73a:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <delay_before.2056>
+			DiskStrukture.state_mashine = stmDelayBeforStart;
+     73e:	84 e0       	ldi	r24, 0x04	; 4
+     740:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <DiskStrukture+0x7>
+			break;
+     744:	84 c0       	rjmp	.+264    	; 0x84e <disk_isr_working_cycle+0x222>
+		case stmDelayBeforStart:
+			if(delay_before == 0){
+     746:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <delay_before.2056>
+     74a:	90 91 21 01 	lds	r25, 0x0121	; 0x800121 <delay_before.2056+0x1>
+     74e:	89 2b       	or	r24, r25
+     750:	09 f0       	breq	.+2      	; 0x754 <disk_isr_working_cycle+0x128>
+     752:	76 c0       	rjmp	.+236    	; 0x840 <disk_isr_working_cycle+0x214>
+					set_disk_enable_disk_rotation();
+     754:	0e 94 8a 02 	call	0x514	; 0x514 <set_disk_enable_disk_rotation>
+					DiskStrukture.state_mashine = stmDiskRotation;
+     758:	85 e0       	ldi	r24, 0x05	; 5
+     75a:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <DiskStrukture+0x7>
+				}
+			break;
+     75e:	70 c0       	rjmp	.+224    	; 0x840 <disk_isr_working_cycle+0x214>
+		case  stmDiskRotation:
+			if(DiskStrukture.enable_rotation == false){
+     760:	90 91 40 01 	lds	r25, 0x0140	; 0x800140 <DiskStrukture+0x10>
+     764:	81 e0       	ldi	r24, 0x01	; 1
+     766:	89 27       	eor	r24, r25
+     768:	88 23       	and	r24, r24
+     76a:	49 f0       	breq	.+18     	; 0x77e <disk_isr_working_cycle+0x152>
+				DiskStrukture.state_mashine = stmDelayBeforeDown;
+     76c:	86 e0       	ldi	r24, 0x06	; 6
+     76e:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <DiskStrukture+0x7>
+				delay_before = DISK_DELAY_BD;
+     772:	84 ef       	ldi	r24, 0xF4	; 244
+     774:	91 e0       	ldi	r25, 0x01	; 1
+     776:	90 93 21 01 	sts	0x0121, r25	; 0x800121 <delay_before.2056+0x1>
+     77a:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <delay_before.2056>
+				}
+			if(DiskStrukture.timeout == 0)
+     77e:	80 91 31 01 	lds	r24, 0x0131	; 0x800131 <DiskStrukture+0x1>
+     782:	90 91 32 01 	lds	r25, 0x0132	; 0x800132 <DiskStrukture+0x2>
+     786:	89 2b       	or	r24, r25
+     788:	19 f4       	brne	.+6      	; 0x790 <disk_isr_working_cycle+0x164>
+				DiskStrukture.state_mashine = stmDiskError;
+     78a:	88 e0       	ldi	r24, 0x08	; 8
+     78c:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <DiskStrukture+0x7>
+			if((DiskStrukture.timeout < (DISK_TIMEOUT - DISK_PRESENT_COUNER))&&(DiskStrukture.disk_present_counter == 0))
+     790:	80 91 31 01 	lds	r24, 0x0131	; 0x800131 <DiskStrukture+0x1>
+     794:	90 91 32 01 	lds	r25, 0x0132	; 0x800132 <DiskStrukture+0x2>
+     798:	80 31       	cpi	r24, 0x10	; 16
+     79a:	97 42       	sbci	r25, 0x27	; 39
+     79c:	08 f0       	brcs	.+2      	; 0x7a0 <disk_isr_working_cycle+0x174>
+     79e:	52 c0       	rjmp	.+164    	; 0x844 <disk_isr_working_cycle+0x218>
+     7a0:	80 91 46 01 	lds	r24, 0x0146	; 0x800146 <DiskStrukture+0x16>
+     7a4:	88 23       	and	r24, r24
+     7a6:	09 f0       	breq	.+2      	; 0x7aa <disk_isr_working_cycle+0x17e>
+     7a8:	4d c0       	rjmp	.+154    	; 0x844 <disk_isr_working_cycle+0x218>
+				DiskStrukture.state_mashine = stmDiskError;
+     7aa:	88 e0       	ldi	r24, 0x08	; 8
+     7ac:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <DiskStrukture+0x7>
+			break;
+     7b0:	49 c0       	rjmp	.+146    	; 0x844 <disk_isr_working_cycle+0x218>
+		case stmDelayBeforeDown:
+			if(delay_before == 0){
+     7b2:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <delay_before.2056>
+     7b6:	90 91 21 01 	lds	r25, 0x0121	; 0x800121 <delay_before.2056+0x1>
+     7ba:	89 2b       	or	r24, r25
+     7bc:	09 f0       	breq	.+2      	; 0x7c0 <disk_isr_working_cycle+0x194>
+     7be:	44 c0       	rjmp	.+136    	; 0x848 <disk_isr_working_cycle+0x21c>
+				set_new_lift_position(LiftCommandDown);
+     7c0:	80 e0       	ldi	r24, 0x00	; 0
+     7c2:	0e 94 f1 09 	call	0x13e2	; 0x13e2 <set_new_lift_position>
+				DiskStrukture.state_mashine = stmDiskDown;
+     7c6:	87 e0       	ldi	r24, 0x07	; 7
+     7c8:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <DiskStrukture+0x7>
+			}
+			break;
+     7cc:	3d c0       	rjmp	.+122    	; 0x848 <disk_isr_working_cycle+0x21c>
+		case stmDiskDown:
+			if(!check_lift_bussy()&&(get_lift_state() != Lift_ERROR)){
+     7ce:	0e 94 a1 0b 	call	0x1742	; 0x1742 <check_lift_bussy>
+     7d2:	98 2f       	mov	r25, r24
+     7d4:	81 e0       	ldi	r24, 0x01	; 1
+     7d6:	89 27       	eor	r24, r25
+     7d8:	88 23       	and	r24, r24
+     7da:	59 f0       	breq	.+22     	; 0x7f2 <disk_isr_working_cycle+0x1c6>
+     7dc:	0e 94 aa 0b 	call	0x1754	; 0x1754 <get_lift_state>
+     7e0:	83 30       	cpi	r24, 0x03	; 3
+     7e2:	39 f0       	breq	.+14     	; 0x7f2 <disk_isr_working_cycle+0x1c6>
+				DiskStrukture.state = DiskReady;
+     7e4:	81 e0       	ldi	r24, 0x01	; 1
+     7e6:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <DiskStrukture>
+				DiskStrukture.state_mashine = stmDiskIddle;
+     7ea:	10 92 37 01 	sts	0x0137, r1	; 0x800137 <DiskStrukture+0x7>
+				DiskStrukture.new_command = false;
+     7ee:	10 92 43 01 	sts	0x0143, r1	; 0x800143 <DiskStrukture+0x13>
+			}
+			if(DiskStrukture.timeout == 0)
+     7f2:	80 91 31 01 	lds	r24, 0x0131	; 0x800131 <DiskStrukture+0x1>
+     7f6:	90 91 32 01 	lds	r25, 0x0132	; 0x800132 <DiskStrukture+0x2>
+     7fa:	89 2b       	or	r24, r25
+     7fc:	39 f5       	brne	.+78     	; 0x84c <disk_isr_working_cycle+0x220>
+				DiskStrukture.state_mashine = stmDiskError;
+     7fe:	88 e0       	ldi	r24, 0x08	; 8
+     800:	80 93 37 01 	sts	0x0137, r24	; 0x800137 <DiskStrukture+0x7>
+			break;
+     804:	23 c0       	rjmp	.+70     	; 0x84c <disk_isr_working_cycle+0x220>
+		case stmDiskError:
+			PORTD	|=	(1 << PD7);
+     806:	8b e2       	ldi	r24, 0x2B	; 43
+     808:	90 e0       	ldi	r25, 0x00	; 0
+     80a:	2b e2       	ldi	r18, 0x2B	; 43
+     80c:	30 e0       	ldi	r19, 0x00	; 0
+     80e:	f9 01       	movw	r30, r18
+     810:	20 81       	ld	r18, Z
+     812:	20 68       	ori	r18, 0x80	; 128
+     814:	fc 01       	movw	r30, r24
+     816:	20 83       	st	Z, r18
+			DiskStrukture.motor_pwm = 0;
+     818:	10 92 33 01 	sts	0x0133, r1	; 0x800133 <DiskStrukture+0x3>
+			if(DiskStrukture.disk_present_counter == 0)
+     81c:	80 91 46 01 	lds	r24, 0x0146	; 0x800146 <DiskStrukture+0x16>
+     820:	88 23       	and	r24, r24
+     822:	21 f4       	brne	.+8      	; 0x82c <disk_isr_working_cycle+0x200>
+				DiskStrukture.state = DiskAbsend;
+     824:	82 e0       	ldi	r24, 0x02	; 2
+     826:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <DiskStrukture>
+     82a:	03 c0       	rjmp	.+6      	; 0x832 <disk_isr_working_cycle+0x206>
+			else
+				DiskStrukture.state = DiskError;
+     82c:	84 e0       	ldi	r24, 0x04	; 4
+     82e:	80 93 30 01 	sts	0x0130, r24	; 0x800130 <DiskStrukture>
+			DiskStrukture.state_mashine = stmDiskIddle;
+     832:	10 92 37 01 	sts	0x0137, r1	; 0x800137 <DiskStrukture+0x7>
+			DiskStrukture.new_command = false;
+     836:	10 92 43 01 	sts	0x0143, r1	; 0x800143 <DiskStrukture+0x13>
+			break;
+     83a:	09 c0       	rjmp	.+18     	; 0x84e <disk_isr_working_cycle+0x222>
+		case stmDiskUp:
+			if(!check_lift_bussy()&&(get_lift_state() != Lift_ERROR))
+				DiskStrukture.state_mashine = stmDiskCheckPosition;
+			if(DiskStrukture.timeout == 0)
+				DiskStrukture.state_mashine = stmDiskError;
+			break;
+     83c:	00 00       	nop
+     83e:	07 c0       	rjmp	.+14     	; 0x84e <disk_isr_working_cycle+0x222>
+		case stmDelayBeforStart:
+			if(delay_before == 0){
+					set_disk_enable_disk_rotation();
+					DiskStrukture.state_mashine = stmDiskRotation;
+				}
+			break;
+     840:	00 00       	nop
+     842:	05 c0       	rjmp	.+10     	; 0x84e <disk_isr_working_cycle+0x222>
+				}
+			if(DiskStrukture.timeout == 0)
+				DiskStrukture.state_mashine = stmDiskError;
+			if((DiskStrukture.timeout < (DISK_TIMEOUT - DISK_PRESENT_COUNER))&&(DiskStrukture.disk_present_counter == 0))
+				DiskStrukture.state_mashine = stmDiskError;
+			break;
+     844:	00 00       	nop
+     846:	03 c0       	rjmp	.+6      	; 0x84e <disk_isr_working_cycle+0x222>
+		case stmDelayBeforeDown:
+			if(delay_before == 0){
+				set_new_lift_position(LiftCommandDown);
+				DiskStrukture.state_mashine = stmDiskDown;
+			}
+			break;
+     848:	00 00       	nop
+     84a:	01 c0       	rjmp	.+2      	; 0x84e <disk_isr_working_cycle+0x222>
+				DiskStrukture.state_mashine = stmDiskIddle;
+				DiskStrukture.new_command = false;
+			}
+			if(DiskStrukture.timeout == 0)
+				DiskStrukture.state_mashine = stmDiskError;
+			break;
+     84c:	00 00       	nop
+				DiskStrukture.state = DiskError;
+			DiskStrukture.state_mashine = stmDiskIddle;
+			DiskStrukture.new_command = false;
+			break;
+	}
+	if(DiskStrukture.timeout)
+     84e:	80 91 31 01 	lds	r24, 0x0131	; 0x800131 <DiskStrukture+0x1>
+     852:	90 91 32 01 	lds	r25, 0x0132	; 0x800132 <DiskStrukture+0x2>
+     856:	89 2b       	or	r24, r25
+     858:	49 f0       	breq	.+18     	; 0x86c <disk_isr_working_cycle+0x240>
+		DiskStrukture.timeout--;
+     85a:	80 91 31 01 	lds	r24, 0x0131	; 0x800131 <DiskStrukture+0x1>
+     85e:	90 91 32 01 	lds	r25, 0x0132	; 0x800132 <DiskStrukture+0x2>
+     862:	01 97       	sbiw	r24, 0x01	; 1
+     864:	90 93 32 01 	sts	0x0132, r25	; 0x800132 <DiskStrukture+0x2>
+     868:	80 93 31 01 	sts	0x0131, r24	; 0x800131 <DiskStrukture+0x1>
+	if(delay_before)
+     86c:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <delay_before.2056>
+     870:	90 91 21 01 	lds	r25, 0x0121	; 0x800121 <delay_before.2056+0x1>
+     874:	89 2b       	or	r24, r25
+     876:	59 f0       	breq	.+22     	; 0x88e <disk_isr_working_cycle+0x262>
+		delay_before--;
+     878:	80 91 20 01 	lds	r24, 0x0120	; 0x800120 <delay_before.2056>
+     87c:	90 91 21 01 	lds	r25, 0x0121	; 0x800121 <delay_before.2056+0x1>
+     880:	01 97       	sbiw	r24, 0x01	; 1
+     882:	90 93 21 01 	sts	0x0121, r25	; 0x800121 <delay_before.2056+0x1>
+     886:	80 93 20 01 	sts	0x0120, r24	; 0x800120 <delay_before.2056>
+     88a:	01 c0       	rjmp	.+2      	; 0x88e <disk_isr_working_cycle+0x262>
+
+ void disk_isr_working_cycle(){
+	static uint16_t delay_before = 0;
+	switch(DiskStrukture.state_mashine){
+		case stmDiskIddle:
+			return;
+     88c:	00 00       	nop
+	}
+	if(DiskStrukture.timeout)
+		DiskStrukture.timeout--;
+	if(delay_before)
+		delay_before--;
+ }
+     88e:	df 91       	pop	r29
+     890:	cf 91       	pop	r28
+     892:	08 95       	ret
+
+00000894 <get_disk_busy>:
+
+ bool get_disk_busy(){
+     894:	cf 93       	push	r28
+     896:	df 93       	push	r29
+     898:	cd b7       	in	r28, 0x3d	; 61
+     89a:	de b7       	in	r29, 0x3e	; 62
+	return DiskStrukture.new_command;
+     89c:	80 91 43 01 	lds	r24, 0x0143	; 0x800143 <DiskStrukture+0x13>
+ }
+     8a0:	df 91       	pop	r29
+     8a2:	cf 91       	pop	r28
+     8a4:	08 95       	ret
+
+000008a6 <check_rotation_side>:
+
+ tDiskRotation check_rotation_side(tDiskSturtture disk){
+     8a6:	cf 93       	push	r28
+     8a8:	df 93       	push	r29
+     8aa:	1f 92       	push	r1
+     8ac:	cd b7       	in	r28, 0x3d	; 61
+     8ae:	de b7       	in	r29, 0x3e	; 62
+		int8_t delta = 0;
+     8b0:	19 82       	std	Y+1, r1	; 0x01
+		delta = disk.current_position - disk.new_position;
+     8b2:	9f 89       	ldd	r25, Y+23	; 0x17
+     8b4:	88 8d       	ldd	r24, Y+24	; 0x18
+     8b6:	29 2f       	mov	r18, r25
+     8b8:	28 1b       	sub	r18, r24
+     8ba:	82 2f       	mov	r24, r18
+     8bc:	89 83       	std	Y+1, r24	; 0x01
+		if(delta < 0)
+     8be:	89 81       	ldd	r24, Y+1	; 0x01
+     8c0:	88 23       	and	r24, r24
+     8c2:	44 f4       	brge	.+16     	; 0x8d4 <check_rotation_side+0x2e>
+			DiskStrukture.delta = disk.new_position - disk.current_position;
+     8c4:	98 8d       	ldd	r25, Y+24	; 0x18
+     8c6:	8f 89       	ldd	r24, Y+23	; 0x17
+     8c8:	29 2f       	mov	r18, r25
+     8ca:	28 1b       	sub	r18, r24
+     8cc:	82 2f       	mov	r24, r18
+     8ce:	80 93 47 01 	sts	0x0147, r24	; 0x800147 <DiskStrukture+0x17>
+     8d2:	07 c0       	rjmp	.+14     	; 0x8e2 <check_rotation_side+0x3c>
+		else
+			DiskStrukture.delta = disk.current_position - disk.new_position;
+     8d4:	9f 89       	ldd	r25, Y+23	; 0x17
+     8d6:	88 8d       	ldd	r24, Y+24	; 0x18
+     8d8:	29 2f       	mov	r18, r25
+     8da:	28 1b       	sub	r18, r24
+     8dc:	82 2f       	mov	r24, r18
+     8de:	80 93 47 01 	sts	0x0147, r24	; 0x800147 <DiskStrukture+0x17>
+		if(delta < 0){
+     8e2:	89 81       	ldd	r24, Y+1	; 0x01
+     8e4:	88 23       	and	r24, r24
+     8e6:	3c f4       	brge	.+14     	; 0x8f6 <check_rotation_side+0x50>
+			if(delta < -7)
+     8e8:	89 81       	ldd	r24, Y+1	; 0x01
+     8ea:	89 3f       	cpi	r24, 0xF9	; 249
+     8ec:	14 f4       	brge	.+4      	; 0x8f2 <check_rotation_side+0x4c>
+				return RotationRight;
+     8ee:	81 e0       	ldi	r24, 0x01	; 1
+     8f0:	08 c0       	rjmp	.+16     	; 0x902 <check_rotation_side+0x5c>
+			else
+				return RotationLeft;
+     8f2:	80 e0       	ldi	r24, 0x00	; 0
+     8f4:	06 c0       	rjmp	.+12     	; 0x902 <check_rotation_side+0x5c>
+		}
+		else{
+			if(delta > 7)
+     8f6:	89 81       	ldd	r24, Y+1	; 0x01
+     8f8:	88 30       	cpi	r24, 0x08	; 8
+     8fa:	14 f0       	brlt	.+4      	; 0x900 <check_rotation_side+0x5a>
+				return RotationLeft;
+     8fc:	80 e0       	ldi	r24, 0x00	; 0
+     8fe:	01 c0       	rjmp	.+2      	; 0x902 <check_rotation_side+0x5c>
+			else
+				return RotationRight;
+     900:	81 e0       	ldi	r24, 0x01	; 1
+		}
+		return RotationRight;
+ }
+     902:	0f 90       	pop	r0
+     904:	df 91       	pop	r29
+     906:	cf 91       	pop	r28
+     908:	08 95       	ret
+
+0000090a <disk_isr_update_motor_pwm>:
+
+ void disk_isr_update_motor_pwm(){
+     90a:	cf 93       	push	r28
+     90c:	df 93       	push	r29
+     90e:	cd b7       	in	r28, 0x3d	; 61
+     910:	de b7       	in	r29, 0x3e	; 62
+	static uint8_t motor_pwm_counter = 0;
+	static tSoftPwmState motor_pwm_state = 0;
+	switch(motor_pwm_state){
+     912:	80 91 22 01 	lds	r24, 0x0122	; 0x800122 <motor_pwm_state.2076>
+     916:	88 2f       	mov	r24, r24
+     918:	90 e0       	ldi	r25, 0x00	; 0
+     91a:	81 30       	cpi	r24, 0x01	; 1
+     91c:	91 05       	cpc	r25, r1
+     91e:	a1 f1       	breq	.+104    	; 0x988 <disk_isr_update_motor_pwm+0x7e>
+     920:	82 30       	cpi	r24, 0x02	; 2
+     922:	91 05       	cpc	r25, r1
+     924:	09 f4       	brne	.+2      	; 0x928 <disk_isr_update_motor_pwm+0x1e>
+     926:	4f c0       	rjmp	.+158    	; 0x9c6 <disk_isr_update_motor_pwm+0xbc>
+     928:	89 2b       	or	r24, r25
+     92a:	09 f0       	breq	.+2      	; 0x92e <disk_isr_update_motor_pwm+0x24>
+     92c:	59 c0       	rjmp	.+178    	; 0x9e0 <disk_isr_update_motor_pwm+0xd6>
+	case pwmSetUpdate:
+		if(DiskStrukture.motor_pwm == 0){
+     92e:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     932:	88 23       	and	r24, r24
+     934:	51 f4       	brne	.+20     	; 0x94a <disk_isr_update_motor_pwm+0x40>
+			PORTD &= ~(1 << PD6);
+     936:	8b e2       	ldi	r24, 0x2B	; 43
+     938:	90 e0       	ldi	r25, 0x00	; 0
+     93a:	2b e2       	ldi	r18, 0x2B	; 43
+     93c:	30 e0       	ldi	r19, 0x00	; 0
+     93e:	f9 01       	movw	r30, r18
+     940:	20 81       	ld	r18, Z
+     942:	2f 7b       	andi	r18, 0xBF	; 191
+     944:	fc 01       	movw	r30, r24
+     946:	20 83       	st	Z, r18
+			return;
+     948:	4b c0       	rjmp	.+150    	; 0x9e0 <disk_isr_update_motor_pwm+0xd6>
+		}
+		if(DiskStrukture.motor_pwm >= 100){
+     94a:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     94e:	84 36       	cpi	r24, 0x64	; 100
+     950:	50 f0       	brcs	.+20     	; 0x966 <disk_isr_update_motor_pwm+0x5c>
+			PORTD |= (1 << PD6);
+     952:	8b e2       	ldi	r24, 0x2B	; 43
+     954:	90 e0       	ldi	r25, 0x00	; 0
+     956:	2b e2       	ldi	r18, 0x2B	; 43
+     958:	30 e0       	ldi	r19, 0x00	; 0
+     95a:	f9 01       	movw	r30, r18
+     95c:	20 81       	ld	r18, Z
+     95e:	20 64       	ori	r18, 0x40	; 64
+     960:	fc 01       	movw	r30, r24
+     962:	20 83       	st	Z, r18
+			return;
+     964:	3d c0       	rjmp	.+122    	; 0x9e0 <disk_isr_update_motor_pwm+0xd6>
+		}
+		PORTD |= (1 << PD6);
+     966:	8b e2       	ldi	r24, 0x2B	; 43
+     968:	90 e0       	ldi	r25, 0x00	; 0
+     96a:	2b e2       	ldi	r18, 0x2B	; 43
+     96c:	30 e0       	ldi	r19, 0x00	; 0
+     96e:	f9 01       	movw	r30, r18
+     970:	20 81       	ld	r18, Z
+     972:	20 64       	ori	r18, 0x40	; 64
+     974:	fc 01       	movw	r30, r24
+     976:	20 83       	st	Z, r18
+		motor_pwm_counter = DiskStrukture.motor_pwm;
+     978:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     97c:	80 93 23 01 	sts	0x0123, r24	; 0x800123 <motor_pwm_counter.2075>
+		motor_pwm_state = pwmClear;	
+     980:	81 e0       	ldi	r24, 0x01	; 1
+     982:	80 93 22 01 	sts	0x0122, r24	; 0x800122 <motor_pwm_state.2076>
+		break;
+     986:	2c c0       	rjmp	.+88     	; 0x9e0 <disk_isr_update_motor_pwm+0xd6>
+	case pwmClear:
+		if(motor_pwm_counter)
+     988:	80 91 23 01 	lds	r24, 0x0123	; 0x800123 <motor_pwm_counter.2075>
+     98c:	88 23       	and	r24, r24
+     98e:	31 f0       	breq	.+12     	; 0x99c <disk_isr_update_motor_pwm+0x92>
+			motor_pwm_counter--;
+     990:	80 91 23 01 	lds	r24, 0x0123	; 0x800123 <motor_pwm_counter.2075>
+     994:	81 50       	subi	r24, 0x01	; 1
+     996:	80 93 23 01 	sts	0x0123, r24	; 0x800123 <motor_pwm_counter.2075>
+		else{
+			PORTD &= ~(1 << PD6);
+			motor_pwm_counter = 100 - DiskStrukture.motor_pwm;
+			motor_pwm_state = pwmReset;
+		}
+		break;
+     99a:	22 c0       	rjmp	.+68     	; 0x9e0 <disk_isr_update_motor_pwm+0xd6>
+		break;
+	case pwmClear:
+		if(motor_pwm_counter)
+			motor_pwm_counter--;
+		else{
+			PORTD &= ~(1 << PD6);
+     99c:	8b e2       	ldi	r24, 0x2B	; 43
+     99e:	90 e0       	ldi	r25, 0x00	; 0
+     9a0:	2b e2       	ldi	r18, 0x2B	; 43
+     9a2:	30 e0       	ldi	r19, 0x00	; 0
+     9a4:	f9 01       	movw	r30, r18
+     9a6:	20 81       	ld	r18, Z
+     9a8:	2f 7b       	andi	r18, 0xBF	; 191
+     9aa:	fc 01       	movw	r30, r24
+     9ac:	20 83       	st	Z, r18
+			motor_pwm_counter = 100 - DiskStrukture.motor_pwm;
+     9ae:	80 91 33 01 	lds	r24, 0x0133	; 0x800133 <DiskStrukture+0x3>
+     9b2:	94 e6       	ldi	r25, 0x64	; 100
+     9b4:	f9 2f       	mov	r31, r25
+     9b6:	f8 1b       	sub	r31, r24
+     9b8:	8f 2f       	mov	r24, r31
+     9ba:	80 93 23 01 	sts	0x0123, r24	; 0x800123 <motor_pwm_counter.2075>
+			motor_pwm_state = pwmReset;
+     9be:	82 e0       	ldi	r24, 0x02	; 2
+     9c0:	80 93 22 01 	sts	0x0122, r24	; 0x800122 <motor_pwm_state.2076>
+		}
+		break;
+     9c4:	0d c0       	rjmp	.+26     	; 0x9e0 <disk_isr_update_motor_pwm+0xd6>
+	case pwmReset:
+		if(motor_pwm_counter)
+     9c6:	80 91 23 01 	lds	r24, 0x0123	; 0x800123 <motor_pwm_counter.2075>
+     9ca:	88 23       	and	r24, r24
+     9cc:	31 f0       	breq	.+12     	; 0x9da <disk_isr_update_motor_pwm+0xd0>
+			motor_pwm_counter--;
+     9ce:	80 91 23 01 	lds	r24, 0x0123	; 0x800123 <motor_pwm_counter.2075>
+     9d2:	81 50       	subi	r24, 0x01	; 1
+     9d4:	80 93 23 01 	sts	0x0123, r24	; 0x800123 <motor_pwm_counter.2075>
+		else
+			motor_pwm_state = pwmSetUpdate;
+		break;
+     9d8:	03 c0       	rjmp	.+6      	; 0x9e0 <disk_isr_update_motor_pwm+0xd6>
+		break;
+	case pwmReset:
+		if(motor_pwm_counter)
+			motor_pwm_counter--;
+		else
+			motor_pwm_state = pwmSetUpdate;
+     9da:	10 92 22 01 	sts	0x0122, r1	; 0x800122 <motor_pwm_state.2076>
+		break;
+     9de:	00 00       	nop
+	}
+ }
+     9e0:	df 91       	pop	r29
+     9e2:	cf 91       	pop	r28
+     9e4:	08 95       	ret
+
+000009e6 <disk_isr_update_led_sync_pwm>:
+
+ void disk_isr_update_led_sync_pwm(){
+     9e6:	cf 93       	push	r28
+     9e8:	df 93       	push	r29
+     9ea:	cd b7       	in	r28, 0x3d	; 61
+     9ec:	de b7       	in	r29, 0x3e	; 62
+ 	static uint8_t sync_pwm_counter = 0;
+ 	static tSoftPwmState sync_pwm_state = 0;
+ 	switch(sync_pwm_state){
+     9ee:	80 91 24 01 	lds	r24, 0x0124	; 0x800124 <sync_pwm_state.2084>
+     9f2:	88 2f       	mov	r24, r24
+     9f4:	90 e0       	ldi	r25, 0x00	; 0
+     9f6:	81 30       	cpi	r24, 0x01	; 1
+     9f8:	91 05       	cpc	r25, r1
+     9fa:	a1 f1       	breq	.+104    	; 0xa64 <disk_isr_update_led_sync_pwm+0x7e>
+     9fc:	82 30       	cpi	r24, 0x02	; 2
+     9fe:	91 05       	cpc	r25, r1
+     a00:	09 f4       	brne	.+2      	; 0xa04 <disk_isr_update_led_sync_pwm+0x1e>
+     a02:	4f c0       	rjmp	.+158    	; 0xaa2 <disk_isr_update_led_sync_pwm+0xbc>
+     a04:	89 2b       	or	r24, r25
+     a06:	09 f0       	breq	.+2      	; 0xa0a <disk_isr_update_led_sync_pwm+0x24>
+     a08:	59 c0       	rjmp	.+178    	; 0xabc <disk_isr_update_led_sync_pwm+0xd6>
+	 	case pwmSetUpdate:
+	 	if(DiskStrukture.led_sync_pwm == 0){
+     a0a:	80 91 35 01 	lds	r24, 0x0135	; 0x800135 <DiskStrukture+0x5>
+     a0e:	88 23       	and	r24, r24
+     a10:	51 f4       	brne	.+20     	; 0xa26 <disk_isr_update_led_sync_pwm+0x40>
+		 	PORTB &= ~(1 << PB2);
+     a12:	85 e2       	ldi	r24, 0x25	; 37
+     a14:	90 e0       	ldi	r25, 0x00	; 0
+     a16:	25 e2       	ldi	r18, 0x25	; 37
+     a18:	30 e0       	ldi	r19, 0x00	; 0
+     a1a:	f9 01       	movw	r30, r18
+     a1c:	20 81       	ld	r18, Z
+     a1e:	2b 7f       	andi	r18, 0xFB	; 251
+     a20:	fc 01       	movw	r30, r24
+     a22:	20 83       	st	Z, r18
+		 	return;
+     a24:	4b c0       	rjmp	.+150    	; 0xabc <disk_isr_update_led_sync_pwm+0xd6>
+	 	}
+	 	if(DiskStrukture.led_sync_pwm >= 100){
+     a26:	80 91 35 01 	lds	r24, 0x0135	; 0x800135 <DiskStrukture+0x5>
+     a2a:	84 36       	cpi	r24, 0x64	; 100
+     a2c:	50 f0       	brcs	.+20     	; 0xa42 <disk_isr_update_led_sync_pwm+0x5c>
+		 	PORTB |= (1 << PB2);
+     a2e:	85 e2       	ldi	r24, 0x25	; 37
+     a30:	90 e0       	ldi	r25, 0x00	; 0
+     a32:	25 e2       	ldi	r18, 0x25	; 37
+     a34:	30 e0       	ldi	r19, 0x00	; 0
+     a36:	f9 01       	movw	r30, r18
+     a38:	20 81       	ld	r18, Z
+     a3a:	24 60       	ori	r18, 0x04	; 4
+     a3c:	fc 01       	movw	r30, r24
+     a3e:	20 83       	st	Z, r18
+		 	return;
+     a40:	3d c0       	rjmp	.+122    	; 0xabc <disk_isr_update_led_sync_pwm+0xd6>
+	 	}
+	 	PORTB |= (1 << PB2);
+     a42:	85 e2       	ldi	r24, 0x25	; 37
+     a44:	90 e0       	ldi	r25, 0x00	; 0
+     a46:	25 e2       	ldi	r18, 0x25	; 37
+     a48:	30 e0       	ldi	r19, 0x00	; 0
+     a4a:	f9 01       	movw	r30, r18
+     a4c:	20 81       	ld	r18, Z
+     a4e:	24 60       	ori	r18, 0x04	; 4
+     a50:	fc 01       	movw	r30, r24
+     a52:	20 83       	st	Z, r18
+	 	sync_pwm_counter = DiskStrukture.led_sync_pwm;
+     a54:	80 91 35 01 	lds	r24, 0x0135	; 0x800135 <DiskStrukture+0x5>
+     a58:	80 93 25 01 	sts	0x0125, r24	; 0x800125 <sync_pwm_counter.2083>
+	 	sync_pwm_state = pwmClear;
+     a5c:	81 e0       	ldi	r24, 0x01	; 1
+     a5e:	80 93 24 01 	sts	0x0124, r24	; 0x800124 <sync_pwm_state.2084>
+	 	break;
+     a62:	2c c0       	rjmp	.+88     	; 0xabc <disk_isr_update_led_sync_pwm+0xd6>
+	 	case pwmClear:
+	 	if(sync_pwm_counter)
+     a64:	80 91 25 01 	lds	r24, 0x0125	; 0x800125 <sync_pwm_counter.2083>
+     a68:	88 23       	and	r24, r24
+     a6a:	31 f0       	breq	.+12     	; 0xa78 <disk_isr_update_led_sync_pwm+0x92>
+	 	sync_pwm_counter--;
+     a6c:	80 91 25 01 	lds	r24, 0x0125	; 0x800125 <sync_pwm_counter.2083>
+     a70:	81 50       	subi	r24, 0x01	; 1
+     a72:	80 93 25 01 	sts	0x0125, r24	; 0x800125 <sync_pwm_counter.2083>
+	 	else{
+		 	PORTB &= ~(1 << PB2);
+		 	sync_pwm_counter = 100 - DiskStrukture.led_sync_pwm;
+		 	sync_pwm_state = pwmReset;
+	 	}
+	 	break;
+     a76:	22 c0       	rjmp	.+68     	; 0xabc <disk_isr_update_led_sync_pwm+0xd6>
+	 	break;
+	 	case pwmClear:
+	 	if(sync_pwm_counter)
+	 	sync_pwm_counter--;
+	 	else{
+		 	PORTB &= ~(1 << PB2);
+     a78:	85 e2       	ldi	r24, 0x25	; 37
+     a7a:	90 e0       	ldi	r25, 0x00	; 0
+     a7c:	25 e2       	ldi	r18, 0x25	; 37
+     a7e:	30 e0       	ldi	r19, 0x00	; 0
+     a80:	f9 01       	movw	r30, r18
+     a82:	20 81       	ld	r18, Z
+     a84:	2b 7f       	andi	r18, 0xFB	; 251
+     a86:	fc 01       	movw	r30, r24
+     a88:	20 83       	st	Z, r18
+		 	sync_pwm_counter = 100 - DiskStrukture.led_sync_pwm;
+     a8a:	80 91 35 01 	lds	r24, 0x0135	; 0x800135 <DiskStrukture+0x5>
+     a8e:	94 e6       	ldi	r25, 0x64	; 100
+     a90:	f9 2f       	mov	r31, r25
+     a92:	f8 1b       	sub	r31, r24
+     a94:	8f 2f       	mov	r24, r31
+     a96:	80 93 25 01 	sts	0x0125, r24	; 0x800125 <sync_pwm_counter.2083>
+		 	sync_pwm_state = pwmReset;
+     a9a:	82 e0       	ldi	r24, 0x02	; 2
+     a9c:	80 93 24 01 	sts	0x0124, r24	; 0x800124 <sync_pwm_state.2084>
+	 	}
+	 	break;
+     aa0:	0d c0       	rjmp	.+26     	; 0xabc <disk_isr_update_led_sync_pwm+0xd6>
+	 	case pwmReset:
+	 	if(sync_pwm_counter)
+     aa2:	80 91 25 01 	lds	r24, 0x0125	; 0x800125 <sync_pwm_counter.2083>
+     aa6:	88 23       	and	r24, r24
+     aa8:	31 f0       	breq	.+12     	; 0xab6 <disk_isr_update_led_sync_pwm+0xd0>
+	 	sync_pwm_counter--;
+     aaa:	80 91 25 01 	lds	r24, 0x0125	; 0x800125 <sync_pwm_counter.2083>
+     aae:	81 50       	subi	r24, 0x01	; 1
+     ab0:	80 93 25 01 	sts	0x0125, r24	; 0x800125 <sync_pwm_counter.2083>
+	 	else
+	 	sync_pwm_state = pwmSetUpdate;
+	 	break;
+     ab4:	03 c0       	rjmp	.+6      	; 0xabc <disk_isr_update_led_sync_pwm+0xd6>
+	 	break;
+	 	case pwmReset:
+	 	if(sync_pwm_counter)
+	 	sync_pwm_counter--;
+	 	else
+	 	sync_pwm_state = pwmSetUpdate;
+     ab6:	10 92 24 01 	sts	0x0124, r1	; 0x800124 <sync_pwm_state.2084>
+	 	break;
+     aba:	00 00       	nop
+ 	}
+ }
+     abc:	df 91       	pop	r29
+     abe:	cf 91       	pop	r28
+     ac0:	08 95       	ret
+
+00000ac2 <disk_isr_update_led_data_pwm>:
+
+ void disk_isr_update_led_data_pwm(){
+     ac2:	cf 93       	push	r28
+     ac4:	df 93       	push	r29
+     ac6:	cd b7       	in	r28, 0x3d	; 61
+     ac8:	de b7       	in	r29, 0x3e	; 62
+ 	static uint8_t data_pwm_counter = 0;
+ 	static tSoftPwmState data_pwm_state = 0;
+ 	switch(data_pwm_state){
+     aca:	80 91 26 01 	lds	r24, 0x0126	; 0x800126 <data_pwm_state.2092>
+     ace:	88 2f       	mov	r24, r24
+     ad0:	90 e0       	ldi	r25, 0x00	; 0
+     ad2:	81 30       	cpi	r24, 0x01	; 1
+     ad4:	91 05       	cpc	r25, r1
+     ad6:	a1 f1       	breq	.+104    	; 0xb40 <disk_isr_update_led_data_pwm+0x7e>
+     ad8:	82 30       	cpi	r24, 0x02	; 2
+     ada:	91 05       	cpc	r25, r1
+     adc:	09 f4       	brne	.+2      	; 0xae0 <disk_isr_update_led_data_pwm+0x1e>
+     ade:	4f c0       	rjmp	.+158    	; 0xb7e <disk_isr_update_led_data_pwm+0xbc>
+     ae0:	89 2b       	or	r24, r25
+     ae2:	09 f0       	breq	.+2      	; 0xae6 <disk_isr_update_led_data_pwm+0x24>
+     ae4:	59 c0       	rjmp	.+178    	; 0xb98 <disk_isr_update_led_data_pwm+0xd6>
+	 	case pwmSetUpdate:
+	 	if(DiskStrukture.led_data_pwm == 0){
+     ae6:	80 91 36 01 	lds	r24, 0x0136	; 0x800136 <DiskStrukture+0x6>
+     aea:	88 23       	and	r24, r24
+     aec:	51 f4       	brne	.+20     	; 0xb02 <disk_isr_update_led_data_pwm+0x40>
+		 	PORTD &= ~(1 << PD3);
+     aee:	8b e2       	ldi	r24, 0x2B	; 43
+     af0:	90 e0       	ldi	r25, 0x00	; 0
+     af2:	2b e2       	ldi	r18, 0x2B	; 43
+     af4:	30 e0       	ldi	r19, 0x00	; 0
+     af6:	f9 01       	movw	r30, r18
+     af8:	20 81       	ld	r18, Z
+     afa:	27 7f       	andi	r18, 0xF7	; 247
+     afc:	fc 01       	movw	r30, r24
+     afe:	20 83       	st	Z, r18
+		 	return;
+     b00:	4b c0       	rjmp	.+150    	; 0xb98 <disk_isr_update_led_data_pwm+0xd6>
+	 	}
+	 	if(DiskStrukture.led_data_pwm >= 100){
+     b02:	80 91 36 01 	lds	r24, 0x0136	; 0x800136 <DiskStrukture+0x6>
+     b06:	84 36       	cpi	r24, 0x64	; 100
+     b08:	50 f0       	brcs	.+20     	; 0xb1e <disk_isr_update_led_data_pwm+0x5c>
+		 	PORTD |= (1 << PD3);
+     b0a:	8b e2       	ldi	r24, 0x2B	; 43
+     b0c:	90 e0       	ldi	r25, 0x00	; 0
+     b0e:	2b e2       	ldi	r18, 0x2B	; 43
+     b10:	30 e0       	ldi	r19, 0x00	; 0
+     b12:	f9 01       	movw	r30, r18
+     b14:	20 81       	ld	r18, Z
+     b16:	28 60       	ori	r18, 0x08	; 8
+     b18:	fc 01       	movw	r30, r24
+     b1a:	20 83       	st	Z, r18
+		 	return;
+     b1c:	3d c0       	rjmp	.+122    	; 0xb98 <disk_isr_update_led_data_pwm+0xd6>
+	 	}
+	 	PORTD |= (1 << PD3);
+     b1e:	8b e2       	ldi	r24, 0x2B	; 43
+     b20:	90 e0       	ldi	r25, 0x00	; 0
+     b22:	2b e2       	ldi	r18, 0x2B	; 43
+     b24:	30 e0       	ldi	r19, 0x00	; 0
+     b26:	f9 01       	movw	r30, r18
+     b28:	20 81       	ld	r18, Z
+     b2a:	28 60       	ori	r18, 0x08	; 8
+     b2c:	fc 01       	movw	r30, r24
+     b2e:	20 83       	st	Z, r18
+	 	data_pwm_counter = DiskStrukture.led_data_pwm;
+     b30:	80 91 36 01 	lds	r24, 0x0136	; 0x800136 <DiskStrukture+0x6>
+     b34:	80 93 27 01 	sts	0x0127, r24	; 0x800127 <data_pwm_counter.2091>
+	 	data_pwm_state = pwmClear;
+     b38:	81 e0       	ldi	r24, 0x01	; 1
+     b3a:	80 93 26 01 	sts	0x0126, r24	; 0x800126 <data_pwm_state.2092>
+	 	break;
+     b3e:	2c c0       	rjmp	.+88     	; 0xb98 <disk_isr_update_led_data_pwm+0xd6>
+	 	case pwmClear:
+	 	if(data_pwm_counter)
+     b40:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <data_pwm_counter.2091>
+     b44:	88 23       	and	r24, r24
+     b46:	31 f0       	breq	.+12     	; 0xb54 <disk_isr_update_led_data_pwm+0x92>
+	 	data_pwm_counter--;
+     b48:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <data_pwm_counter.2091>
+     b4c:	81 50       	subi	r24, 0x01	; 1
+     b4e:	80 93 27 01 	sts	0x0127, r24	; 0x800127 <data_pwm_counter.2091>
+	 	else{
+		 	PORTD &= ~(1 << PD3);
+		 	data_pwm_counter = 100 - DiskStrukture.led_data_pwm;
+		 	data_pwm_state = pwmReset;
+	 	}
+	 	break;
+     b52:	22 c0       	rjmp	.+68     	; 0xb98 <disk_isr_update_led_data_pwm+0xd6>
+	 	break;
+	 	case pwmClear:
+	 	if(data_pwm_counter)
+	 	data_pwm_counter--;
+	 	else{
+		 	PORTD &= ~(1 << PD3);
+     b54:	8b e2       	ldi	r24, 0x2B	; 43
+     b56:	90 e0       	ldi	r25, 0x00	; 0
+     b58:	2b e2       	ldi	r18, 0x2B	; 43
+     b5a:	30 e0       	ldi	r19, 0x00	; 0
+     b5c:	f9 01       	movw	r30, r18
+     b5e:	20 81       	ld	r18, Z
+     b60:	27 7f       	andi	r18, 0xF7	; 247
+     b62:	fc 01       	movw	r30, r24
+     b64:	20 83       	st	Z, r18
+		 	data_pwm_counter = 100 - DiskStrukture.led_data_pwm;
+     b66:	80 91 36 01 	lds	r24, 0x0136	; 0x800136 <DiskStrukture+0x6>
+     b6a:	94 e6       	ldi	r25, 0x64	; 100
+     b6c:	f9 2f       	mov	r31, r25
+     b6e:	f8 1b       	sub	r31, r24
+     b70:	8f 2f       	mov	r24, r31
+     b72:	80 93 27 01 	sts	0x0127, r24	; 0x800127 <data_pwm_counter.2091>
+		 	data_pwm_state = pwmReset;
+     b76:	82 e0       	ldi	r24, 0x02	; 2
+     b78:	80 93 26 01 	sts	0x0126, r24	; 0x800126 <data_pwm_state.2092>
+	 	}
+	 	break;
+     b7c:	0d c0       	rjmp	.+26     	; 0xb98 <disk_isr_update_led_data_pwm+0xd6>
+	 	case pwmReset:
+	 	if(data_pwm_counter)
+     b7e:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <data_pwm_counter.2091>
+     b82:	88 23       	and	r24, r24
+     b84:	31 f0       	breq	.+12     	; 0xb92 <disk_isr_update_led_data_pwm+0xd0>
+	 	data_pwm_counter--;
+     b86:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <data_pwm_counter.2091>
+     b8a:	81 50       	subi	r24, 0x01	; 1
+     b8c:	80 93 27 01 	sts	0x0127, r24	; 0x800127 <data_pwm_counter.2091>
+	 	else
+	 	data_pwm_state = pwmSetUpdate;
+	 	break;
+     b90:	03 c0       	rjmp	.+6      	; 0xb98 <disk_isr_update_led_data_pwm+0xd6>
+	 	break;
+	 	case pwmReset:
+	 	if(data_pwm_counter)
+	 	data_pwm_counter--;
+	 	else
+	 	data_pwm_state = pwmSetUpdate;
+     b92:	10 92 26 01 	sts	0x0126, r1	; 0x800126 <data_pwm_state.2092>
+	 	break;
+     b96:	00 00       	nop
+ 	}
+ }
+     b98:	df 91       	pop	r29
+     b9a:	cf 91       	pop	r28
+     b9c:	08 95       	ret
+
+00000b9e <__vector_3>:
+
+ISR (PCINT0_vect){
+     b9e:	1f 92       	push	r1
+     ba0:	0f 92       	push	r0
+     ba2:	00 90 5f 00 	lds	r0, 0x005F	; 0x80005f <__TEXT_REGION_LENGTH__+0x7fc05f>
+     ba6:	0f 92       	push	r0
+     ba8:	11 24       	eor	r1, r1
+     baa:	2f 93       	push	r18
+     bac:	3f 93       	push	r19
+     bae:	4f 93       	push	r20
+     bb0:	5f 93       	push	r21
+     bb2:	6f 93       	push	r22
+     bb4:	7f 93       	push	r23
+     bb6:	8f 93       	push	r24
+     bb8:	9f 93       	push	r25
+     bba:	af 93       	push	r26
+     bbc:	bf 93       	push	r27
+     bbe:	ef 93       	push	r30
+     bc0:	ff 93       	push	r31
+     bc2:	cf 93       	push	r28
+     bc4:	df 93       	push	r29
+     bc6:	cd b7       	in	r28, 0x3d	; 61
+     bc8:	de b7       	in	r29, 0x3e	; 62
+	DiskStrukture.sin_cos_counter++;
+     bca:	80 91 38 01 	lds	r24, 0x0138	; 0x800138 <DiskStrukture+0x8>
+     bce:	90 91 39 01 	lds	r25, 0x0139	; 0x800139 <DiskStrukture+0x9>
+     bd2:	a0 91 3a 01 	lds	r26, 0x013A	; 0x80013a <DiskStrukture+0xa>
+     bd6:	b0 91 3b 01 	lds	r27, 0x013B	; 0x80013b <DiskStrukture+0xb>
+     bda:	01 96       	adiw	r24, 0x01	; 1
+     bdc:	a1 1d       	adc	r26, r1
+     bde:	b1 1d       	adc	r27, r1
+     be0:	80 93 38 01 	sts	0x0138, r24	; 0x800138 <DiskStrukture+0x8>
+     be4:	90 93 39 01 	sts	0x0139, r25	; 0x800139 <DiskStrukture+0x9>
+     be8:	a0 93 3a 01 	sts	0x013A, r26	; 0x80013a <DiskStrukture+0xa>
+     bec:	b0 93 3b 01 	sts	0x013B, r27	; 0x80013b <DiskStrukture+0xb>
+	if(DiskStrukture.delayed_stop){
+     bf0:	80 91 45 01 	lds	r24, 0x0145	; 0x800145 <DiskStrukture+0x15>
+     bf4:	88 23       	and	r24, r24
+     bf6:	09 f4       	brne	.+2      	; 0xbfa <__vector_3+0x5c>
+     bf8:	46 c0       	rjmp	.+140    	; 0xc86 <__vector_3+0xe8>
+		if((DiskStrukture.sin_cos_counter > DISK_OFFEST_RIGHT)&&(DiskStrukture.disk_rotation == RotationLeft)){
+     bfa:	80 91 38 01 	lds	r24, 0x0138	; 0x800138 <DiskStrukture+0x8>
+     bfe:	90 91 39 01 	lds	r25, 0x0139	; 0x800139 <DiskStrukture+0x9>
+     c02:	a0 91 3a 01 	lds	r26, 0x013A	; 0x80013a <DiskStrukture+0xa>
+     c06:	b0 91 3b 01 	lds	r27, 0x013B	; 0x80013b <DiskStrukture+0xb>
+     c0a:	8e 97       	sbiw	r24, 0x2e	; 46
+     c0c:	a1 05       	cpc	r26, r1
+     c0e:	b1 05       	cpc	r27, r1
+     c10:	b8 f0       	brcs	.+46     	; 0xc40 <__vector_3+0xa2>
+     c12:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <DiskStrukture+0x14>
+     c16:	88 23       	and	r24, r24
+     c18:	99 f4       	brne	.+38     	; 0xc40 <__vector_3+0xa2>
+			PORTD	|=	(1 << PD7);													// break pin
+     c1a:	8b e2       	ldi	r24, 0x2B	; 43
+     c1c:	90 e0       	ldi	r25, 0x00	; 0
+     c1e:	2b e2       	ldi	r18, 0x2B	; 43
+     c20:	30 e0       	ldi	r19, 0x00	; 0
+     c22:	f9 01       	movw	r30, r18
+     c24:	20 81       	ld	r18, Z
+     c26:	20 68       	ori	r18, 0x80	; 128
+     c28:	fc 01       	movw	r30, r24
+     c2a:	20 83       	st	Z, r18
+			DiskStrukture.motor_pwm = 0;
+     c2c:	10 92 33 01 	sts	0x0133, r1	; 0x800133 <DiskStrukture+0x3>
+			DiskStrukture.enable_rotation = false;
+     c30:	10 92 40 01 	sts	0x0140, r1	; 0x800140 <DiskStrukture+0x10>
+			DiskStrukture.delayed_stop = false;
+     c34:	10 92 45 01 	sts	0x0145, r1	; 0x800145 <DiskStrukture+0x15>
+			DiskStrukture.new_position = get_disk_label_position();
+     c38:	0e 94 0d 02 	call	0x41a	; 0x41a <get_disk_label_position>
+     c3c:	80 93 42 01 	sts	0x0142, r24	; 0x800142 <DiskStrukture+0x12>
+		}
+		if((DiskStrukture.sin_cos_counter > DISK_OFFEST_LEFT)&&(DiskStrukture.disk_rotation == RotationRight)){
+     c40:	80 91 38 01 	lds	r24, 0x0138	; 0x800138 <DiskStrukture+0x8>
+     c44:	90 91 39 01 	lds	r25, 0x0139	; 0x800139 <DiskStrukture+0x9>
+     c48:	a0 91 3a 01 	lds	r26, 0x013A	; 0x80013a <DiskStrukture+0xa>
+     c4c:	b0 91 3b 01 	lds	r27, 0x013B	; 0x80013b <DiskStrukture+0xb>
+     c50:	8e 97       	sbiw	r24, 0x2e	; 46
+     c52:	a1 05       	cpc	r26, r1
+     c54:	b1 05       	cpc	r27, r1
+     c56:	b8 f0       	brcs	.+46     	; 0xc86 <__vector_3+0xe8>
+     c58:	80 91 44 01 	lds	r24, 0x0144	; 0x800144 <DiskStrukture+0x14>
+     c5c:	81 30       	cpi	r24, 0x01	; 1
+     c5e:	99 f4       	brne	.+38     	; 0xc86 <__vector_3+0xe8>
+			PORTD	|=	(1 << PD7);													// break pin
+     c60:	8b e2       	ldi	r24, 0x2B	; 43
+     c62:	90 e0       	ldi	r25, 0x00	; 0
+     c64:	2b e2       	ldi	r18, 0x2B	; 43
+     c66:	30 e0       	ldi	r19, 0x00	; 0
+     c68:	f9 01       	movw	r30, r18
+     c6a:	20 81       	ld	r18, Z
+     c6c:	20 68       	ori	r18, 0x80	; 128
+     c6e:	fc 01       	movw	r30, r24
+     c70:	20 83       	st	Z, r18
+			DiskStrukture.motor_pwm = 0;
+     c72:	10 92 33 01 	sts	0x0133, r1	; 0x800133 <DiskStrukture+0x3>
+			DiskStrukture.enable_rotation = false;
+     c76:	10 92 40 01 	sts	0x0140, r1	; 0x800140 <DiskStrukture+0x10>
+			DiskStrukture.delayed_stop = false;
+     c7a:	10 92 45 01 	sts	0x0145, r1	; 0x800145 <DiskStrukture+0x15>
+			DiskStrukture.new_position = get_disk_label_position();
+     c7e:	0e 94 0d 02 	call	0x41a	; 0x41a <get_disk_label_position>
+     c82:	80 93 42 01 	sts	0x0142, r24	; 0x800142 <DiskStrukture+0x12>
+		}
+	}
+}
+     c86:	00 00       	nop
+     c88:	df 91       	pop	r29
+     c8a:	cf 91       	pop	r28
+     c8c:	ff 91       	pop	r31
+     c8e:	ef 91       	pop	r30
+     c90:	bf 91       	pop	r27
+     c92:	af 91       	pop	r26
+     c94:	9f 91       	pop	r25
+     c96:	8f 91       	pop	r24
+     c98:	7f 91       	pop	r23
+     c9a:	6f 91       	pop	r22
+     c9c:	5f 91       	pop	r21
+     c9e:	4f 91       	pop	r20
+     ca0:	3f 91       	pop	r19
+     ca2:	2f 91       	pop	r18
+     ca4:	0f 90       	pop	r0
+     ca6:	00 92 5f 00 	sts	0x005F, r0	; 0x80005f <__TEXT_REGION_LENGTH__+0x7fc05f>
+     caa:	0f 90       	pop	r0
+     cac:	1f 90       	pop	r1
+     cae:	18 95       	reti
+
+00000cb0 <__vector_4>:
+
+ISR (PCINT1_vect){
+     cb0:	1f 92       	push	r1
+     cb2:	0f 92       	push	r0
+     cb4:	00 90 5f 00 	lds	r0, 0x005F	; 0x80005f <__TEXT_REGION_LENGTH__+0x7fc05f>
+     cb8:	0f 92       	push	r0
+     cba:	11 24       	eor	r1, r1
+     cbc:	2f 93       	push	r18
+     cbe:	3f 93       	push	r19
+     cc0:	4f 93       	push	r20
+     cc2:	5f 93       	push	r21
+     cc4:	6f 93       	push	r22
+     cc6:	7f 93       	push	r23
+     cc8:	8f 93       	push	r24
+     cca:	9f 93       	push	r25
+     ccc:	af 93       	push	r26
+     cce:	bf 93       	push	r27
+     cd0:	ef 93       	push	r30
+     cd2:	ff 93       	push	r31
+     cd4:	cf 93       	push	r28
+     cd6:	df 93       	push	r29
+     cd8:	1f 92       	push	r1
+     cda:	cd b7       	in	r28, 0x3d	; 61
+     cdc:	de b7       	in	r29, 0x3e	; 62
+			uint8_t return_value;
+			if(PINC&(1 << PC0) == (1 << PC0)){
+     cde:	86 e2       	ldi	r24, 0x26	; 38
+     ce0:	90 e0       	ldi	r25, 0x00	; 0
+     ce2:	fc 01       	movw	r30, r24
+     ce4:	80 81       	ld	r24, Z
+     ce6:	88 2f       	mov	r24, r24
+     ce8:	90 e0       	ldi	r25, 0x00	; 0
+     cea:	81 70       	andi	r24, 0x01	; 1
+     cec:	99 27       	eor	r25, r25
+     cee:	89 2b       	or	r24, r25
+     cf0:	c9 f5       	brne	.+114    	; 0xd64 <__vector_4+0xb4>
+				return;
+			}
+			else if((DiskStrukture.sin_cos_counter > 2700)&&(DiskStrukture.enable_rotation)){
+     cf2:	80 91 38 01 	lds	r24, 0x0138	; 0x800138 <DiskStrukture+0x8>
+     cf6:	90 91 39 01 	lds	r25, 0x0139	; 0x800139 <DiskStrukture+0x9>
+     cfa:	a0 91 3a 01 	lds	r26, 0x013A	; 0x80013a <DiskStrukture+0xa>
+     cfe:	b0 91 3b 01 	lds	r27, 0x013B	; 0x80013b <DiskStrukture+0xb>
+     d02:	8d 38       	cpi	r24, 0x8D	; 141
+     d04:	9a 40       	sbci	r25, 0x0A	; 10
+     d06:	a1 05       	cpc	r26, r1
+     d08:	b1 05       	cpc	r27, r1
+     d0a:	70 f1       	brcs	.+92     	; 0xd68 <__vector_4+0xb8>
+     d0c:	80 91 40 01 	lds	r24, 0x0140	; 0x800140 <DiskStrukture+0x10>
+     d10:	88 23       	and	r24, r24
+     d12:	51 f1       	breq	.+84     	; 0xd68 <__vector_4+0xb8>
+				DiskStrukture.disk_present_counter++;
+     d14:	80 91 46 01 	lds	r24, 0x0146	; 0x800146 <DiskStrukture+0x16>
+     d18:	8f 5f       	subi	r24, 0xFF	; 255
+     d1a:	80 93 46 01 	sts	0x0146, r24	; 0x800146 <DiskStrukture+0x16>
+				return_value =  (PIND&0x07);							//m1,m2,m4
+     d1e:	89 e2       	ldi	r24, 0x29	; 41
+     d20:	90 e0       	ldi	r25, 0x00	; 0
+     d22:	fc 01       	movw	r30, r24
+     d24:	80 81       	ld	r24, Z
+     d26:	87 70       	andi	r24, 0x07	; 7
+     d28:	89 83       	std	Y+1, r24	; 0x01
+				return_value |= (PIND&0x10)>>1;						//m8
+     d2a:	89 e2       	ldi	r24, 0x29	; 41
+     d2c:	90 e0       	ldi	r25, 0x00	; 0
+     d2e:	fc 01       	movw	r30, r24
+     d30:	80 81       	ld	r24, Z
+     d32:	88 2f       	mov	r24, r24
+     d34:	90 e0       	ldi	r25, 0x00	; 0
+     d36:	80 71       	andi	r24, 0x10	; 16
+     d38:	99 27       	eor	r25, r25
+     d3a:	95 95       	asr	r25
+     d3c:	87 95       	ror	r24
+     d3e:	98 2f       	mov	r25, r24
+     d40:	89 81       	ldd	r24, Y+1	; 0x01
+     d42:	89 2b       	or	r24, r25
+     d44:	89 83       	std	Y+1, r24	; 0x01
+				return_value = 15 - return_value;
+     d46:	9f e0       	ldi	r25, 0x0F	; 15
+     d48:	89 81       	ldd	r24, Y+1	; 0x01
+     d4a:	f9 2f       	mov	r31, r25
+     d4c:	f8 1b       	sub	r31, r24
+     d4e:	8f 2f       	mov	r24, r31
+     d50:	89 83       	std	Y+1, r24	; 0x01
+				if(DiskStrukture.new_position == return_value)
+     d52:	90 91 42 01 	lds	r25, 0x0142	; 0x800142 <DiskStrukture+0x12>
+     d56:	89 81       	ldd	r24, Y+1	; 0x01
+     d58:	98 17       	cp	r25, r24
+     d5a:	31 f4       	brne	.+12     	; 0xd68 <__vector_4+0xb8>
+					disk_stop_rotation();
+     d5c:	0e 94 97 02 	call	0x52e	; 0x52e <disk_stop_rotation>
+			}
+			return;
+     d60:	00 00       	nop
+     d62:	02 c0       	rjmp	.+4      	; 0xd68 <__vector_4+0xb8>
+}
+
+ISR (PCINT1_vect){
+			uint8_t return_value;
+			if(PINC&(1 << PC0) == (1 << PC0)){
+				return;
+     d64:	00 00       	nop
+     d66:	01 c0       	rjmp	.+2      	; 0xd6a <__vector_4+0xba>
+				return_value |= (PIND&0x10)>>1;						//m8
+				return_value = 15 - return_value;
+				if(DiskStrukture.new_position == return_value)
+					disk_stop_rotation();
+			}
+			return;
+     d68:	00 00       	nop
+     d6a:	0f 90       	pop	r0
+     d6c:	df 91       	pop	r29
+     d6e:	cf 91       	pop	r28
+     d70:	ff 91       	pop	r31
+     d72:	ef 91       	pop	r30
+     d74:	bf 91       	pop	r27
+     d76:	af 91       	pop	r26
+     d78:	9f 91       	pop	r25
+     d7a:	8f 91       	pop	r24
+     d7c:	7f 91       	pop	r23
+     d7e:	6f 91       	pop	r22
+     d80:	5f 91       	pop	r21
+     d82:	4f 91       	pop	r20
+     d84:	3f 91       	pop	r19
+     d86:	2f 91       	pop	r18
+     d88:	0f 90       	pop	r0
+     d8a:	00 92 5f 00 	sts	0x005F, r0	; 0x80005f <__TEXT_REGION_LENGTH__+0x7fc05f>
+     d8e:	0f 90       	pop	r0
+     d90:	1f 90       	pop	r1
+     d92:	18 95       	reti
+
+00000d94 <init_gpio>:
+ *  Author: Andrii
+ */ 
+
+ #include "includes.h"
+
+ void init_gpio(){
+     d94:	cf 93       	push	r28
+     d96:	df 93       	push	r29
+     d98:	cd b7       	in	r28, 0x3d	; 61
+     d9a:	de b7       	in	r29, 0x3e	; 62
+	/*init lift gpios*/
+	DDRC &= ~(1 << DD3);									// end switch pin input
+     d9c:	87 e2       	ldi	r24, 0x27	; 39
+     d9e:	90 e0       	ldi	r25, 0x00	; 0
+     da0:	27 e2       	ldi	r18, 0x27	; 39
+     da2:	30 e0       	ldi	r19, 0x00	; 0
+     da4:	f9 01       	movw	r30, r18
+     da6:	20 81       	ld	r18, Z
+     da8:	27 7f       	andi	r18, 0xF7	; 247
+     daa:	fc 01       	movw	r30, r24
+     dac:	20 83       	st	Z, r18
+	DDRC |= (1 << DD2);										// lift enable pin output
+     dae:	87 e2       	ldi	r24, 0x27	; 39
+     db0:	90 e0       	ldi	r25, 0x00	; 0
+     db2:	27 e2       	ldi	r18, 0x27	; 39
+     db4:	30 e0       	ldi	r19, 0x00	; 0
+     db6:	f9 01       	movw	r30, r18
+     db8:	20 81       	ld	r18, Z
+     dba:	24 60       	ori	r18, 0x04	; 4
+     dbc:	fc 01       	movw	r30, r24
+     dbe:	20 83       	st	Z, r18
+	PORTC &= ~(1 << PORT2);								// lift enable pin off
+     dc0:	88 e2       	ldi	r24, 0x28	; 40
+     dc2:	90 e0       	ldi	r25, 0x00	; 0
+     dc4:	28 e2       	ldi	r18, 0x28	; 40
+     dc6:	30 e0       	ldi	r19, 0x00	; 0
+     dc8:	f9 01       	movw	r30, r18
+     dca:	20 81       	ld	r18, Z
+     dcc:	2b 7f       	andi	r18, 0xFB	; 251
+     dce:	fc 01       	movw	r30, r24
+     dd0:	20 83       	st	Z, r18
+
+	DDRB |= (1 << DD2);										//syc led pwm pin
+     dd2:	84 e2       	ldi	r24, 0x24	; 36
+     dd4:	90 e0       	ldi	r25, 0x00	; 0
+     dd6:	24 e2       	ldi	r18, 0x24	; 36
+     dd8:	30 e0       	ldi	r19, 0x00	; 0
+     dda:	f9 01       	movw	r30, r18
+     ddc:	20 81       	ld	r18, Z
+     dde:	24 60       	ori	r18, 0x04	; 4
+     de0:	fc 01       	movw	r30, r24
+     de2:	20 83       	st	Z, r18
+	DDRB |= (1 << DD1);										// servo control pin output
+     de4:	84 e2       	ldi	r24, 0x24	; 36
+     de6:	90 e0       	ldi	r25, 0x00	; 0
+     de8:	24 e2       	ldi	r18, 0x24	; 36
+     dea:	30 e0       	ldi	r19, 0x00	; 0
+     dec:	f9 01       	movw	r30, r18
+     dee:	20 81       	ld	r18, Z
+     df0:	22 60       	ori	r18, 0x02	; 2
+     df2:	fc 01       	movw	r30, r24
+     df4:	20 83       	st	Z, r18
+	DDRB |= (1 << DD0);										//direction signal pin
+     df6:	84 e2       	ldi	r24, 0x24	; 36
+     df8:	90 e0       	ldi	r25, 0x00	; 0
+     dfa:	24 e2       	ldi	r18, 0x24	; 36
+     dfc:	30 e0       	ldi	r19, 0x00	; 0
+     dfe:	f9 01       	movw	r30, r18
+     e00:	20 81       	ld	r18, Z
+     e02:	21 60       	ori	r18, 0x01	; 1
+     e04:	fc 01       	movw	r30, r24
+     e06:	20 83       	st	Z, r18
+	PORTB |= (1 << PB0);									//direction pin, any direction
+     e08:	85 e2       	ldi	r24, 0x25	; 37
+     e0a:	90 e0       	ldi	r25, 0x00	; 0
+     e0c:	25 e2       	ldi	r18, 0x25	; 37
+     e0e:	30 e0       	ldi	r19, 0x00	; 0
+     e10:	f9 01       	movw	r30, r18
+     e12:	20 81       	ld	r18, Z
+     e14:	21 60       	ori	r18, 0x01	; 1
+     e16:	fc 01       	movw	r30, r24
+     e18:	20 83       	st	Z, r18
+	PORTB &= ~(1 << PB1);									//servo control pin off
+     e1a:	85 e2       	ldi	r24, 0x25	; 37
+     e1c:	90 e0       	ldi	r25, 0x00	; 0
+     e1e:	25 e2       	ldi	r18, 0x25	; 37
+     e20:	30 e0       	ldi	r19, 0x00	; 0
+     e22:	f9 01       	movw	r30, r18
+     e24:	20 81       	ld	r18, Z
+     e26:	2d 7f       	andi	r18, 0xFD	; 253
+     e28:	fc 01       	movw	r30, r24
+     e2a:	20 83       	st	Z, r18
+	PORTB &= ~(1 << PB2);									//sync led pin off
+     e2c:	85 e2       	ldi	r24, 0x25	; 37
+     e2e:	90 e0       	ldi	r25, 0x00	; 0
+     e30:	25 e2       	ldi	r18, 0x25	; 37
+     e32:	30 e0       	ldi	r19, 0x00	; 0
+     e34:	f9 01       	movw	r30, r18
+     e36:	20 81       	ld	r18, Z
+     e38:	2b 7f       	andi	r18, 0xFB	; 251
+     e3a:	fc 01       	movw	r30, r24
+     e3c:	20 83       	st	Z, r18
+	
+	DDRD |= (1 << DD7);										//brake signal pin
+     e3e:	8a e2       	ldi	r24, 0x2A	; 42
+     e40:	90 e0       	ldi	r25, 0x00	; 0
+     e42:	2a e2       	ldi	r18, 0x2A	; 42
+     e44:	30 e0       	ldi	r19, 0x00	; 0
+     e46:	f9 01       	movw	r30, r18
+     e48:	20 81       	ld	r18, Z
+     e4a:	20 68       	ori	r18, 0x80	; 128
+     e4c:	fc 01       	movw	r30, r24
+     e4e:	20 83       	st	Z, r18
+	DDRD |= (1 << DD6);										//disk motor pin
+     e50:	8a e2       	ldi	r24, 0x2A	; 42
+     e52:	90 e0       	ldi	r25, 0x00	; 0
+     e54:	2a e2       	ldi	r18, 0x2A	; 42
+     e56:	30 e0       	ldi	r19, 0x00	; 0
+     e58:	f9 01       	movw	r30, r18
+     e5a:	20 81       	ld	r18, Z
+     e5c:	20 64       	ori	r18, 0x40	; 64
+     e5e:	fc 01       	movw	r30, r24
+     e60:	20 83       	st	Z, r18
+	DDRD |= (1 << DD5);										//cell motor pin
+     e62:	8a e2       	ldi	r24, 0x2A	; 42
+     e64:	90 e0       	ldi	r25, 0x00	; 0
+     e66:	2a e2       	ldi	r18, 0x2A	; 42
+     e68:	30 e0       	ldi	r19, 0x00	; 0
+     e6a:	f9 01       	movw	r30, r18
+     e6c:	20 81       	ld	r18, Z
+     e6e:	20 62       	ori	r18, 0x20	; 32
+     e70:	fc 01       	movw	r30, r24
+     e72:	20 83       	st	Z, r18
+	DDRD |= (1 << DD3);										//data led pwm pin
+     e74:	8a e2       	ldi	r24, 0x2A	; 42
+     e76:	90 e0       	ldi	r25, 0x00	; 0
+     e78:	2a e2       	ldi	r18, 0x2A	; 42
+     e7a:	30 e0       	ldi	r19, 0x00	; 0
+     e7c:	f9 01       	movw	r30, r18
+     e7e:	20 81       	ld	r18, Z
+     e80:	28 60       	ori	r18, 0x08	; 8
+     e82:	fc 01       	movw	r30, r24
+     e84:	20 83       	st	Z, r18
+
+	PORTD |= (1 << PD7);									//brake pin on -> brake func off
+     e86:	8b e2       	ldi	r24, 0x2B	; 43
+     e88:	90 e0       	ldi	r25, 0x00	; 0
+     e8a:	2b e2       	ldi	r18, 0x2B	; 43
+     e8c:	30 e0       	ldi	r19, 0x00	; 0
+     e8e:	f9 01       	movw	r30, r18
+     e90:	20 81       	ld	r18, Z
+     e92:	20 68       	ori	r18, 0x80	; 128
+     e94:	fc 01       	movw	r30, r24
+     e96:	20 83       	st	Z, r18
+	PORTD &= ~(1 << PD6);									//disk motor pin off		
+     e98:	8b e2       	ldi	r24, 0x2B	; 43
+     e9a:	90 e0       	ldi	r25, 0x00	; 0
+     e9c:	2b e2       	ldi	r18, 0x2B	; 43
+     e9e:	30 e0       	ldi	r19, 0x00	; 0
+     ea0:	f9 01       	movw	r30, r18
+     ea2:	20 81       	ld	r18, Z
+     ea4:	2f 7b       	andi	r18, 0xBF	; 191
+     ea6:	fc 01       	movw	r30, r24
+     ea8:	20 83       	st	Z, r18
+	PORTD &= ~(1 << PD5);									//cell motor pin off
+     eaa:	8b e2       	ldi	r24, 0x2B	; 43
+     eac:	90 e0       	ldi	r25, 0x00	; 0
+     eae:	2b e2       	ldi	r18, 0x2B	; 43
+     eb0:	30 e0       	ldi	r19, 0x00	; 0
+     eb2:	f9 01       	movw	r30, r18
+     eb4:	20 81       	ld	r18, Z
+     eb6:	2f 7d       	andi	r18, 0xDF	; 223
+     eb8:	fc 01       	movw	r30, r24
+     eba:	20 83       	st	Z, r18
+	PORTD &= ~(1 << PD3);									//data led pin off
+     ebc:	8b e2       	ldi	r24, 0x2B	; 43
+     ebe:	90 e0       	ldi	r25, 0x00	; 0
+     ec0:	2b e2       	ldi	r18, 0x2B	; 43
+     ec2:	30 e0       	ldi	r19, 0x00	; 0
+     ec4:	f9 01       	movw	r30, r18
+     ec6:	20 81       	ld	r18, Z
+     ec8:	27 7f       	andi	r18, 0xF7	; 247
+     eca:	fc 01       	movw	r30, r24
+     ecc:	20 83       	st	Z, r18
+
+     ece:	00 00       	nop
+     ed0:	df 91       	pop	r29
+     ed2:	cf 91       	pop	r28
+     ed4:	08 95       	ret
+
+00000ed6 <init_twi>:
+volatile uint8_t twi_buffer[TWI_BUFFER_SIZE];
+volatile uint8_t temp_buffer[TWI_BUFFER_SIZE];
+volatile uint8_t twi_input_ptr;
+volatile uint8_t twi_output_ptr;
+
+void init_twi(void){
+     ed6:	cf 93       	push	r28
+     ed8:	df 93       	push	r29
+     eda:	cd b7       	in	r28, 0x3d	; 61
+     edc:	de b7       	in	r29, 0x3e	; 62
+	TWBR = 0x48; // SCL=50kHz [p.235,216]
+     ede:	88 eb       	ldi	r24, 0xB8	; 184
+     ee0:	90 e0       	ldi	r25, 0x00	; 0
+     ee2:	28 e4       	ldi	r18, 0x48	; 72
+     ee4:	fc 01       	movw	r30, r24
+     ee6:	20 83       	st	Z, r18
+	TWCR = 0x00;
+     ee8:	8c eb       	ldi	r24, 0xBC	; 188
+     eea:	90 e0       	ldi	r25, 0x00	; 0
+     eec:	fc 01       	movw	r30, r24
+     eee:	10 82       	st	Z, r1
+	TWAR = TWI_ADDRESS;
+     ef0:	8a eb       	ldi	r24, 0xBA	; 186
+     ef2:	90 e0       	ldi	r25, 0x00	; 0
+     ef4:	20 e7       	ldi	r18, 0x70	; 112
+     ef6:	fc 01       	movw	r30, r24
+     ef8:	20 83       	st	Z, r18
+	TWSR = 0x00;
+     efa:	89 eb       	ldi	r24, 0xB9	; 185
+     efc:	90 e0       	ldi	r25, 0x00	; 0
+     efe:	fc 01       	movw	r30, r24
+     f00:	10 82       	st	Z, r1
+	TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWIE) | (1 << TWEA);
+     f02:	8c eb       	ldi	r24, 0xBC	; 188
+     f04:	90 e0       	ldi	r25, 0x00	; 0
+     f06:	25 ec       	ldi	r18, 0xC5	; 197
+     f08:	fc 01       	movw	r30, r24
+     f0a:	20 83       	st	Z, r18
+}
+     f0c:	00 00       	nop
+     f0e:	df 91       	pop	r29
+     f10:	cf 91       	pop	r28
+     f12:	08 95       	ret
+
+00000f14 <calculate_checksum>:
+
+uint8_t calculate_checksum(uint8_t length,volatile uint8_t* data){
+     f14:	cf 93       	push	r28
+     f16:	df 93       	push	r29
+     f18:	00 d0       	rcall	.+0      	; 0xf1a <calculate_checksum+0x6>
+     f1a:	00 d0       	rcall	.+0      	; 0xf1c <calculate_checksum+0x8>
+     f1c:	1f 92       	push	r1
+     f1e:	cd b7       	in	r28, 0x3d	; 61
+     f20:	de b7       	in	r29, 0x3e	; 62
+     f22:	8b 83       	std	Y+3, r24	; 0x03
+     f24:	7d 83       	std	Y+5, r23	; 0x05
+     f26:	6c 83       	std	Y+4, r22	; 0x04
+	uint8_t crc = 0;
+     f28:	19 82       	std	Y+1, r1	; 0x01
+	for(uint8_t i = 0; i < length; i++)
+     f2a:	1a 82       	std	Y+2, r1	; 0x02
+     f2c:	0f c0       	rjmp	.+30     	; 0xf4c <calculate_checksum+0x38>
+	crc += data[i];
+     f2e:	8a 81       	ldd	r24, Y+2	; 0x02
+     f30:	88 2f       	mov	r24, r24
+     f32:	90 e0       	ldi	r25, 0x00	; 0
+     f34:	2c 81       	ldd	r18, Y+4	; 0x04
+     f36:	3d 81       	ldd	r19, Y+5	; 0x05
+     f38:	82 0f       	add	r24, r18
+     f3a:	93 1f       	adc	r25, r19
+     f3c:	fc 01       	movw	r30, r24
+     f3e:	80 81       	ld	r24, Z
+     f40:	99 81       	ldd	r25, Y+1	; 0x01
+     f42:	89 0f       	add	r24, r25
+     f44:	89 83       	std	Y+1, r24	; 0x01
+	TWCR = (1 << TWINT) | (1 << TWEN) | (1 << TWIE) | (1 << TWEA);
+}
+
+uint8_t calculate_checksum(uint8_t length,volatile uint8_t* data){
+	uint8_t crc = 0;
+	for(uint8_t i = 0; i < length; i++)
+     f46:	8a 81       	ldd	r24, Y+2	; 0x02
+     f48:	8f 5f       	subi	r24, 0xFF	; 255
+     f4a:	8a 83       	std	Y+2, r24	; 0x02
+     f4c:	9a 81       	ldd	r25, Y+2	; 0x02
+     f4e:	8b 81       	ldd	r24, Y+3	; 0x03
+     f50:	98 17       	cp	r25, r24
+     f52:	68 f3       	brcs	.-38     	; 0xf2e <calculate_checksum+0x1a>
+	crc += data[i];
+	return crc;
+     f54:	89 81       	ldd	r24, Y+1	; 0x01
+}
+     f56:	0f 90       	pop	r0
+     f58:	0f 90       	pop	r0
+     f5a:	0f 90       	pop	r0
+     f5c:	0f 90       	pop	r0
+     f5e:	0f 90       	pop	r0
+     f60:	df 91       	pop	r29
+     f62:	cf 91       	pop	r28
+     f64:	08 95       	ret
+
+00000f66 <prepare_output_buffer>:
+
+void prepare_output_buffer(uint8_t command, uint8_t status, uint8_t length, uint8_t* data){
+     f66:	cf 93       	push	r28
+     f68:	df 93       	push	r29
+     f6a:	cd b7       	in	r28, 0x3d	; 61
+     f6c:	de b7       	in	r29, 0x3e	; 62
+     f6e:	27 97       	sbiw	r28, 0x07	; 7
+     f70:	0f b6       	in	r0, 0x3f	; 63
+     f72:	f8 94       	cli
+     f74:	de bf       	out	0x3e, r29	; 62
+     f76:	0f be       	out	0x3f, r0	; 63
+     f78:	cd bf       	out	0x3d, r28	; 61
+     f7a:	8b 83       	std	Y+3, r24	; 0x03
+     f7c:	6c 83       	std	Y+4, r22	; 0x04
+     f7e:	4d 83       	std	Y+5, r20	; 0x05
+     f80:	3f 83       	std	Y+7, r19	; 0x07
+     f82:	2e 83       	std	Y+6, r18	; 0x06
+	uint8_t crc = 0;
+     f84:	19 82       	std	Y+1, r1	; 0x01
+	memset(twi_buffer,0x00,TWI_BUFFER_SIZE);
+     f86:	46 e9       	ldi	r20, 0x96	; 150
+     f88:	50 e0       	ldi	r21, 0x00	; 0
+     f8a:	60 e0       	ldi	r22, 0x00	; 0
+     f8c:	70 e0       	ldi	r23, 0x00	; 0
+     f8e:	8a e4       	ldi	r24, 0x4A	; 74
+     f90:	91 e0       	ldi	r25, 0x01	; 1
+     f92:	0e 94 1a 0d 	call	0x1a34	; 0x1a34 <memset>
+	twi_buffer[0] = status;
+     f96:	8c 81       	ldd	r24, Y+4	; 0x04
+     f98:	80 93 4a 01 	sts	0x014A, r24	; 0x80014a <twi_buffer>
+	twi_buffer[1] = command;
+     f9c:	8b 81       	ldd	r24, Y+3	; 0x03
+     f9e:	80 93 4b 01 	sts	0x014B, r24	; 0x80014b <twi_buffer+0x1>
+	memcpy(&twi_buffer[2],data,length);
+     fa2:	8d 81       	ldd	r24, Y+5	; 0x05
+     fa4:	28 2f       	mov	r18, r24
+     fa6:	30 e0       	ldi	r19, 0x00	; 0
+     fa8:	8e 81       	ldd	r24, Y+6	; 0x06
+     faa:	9f 81       	ldd	r25, Y+7	; 0x07
+     fac:	a9 01       	movw	r20, r18
+     fae:	bc 01       	movw	r22, r24
+     fb0:	8c e4       	ldi	r24, 0x4C	; 76
+     fb2:	91 e0       	ldi	r25, 0x01	; 1
+     fb4:	0e 94 11 0d 	call	0x1a22	; 0x1a22 <memcpy>
+	for(uint8_t i = 0; i < length + 2; i++)
+     fb8:	1a 82       	std	Y+2, r1	; 0x02
+     fba:	0d c0       	rjmp	.+26     	; 0xfd6 <prepare_output_buffer+0x70>
+	crc += twi_buffer[i];
+     fbc:	8a 81       	ldd	r24, Y+2	; 0x02
+     fbe:	88 2f       	mov	r24, r24
+     fc0:	90 e0       	ldi	r25, 0x00	; 0
+     fc2:	86 5b       	subi	r24, 0xB6	; 182
+     fc4:	9e 4f       	sbci	r25, 0xFE	; 254
+     fc6:	fc 01       	movw	r30, r24
+     fc8:	80 81       	ld	r24, Z
+     fca:	99 81       	ldd	r25, Y+1	; 0x01
+     fcc:	89 0f       	add	r24, r25
+     fce:	89 83       	std	Y+1, r24	; 0x01
+	uint8_t crc = 0;
+	memset(twi_buffer,0x00,TWI_BUFFER_SIZE);
+	twi_buffer[0] = status;
+	twi_buffer[1] = command;
+	memcpy(&twi_buffer[2],data,length);
+	for(uint8_t i = 0; i < length + 2; i++)
+     fd0:	8a 81       	ldd	r24, Y+2	; 0x02
+     fd2:	8f 5f       	subi	r24, 0xFF	; 255
+     fd4:	8a 83       	std	Y+2, r24	; 0x02
+     fd6:	8a 81       	ldd	r24, Y+2	; 0x02
+     fd8:	28 2f       	mov	r18, r24
+     fda:	30 e0       	ldi	r19, 0x00	; 0
+     fdc:	8d 81       	ldd	r24, Y+5	; 0x05
+     fde:	88 2f       	mov	r24, r24
+     fe0:	90 e0       	ldi	r25, 0x00	; 0
+     fe2:	02 96       	adiw	r24, 0x02	; 2
+     fe4:	28 17       	cp	r18, r24
+     fe6:	39 07       	cpc	r19, r25
+     fe8:	4c f3       	brlt	.-46     	; 0xfbc <prepare_output_buffer+0x56>
+	crc += twi_buffer[i];
+	crc = (uint8_t)(0 - crc);
+     fea:	89 81       	ldd	r24, Y+1	; 0x01
+     fec:	81 95       	neg	r24
+     fee:	89 83       	std	Y+1, r24	; 0x01
+	twi_buffer[length + 2] = crc;
+     ff0:	8d 81       	ldd	r24, Y+5	; 0x05
+     ff2:	88 2f       	mov	r24, r24
+     ff4:	90 e0       	ldi	r25, 0x00	; 0
+     ff6:	02 96       	adiw	r24, 0x02	; 2
+     ff8:	86 5b       	subi	r24, 0xB6	; 182
+     ffa:	9e 4f       	sbci	r25, 0xFE	; 254
+     ffc:	29 81       	ldd	r18, Y+1	; 0x01
+     ffe:	fc 01       	movw	r30, r24
+    1000:	20 83       	st	Z, r18
+}
+    1002:	00 00       	nop
+    1004:	27 96       	adiw	r28, 0x07	; 7
+    1006:	0f b6       	in	r0, 0x3f	; 63
+    1008:	f8 94       	cli
+    100a:	de bf       	out	0x3e, r29	; 62
+    100c:	0f be       	out	0x3f, r0	; 63
+    100e:	cd bf       	out	0x3d, r28	; 61
+    1010:	df 91       	pop	r29
+    1012:	cf 91       	pop	r28
+    1014:	08 95       	ret
+
+00001016 <twi_engine>:
+
+void twi_engine(){
+    1016:	cf 93       	push	r28
+    1018:	df 93       	push	r29
+    101a:	00 d0       	rcall	.+0      	; 0x101c <twi_engine+0x6>
+    101c:	1f 92       	push	r1
+    101e:	cd b7       	in	r28, 0x3d	; 61
+    1020:	de b7       	in	r29, 0x3e	; 62
+	uint8_t status = STATUS_OK;
+    1022:	19 82       	std	Y+1, r1	; 0x01
+	uint8_t tx_length = 0;
+    1024:	1a 82       	std	Y+2, r1	; 0x02
+	uint8_t twi_command;
+	uint8_t twi_crc;
+	twi_command = twi_buffer[0];
+    1026:	80 91 4a 01 	lds	r24, 0x014A	; 0x80014a <twi_buffer>
+    102a:	8b 83       	std	Y+3, r24	; 0x03
+	if(calculate_checksum(twi_input_ptr,twi_buffer) != 0)
+    102c:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <twi_input_ptr>
+    1030:	6a e4       	ldi	r22, 0x4A	; 74
+    1032:	71 e0       	ldi	r23, 0x01	; 1
+    1034:	0e 94 8a 07 	call	0xf14	; 0xf14 <calculate_checksum>
+    1038:	88 23       	and	r24, r24
+    103a:	19 f0       	breq	.+6      	; 0x1042 <twi_engine+0x2c>
+		status|=STATUS_CRC_ERR;
+    103c:	89 81       	ldd	r24, Y+1	; 0x01
+    103e:	82 60       	ori	r24, 0x02	; 2
+    1040:	89 83       	std	Y+1, r24	; 0x01
+	if(status != STATUS_OK){
+    1042:	89 81       	ldd	r24, Y+1	; 0x01
+    1044:	88 23       	and	r24, r24
+    1046:	41 f0       	breq	.+16     	; 0x1058 <twi_engine+0x42>
+		prepare_output_buffer(twi_command,status,tx_length,temp_buffer);
+    1048:	20 ee       	ldi	r18, 0xE0	; 224
+    104a:	31 e0       	ldi	r19, 0x01	; 1
+    104c:	4a 81       	ldd	r20, Y+2	; 0x02
+    104e:	69 81       	ldd	r22, Y+1	; 0x01
+    1050:	8b 81       	ldd	r24, Y+3	; 0x03
+    1052:	0e 94 b3 07 	call	0xf66	; 0xf66 <prepare_output_buffer>
+		return;
+    1056:	87 c0       	rjmp	.+270    	; 0x1166 <twi_engine+0x150>
+	}
+	switch(twi_command){
+    1058:	8b 81       	ldd	r24, Y+3	; 0x03
+    105a:	88 2f       	mov	r24, r24
+    105c:	90 e0       	ldi	r25, 0x00	; 0
+    105e:	82 30       	cpi	r24, 0x02	; 2
+    1060:	91 05       	cpc	r25, r1
+    1062:	09 f4       	brne	.+2      	; 0x1066 <twi_engine+0x50>
+    1064:	3e c0       	rjmp	.+124    	; 0x10e2 <twi_engine+0xcc>
+    1066:	83 30       	cpi	r24, 0x03	; 3
+    1068:	91 05       	cpc	r25, r1
+    106a:	2c f4       	brge	.+10     	; 0x1076 <twi_engine+0x60>
+    106c:	00 97       	sbiw	r24, 0x00	; 0
+    106e:	79 f0       	breq	.+30     	; 0x108e <twi_engine+0x78>
+    1070:	01 97       	sbiw	r24, 0x01	; 1
+    1072:	f1 f0       	breq	.+60     	; 0x10b0 <twi_engine+0x9a>
+    1074:	6c c0       	rjmp	.+216    	; 0x114e <twi_engine+0x138>
+    1076:	84 30       	cpi	r24, 0x04	; 4
+    1078:	91 05       	cpc	r25, r1
+    107a:	09 f4       	brne	.+2      	; 0x107e <twi_engine+0x68>
+    107c:	53 c0       	rjmp	.+166    	; 0x1124 <twi_engine+0x10e>
+    107e:	84 30       	cpi	r24, 0x04	; 4
+    1080:	91 05       	cpc	r25, r1
+    1082:	0c f4       	brge	.+2      	; 0x1086 <twi_engine+0x70>
+    1084:	42 c0       	rjmp	.+132    	; 0x110a <twi_engine+0xf4>
+    1086:	05 97       	sbiw	r24, 0x05	; 5
+    1088:	09 f4       	brne	.+2      	; 0x108c <twi_engine+0x76>
+    108a:	59 c0       	rjmp	.+178    	; 0x113e <twi_engine+0x128>
+    108c:	60 c0       	rjmp	.+192    	; 0x114e <twi_engine+0x138>
+		case CAR_GET_ID:
+			if(twi_input_ptr != 2){
+    108e:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <twi_input_ptr>
+    1092:	82 30       	cpi	r24, 0x02	; 2
+    1094:	21 f0       	breq	.+8      	; 0x109e <twi_engine+0x88>
+				status|=STATUS_WRONG_LENGTH;
+    1096:	89 81       	ldd	r24, Y+1	; 0x01
+    1098:	80 61       	ori	r24, 0x10	; 16
+    109a:	89 83       	std	Y+1, r24	; 0x01
+				break;
+    109c:	5d c0       	rjmp	.+186    	; 0x1158 <twi_engine+0x142>
+			}
+			strcpy((char*)temp_buffer,ID);
+    109e:	60 e0       	ldi	r22, 0x00	; 0
+    10a0:	71 e0       	ldi	r23, 0x01	; 1
+    10a2:	80 ee       	ldi	r24, 0xE0	; 224
+    10a4:	91 e0       	ldi	r25, 0x01	; 1
+    10a6:	0e 94 21 0d 	call	0x1a42	; 0x1a42 <strcpy>
+			tx_length = 128;
+    10aa:	80 e8       	ldi	r24, 0x80	; 128
+    10ac:	8a 83       	std	Y+2, r24	; 0x02
+			break;
+    10ae:	54 c0       	rjmp	.+168    	; 0x1158 <twi_engine+0x142>
+		case CAR_GET_STATUS:
+			if(twi_input_ptr != 2){
+    10b0:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <twi_input_ptr>
+    10b4:	82 30       	cpi	r24, 0x02	; 2
+    10b6:	21 f0       	breq	.+8      	; 0x10c0 <twi_engine+0xaa>
+				status|=STATUS_WRONG_LENGTH;
+    10b8:	89 81       	ldd	r24, Y+1	; 0x01
+    10ba:	80 61       	ori	r24, 0x10	; 16
+    10bc:	89 83       	std	Y+1, r24	; 0x01
+				break;
+    10be:	4c c0       	rjmp	.+152    	; 0x1158 <twi_engine+0x142>
+			}
+			temp_buffer[0] = (uint8_t)get_cell_state();	 // cell_rotator_state;
+    10c0:	0e 94 a6 00 	call	0x14c	; 0x14c <get_cell_state>
+    10c4:	80 93 e0 01 	sts	0x01E0, r24	; 0x8001e0 <temp_buffer>
+			temp_buffer[1] = (uint8_t)get_lift_state();	// lift_state;
+    10c8:	0e 94 aa 0b 	call	0x1754	; 0x1754 <get_lift_state>
+    10cc:	80 93 e1 01 	sts	0x01E1, r24	; 0x8001e1 <temp_buffer+0x1>
+			temp_buffer[2] = (uint8_t)get_disk_state();	// table_rotator_state;
+    10d0:	0e 94 bc 02 	call	0x578	; 0x578 <get_disk_state>
+    10d4:	80 93 e2 01 	sts	0x01E2, r24	; 0x8001e2 <temp_buffer+0x2>
+			temp_buffer[3] = 0;
+    10d8:	10 92 e3 01 	sts	0x01E3, r1	; 0x8001e3 <temp_buffer+0x3>
+			tx_length = 4;
+    10dc:	84 e0       	ldi	r24, 0x04	; 4
+    10de:	8a 83       	std	Y+2, r24	; 0x02
+			break;
+    10e0:	3b c0       	rjmp	.+118    	; 0x1158 <twi_engine+0x142>
+		case CAR_CELL_ROTATOR_POSITION:
+			if((twi_input_ptr != (2 + 2))){
+    10e2:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <twi_input_ptr>
+    10e6:	84 30       	cpi	r24, 0x04	; 4
+    10e8:	21 f0       	breq	.+8      	; 0x10f2 <twi_engine+0xdc>
+				status|=STATUS_WRONG_LENGTH;
+    10ea:	89 81       	ldd	r24, Y+1	; 0x01
+    10ec:	80 61       	ori	r24, 0x10	; 16
+    10ee:	89 83       	std	Y+1, r24	; 0x01
+				break;
+    10f0:	33 c0       	rjmp	.+102    	; 0x1158 <twi_engine+0x142>
+			}
+			cell_update_control_values((bool)twi_buffer[1], twi_buffer[2]);
+    10f2:	20 91 4c 01 	lds	r18, 0x014C	; 0x80014c <twi_buffer+0x2>
+    10f6:	90 91 4b 01 	lds	r25, 0x014B	; 0x80014b <twi_buffer+0x1>
+    10fa:	81 e0       	ldi	r24, 0x01	; 1
+    10fc:	99 23       	and	r25, r25
+    10fe:	09 f4       	brne	.+2      	; 0x1102 <twi_engine+0xec>
+    1100:	80 e0       	ldi	r24, 0x00	; 0
+    1102:	62 2f       	mov	r22, r18
+    1104:	0e 94 6f 00 	call	0xde	; 0xde <cell_update_control_values>
+			break;
+    1108:	27 c0       	rjmp	.+78     	; 0x1158 <twi_engine+0x142>
+		case CAR_LIFT_UP_DOWN:
+			if(twi_input_ptr != 3){
+    110a:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <twi_input_ptr>
+    110e:	83 30       	cpi	r24, 0x03	; 3
+    1110:	21 f0       	breq	.+8      	; 0x111a <twi_engine+0x104>
+				status|=STATUS_WRONG_LENGTH;
+    1112:	89 81       	ldd	r24, Y+1	; 0x01
+    1114:	80 61       	ori	r24, 0x10	; 16
+    1116:	89 83       	std	Y+1, r24	; 0x01
+				break;
+    1118:	1f c0       	rjmp	.+62     	; 0x1158 <twi_engine+0x142>
+			}
+			set_new_lift_position((tLiftCommandPosition)twi_buffer[1]);
+    111a:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <twi_buffer+0x1>
+    111e:	0e 94 f1 09 	call	0x13e2	; 0x13e2 <set_new_lift_position>
+			break;
+    1122:	1a c0       	rjmp	.+52     	; 0x1158 <twi_engine+0x142>
+		case CAR_SET_POSITION:
+			if(twi_input_ptr != 4){
+    1124:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <twi_input_ptr>
+    1128:	84 30       	cpi	r24, 0x04	; 4
+    112a:	21 f0       	breq	.+8      	; 0x1134 <twi_engine+0x11e>
+				status|=STATUS_WRONG_LENGTH;
+    112c:	89 81       	ldd	r24, Y+1	; 0x01
+    112e:	80 61       	ori	r24, 0x10	; 16
+    1130:	89 83       	std	Y+1, r24	; 0x01
+				break;
+    1132:	12 c0       	rjmp	.+36     	; 0x1158 <twi_engine+0x142>
+			}
+			disk_set_new_position(twi_buffer[1]);
+    1134:	80 91 4b 01 	lds	r24, 0x014B	; 0x80014b <twi_buffer+0x1>
+    1138:	0e 94 c5 02 	call	0x58a	; 0x58a <disk_set_new_position>
+			break;
+    113c:	0d c0       	rjmp	.+26     	; 0x1158 <twi_engine+0x142>
+		case CAR_SET_SPEED:
+			if(twi_input_ptr != 5){
+    113e:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <twi_input_ptr>
+    1142:	85 30       	cpi	r24, 0x05	; 5
+    1144:	41 f0       	breq	.+16     	; 0x1156 <twi_engine+0x140>
+				status|=STATUS_WRONG_LENGTH;
+    1146:	89 81       	ldd	r24, Y+1	; 0x01
+    1148:	80 61       	ori	r24, 0x10	; 16
+    114a:	89 83       	std	Y+1, r24	; 0x01
+				break;
+    114c:	05 c0       	rjmp	.+10     	; 0x1158 <twi_engine+0x142>
+			}
+			break;
+		default:
+			status|=STATUS_WRONG_COMMAND;
+    114e:	89 81       	ldd	r24, Y+1	; 0x01
+    1150:	84 60       	ori	r24, 0x04	; 4
+    1152:	89 83       	std	Y+1, r24	; 0x01
+			break;
+    1154:	01 c0       	rjmp	.+2      	; 0x1158 <twi_engine+0x142>
+		case CAR_SET_SPEED:
+			if(twi_input_ptr != 5){
+				status|=STATUS_WRONG_LENGTH;
+				break;
+			}
+			break;
+    1156:	00 00       	nop
+		default:
+			status|=STATUS_WRONG_COMMAND;
+			break;
+	}
+	prepare_output_buffer(twi_command,status,tx_length,temp_buffer);
+    1158:	20 ee       	ldi	r18, 0xE0	; 224
+    115a:	31 e0       	ldi	r19, 0x01	; 1
+    115c:	4a 81       	ldd	r20, Y+2	; 0x02
+    115e:	69 81       	ldd	r22, Y+1	; 0x01
+    1160:	8b 81       	ldd	r24, Y+3	; 0x03
+    1162:	0e 94 b3 07 	call	0xf66	; 0xf66 <prepare_output_buffer>
+}
+    1166:	0f 90       	pop	r0
+    1168:	0f 90       	pop	r0
+    116a:	0f 90       	pop	r0
+    116c:	df 91       	pop	r29
+    116e:	cf 91       	pop	r28
+    1170:	08 95       	ret
+
+00001172 <__vector_24>:
+
+ISR (TWI_vect)
+{
+    1172:	1f 92       	push	r1
+    1174:	0f 92       	push	r0
+    1176:	00 90 5f 00 	lds	r0, 0x005F	; 0x80005f <__TEXT_REGION_LENGTH__+0x7fc05f>
+    117a:	0f 92       	push	r0
+    117c:	11 24       	eor	r1, r1
+    117e:	2f 93       	push	r18
+    1180:	3f 93       	push	r19
+    1182:	4f 93       	push	r20
+    1184:	5f 93       	push	r21
+    1186:	6f 93       	push	r22
+    1188:	7f 93       	push	r23
+    118a:	8f 93       	push	r24
+    118c:	9f 93       	push	r25
+    118e:	af 93       	push	r26
+    1190:	bf 93       	push	r27
+    1192:	ef 93       	push	r30
+    1194:	ff 93       	push	r31
+    1196:	cf 93       	push	r28
+    1198:	df 93       	push	r29
+    119a:	cd b7       	in	r28, 0x3d	; 61
+    119c:	de b7       	in	r29, 0x3e	; 62
+	switch(TWSR)
+    119e:	89 eb       	ldi	r24, 0xB9	; 185
+    11a0:	90 e0       	ldi	r25, 0x00	; 0
+    11a2:	fc 01       	movw	r30, r24
+    11a4:	80 81       	ld	r24, Z
+    11a6:	88 2f       	mov	r24, r24
+    11a8:	90 e0       	ldi	r25, 0x00	; 0
+    11aa:	80 3a       	cpi	r24, 0xA0	; 160
+    11ac:	91 05       	cpc	r25, r1
+    11ae:	09 f4       	brne	.+2      	; 0x11b2 <__vector_24+0x40>
+    11b0:	51 c0       	rjmp	.+162    	; 0x1254 <__vector_24+0xe2>
+    11b2:	81 3a       	cpi	r24, 0xA1	; 161
+    11b4:	91 05       	cpc	r25, r1
+    11b6:	8c f4       	brge	.+34     	; 0x11da <__vector_24+0x68>
+    11b8:	80 36       	cpi	r24, 0x60	; 96
+    11ba:	91 05       	cpc	r25, r1
+    11bc:	29 f1       	breq	.+74     	; 0x1208 <__vector_24+0x96>
+    11be:	81 36       	cpi	r24, 0x61	; 97
+    11c0:	91 05       	cpc	r25, r1
+    11c2:	24 f4       	brge	.+8      	; 0x11cc <__vector_24+0x5a>
+    11c4:	89 2b       	or	r24, r25
+    11c6:	09 f4       	brne	.+2      	; 0x11ca <__vector_24+0x58>
+    11c8:	87 c0       	rjmp	.+270    	; 0x12d8 <__vector_24+0x166>
+    11ca:	8c c0       	rjmp	.+280    	; 0x12e4 <__vector_24+0x172>
+    11cc:	88 36       	cpi	r24, 0x68	; 104
+    11ce:	91 05       	cpc	r25, r1
+    11d0:	d9 f0       	breq	.+54     	; 0x1208 <__vector_24+0x96>
+    11d2:	80 38       	cpi	r24, 0x80	; 128
+    11d4:	91 05       	cpc	r25, r1
+    11d6:	41 f1       	breq	.+80     	; 0x1228 <__vector_24+0xb6>
+    11d8:	85 c0       	rjmp	.+266    	; 0x12e4 <__vector_24+0x172>
+    11da:	88 3b       	cpi	r24, 0xB8	; 184
+    11dc:	91 05       	cpc	r25, r1
+    11de:	09 f4       	brne	.+2      	; 0x11e2 <__vector_24+0x70>
+    11e0:	59 c0       	rjmp	.+178    	; 0x1294 <__vector_24+0x122>
+    11e2:	89 3b       	cpi	r24, 0xB9	; 185
+    11e4:	91 05       	cpc	r25, r1
+    11e6:	3c f4       	brge	.+14     	; 0x11f6 <__vector_24+0x84>
+    11e8:	88 3a       	cpi	r24, 0xA8	; 168
+    11ea:	91 05       	cpc	r25, r1
+    11ec:	d9 f1       	breq	.+118    	; 0x1264 <__vector_24+0xf2>
+    11ee:	80 3b       	cpi	r24, 0xB0	; 176
+    11f0:	91 05       	cpc	r25, r1
+    11f2:	c1 f1       	breq	.+112    	; 0x1264 <__vector_24+0xf2>
+    11f4:	77 c0       	rjmp	.+238    	; 0x12e4 <__vector_24+0x172>
+    11f6:	80 3c       	cpi	r24, 0xC0	; 192
+    11f8:	91 05       	cpc	r25, r1
+    11fa:	09 f4       	brne	.+2      	; 0x11fe <__vector_24+0x8c>
+    11fc:	61 c0       	rjmp	.+194    	; 0x12c0 <__vector_24+0x14e>
+    11fe:	88 3c       	cpi	r24, 0xC8	; 200
+    1200:	91 05       	cpc	r25, r1
+    1202:	09 f4       	brne	.+2      	; 0x1206 <__vector_24+0x94>
+    1204:	63 c0       	rjmp	.+198    	; 0x12cc <__vector_24+0x15a>
+    1206:	6e c0       	rjmp	.+220    	; 0x12e4 <__vector_24+0x172>
+	{
+		case 0x68:
+		case 0x60:
+		twi_input_ptr = 0;
+    1208:	10 92 49 01 	sts	0x0149, r1	; 0x800149 <twi_input_ptr>
+		memset(twi_buffer,0,TWI_BUFFER_SIZE);
+    120c:	46 e9       	ldi	r20, 0x96	; 150
+    120e:	50 e0       	ldi	r21, 0x00	; 0
+    1210:	60 e0       	ldi	r22, 0x00	; 0
+    1212:	70 e0       	ldi	r23, 0x00	; 0
+    1214:	8a e4       	ldi	r24, 0x4A	; 74
+    1216:	91 e0       	ldi	r25, 0x01	; 1
+    1218:	0e 94 1a 0d 	call	0x1a34	; 0x1a34 <memset>
+		TWCR = (1 << TWEA)|(0 << TWSTA)|(0 << TWSTO)|(0 << TWWC)|(1 << TWEN)|(1 << TWIE)|(1 << TWINT);
+    121c:	8c eb       	ldi	r24, 0xBC	; 188
+    121e:	90 e0       	ldi	r25, 0x00	; 0
+    1220:	25 ec       	ldi	r18, 0xC5	; 197
+    1222:	fc 01       	movw	r30, r24
+    1224:	20 83       	st	Z, r18
+		return;
+    1226:	63 c0       	rjmp	.+198    	; 0x12ee <__vector_24+0x17c>
+		case 0x80:
+		*(twi_buffer + twi_input_ptr++) = TWDR;
+    1228:	80 91 49 01 	lds	r24, 0x0149	; 0x800149 <twi_input_ptr>
+    122c:	91 e0       	ldi	r25, 0x01	; 1
+    122e:	98 0f       	add	r25, r24
+    1230:	90 93 49 01 	sts	0x0149, r25	; 0x800149 <twi_input_ptr>
+    1234:	88 2f       	mov	r24, r24
+    1236:	90 e0       	ldi	r25, 0x00	; 0
+    1238:	86 5b       	subi	r24, 0xB6	; 182
+    123a:	9e 4f       	sbci	r25, 0xFE	; 254
+    123c:	2b eb       	ldi	r18, 0xBB	; 187
+    123e:	30 e0       	ldi	r19, 0x00	; 0
+    1240:	f9 01       	movw	r30, r18
+    1242:	20 81       	ld	r18, Z
+    1244:	fc 01       	movw	r30, r24
+    1246:	20 83       	st	Z, r18
+		TWCR = (1 << TWEA)|(0 << TWSTA)|(0 << TWSTO)|(0 << TWWC)|(1 << TWEN)|(1 << TWIE)|(1 << TWINT);
+    1248:	8c eb       	ldi	r24, 0xBC	; 188
+    124a:	90 e0       	ldi	r25, 0x00	; 0
+    124c:	25 ec       	ldi	r18, 0xC5	; 197
+    124e:	fc 01       	movw	r30, r24
+    1250:	20 83       	st	Z, r18
+		return;
+    1252:	4d c0       	rjmp	.+154    	; 0x12ee <__vector_24+0x17c>
+		case 0xA0:
+		twi_engine();
+    1254:	0e 94 0b 08 	call	0x1016	; 0x1016 <twi_engine>
+		TWCR = (1 << TWEA)|(0 << TWSTA)|(0 << TWSTO)|(0 << TWWC)|(1 << TWEN)|(1 << TWIE)|(1 << TWINT);
+    1258:	8c eb       	ldi	r24, 0xBC	; 188
+    125a:	90 e0       	ldi	r25, 0x00	; 0
+    125c:	25 ec       	ldi	r18, 0xC5	; 197
+    125e:	fc 01       	movw	r30, r24
+    1260:	20 83       	st	Z, r18
+		return;
+    1262:	45 c0       	rjmp	.+138    	; 0x12ee <__vector_24+0x17c>
+		case 0xA8:
+		case 0xB0:
+		twi_output_ptr = 0;
+    1264:	10 92 48 01 	sts	0x0148, r1	; 0x800148 <twi_output_ptr>
+		TWDR = *(twi_buffer + twi_output_ptr++);
+    1268:	8b eb       	ldi	r24, 0xBB	; 187
+    126a:	90 e0       	ldi	r25, 0x00	; 0
+    126c:	20 91 48 01 	lds	r18, 0x0148	; 0x800148 <twi_output_ptr>
+    1270:	31 e0       	ldi	r19, 0x01	; 1
+    1272:	32 0f       	add	r19, r18
+    1274:	30 93 48 01 	sts	0x0148, r19	; 0x800148 <twi_output_ptr>
+    1278:	22 2f       	mov	r18, r18
+    127a:	30 e0       	ldi	r19, 0x00	; 0
+    127c:	26 5b       	subi	r18, 0xB6	; 182
+    127e:	3e 4f       	sbci	r19, 0xFE	; 254
+    1280:	f9 01       	movw	r30, r18
+    1282:	20 81       	ld	r18, Z
+    1284:	fc 01       	movw	r30, r24
+    1286:	20 83       	st	Z, r18
+		TWCR = (1 << TWEA)|(0 << TWSTA)|(0 << TWSTO)|(0 << TWWC)|(1 << TWEN)|(1 << TWIE)|(1 << TWINT);
+    1288:	8c eb       	ldi	r24, 0xBC	; 188
+    128a:	90 e0       	ldi	r25, 0x00	; 0
+    128c:	25 ec       	ldi	r18, 0xC5	; 197
+    128e:	fc 01       	movw	r30, r24
+    1290:	20 83       	st	Z, r18
+		return;
+    1292:	2d c0       	rjmp	.+90     	; 0x12ee <__vector_24+0x17c>
+		case 0xB8:
+		TWDR = *(twi_buffer + twi_output_ptr++);
+    1294:	8b eb       	ldi	r24, 0xBB	; 187
+    1296:	90 e0       	ldi	r25, 0x00	; 0
+    1298:	20 91 48 01 	lds	r18, 0x0148	; 0x800148 <twi_output_ptr>
+    129c:	31 e0       	ldi	r19, 0x01	; 1
+    129e:	32 0f       	add	r19, r18
+    12a0:	30 93 48 01 	sts	0x0148, r19	; 0x800148 <twi_output_ptr>
+    12a4:	22 2f       	mov	r18, r18
+    12a6:	30 e0       	ldi	r19, 0x00	; 0
+    12a8:	26 5b       	subi	r18, 0xB6	; 182
+    12aa:	3e 4f       	sbci	r19, 0xFE	; 254
+    12ac:	f9 01       	movw	r30, r18
+    12ae:	20 81       	ld	r18, Z
+    12b0:	fc 01       	movw	r30, r24
+    12b2:	20 83       	st	Z, r18
+		TWCR = (1 << TWEA)|(0 << TWSTA)|(0 << TWSTO)|(0 << TWWC)|(1 << TWEN)|(1 << TWIE)|(1 << TWINT);
+    12b4:	8c eb       	ldi	r24, 0xBC	; 188
+    12b6:	90 e0       	ldi	r25, 0x00	; 0
+    12b8:	25 ec       	ldi	r18, 0xC5	; 197
+    12ba:	fc 01       	movw	r30, r24
+    12bc:	20 83       	st	Z, r18
+		return;
+    12be:	17 c0       	rjmp	.+46     	; 0x12ee <__vector_24+0x17c>
+		case 0xC0:
+		TWCR = (1 << TWEA)|(0 << TWSTA)|(0 << TWSTO)|(0 << TWWC)|(1 << TWEN)|(1 << TWIE)|(1 << TWINT);
+    12c0:	8c eb       	ldi	r24, 0xBC	; 188
+    12c2:	90 e0       	ldi	r25, 0x00	; 0
+    12c4:	25 ec       	ldi	r18, 0xC5	; 197
+    12c6:	fc 01       	movw	r30, r24
+    12c8:	20 83       	st	Z, r18
+		return;
+    12ca:	11 c0       	rjmp	.+34     	; 0x12ee <__vector_24+0x17c>
+		case 0xC8:
+		TWCR = (1 << TWEA)|(0 << TWSTA)|(0 << TWSTO)|(0 << TWWC)|(1 << TWEN)|(1 << TWIE)|(1 << TWINT);
+    12cc:	8c eb       	ldi	r24, 0xBC	; 188
+    12ce:	90 e0       	ldi	r25, 0x00	; 0
+    12d0:	25 ec       	ldi	r18, 0xC5	; 197
+    12d2:	fc 01       	movw	r30, r24
+    12d4:	20 83       	st	Z, r18
+		return;
+    12d6:	0b c0       	rjmp	.+22     	; 0x12ee <__vector_24+0x17c>
+		case 0x00:
+		TWCR = (1 << TWEA)|(0 << TWSTA)|(1 << TWSTO)|(0 << TWWC)|(1 << TWEN)|(1 << TWIE)|(1 << TWINT);
+    12d8:	8c eb       	ldi	r24, 0xBC	; 188
+    12da:	90 e0       	ldi	r25, 0x00	; 0
+    12dc:	25 ed       	ldi	r18, 0xD5	; 213
+    12de:	fc 01       	movw	r30, r24
+    12e0:	20 83       	st	Z, r18
+		return;
+    12e2:	05 c0       	rjmp	.+10     	; 0x12ee <__vector_24+0x17c>
+		default:
+		TWCR = (1 << TWEA)|(0 << TWSTA)|(0 << TWSTO)|(0 << TWWC)|(1 << TWEN)|(1 << TWIE)|(1 << TWINT);
+    12e4:	8c eb       	ldi	r24, 0xBC	; 188
+    12e6:	90 e0       	ldi	r25, 0x00	; 0
+    12e8:	25 ec       	ldi	r18, 0xC5	; 197
+    12ea:	fc 01       	movw	r30, r24
+    12ec:	20 83       	st	Z, r18
+	}
+    12ee:	df 91       	pop	r29
+    12f0:	cf 91       	pop	r28
+    12f2:	ff 91       	pop	r31
+    12f4:	ef 91       	pop	r30
+    12f6:	bf 91       	pop	r27
+    12f8:	af 91       	pop	r26
+    12fa:	9f 91       	pop	r25
+    12fc:	8f 91       	pop	r24
+    12fe:	7f 91       	pop	r23
+    1300:	6f 91       	pop	r22
+    1302:	5f 91       	pop	r21
+    1304:	4f 91       	pop	r20
+    1306:	3f 91       	pop	r19
+    1308:	2f 91       	pop	r18
+    130a:	0f 90       	pop	r0
+    130c:	00 92 5f 00 	sts	0x005F, r0	; 0x80005f <__TEXT_REGION_LENGTH__+0x7fc05f>
+    1310:	0f 90       	pop	r0
+    1312:	1f 90       	pop	r1
+    1314:	18 95       	reti
+
+00001316 <init_lift_pwm>:
+	return LiftStructure.state;
+}
+
+tLiftStructure get_lift_structure(){
+	return LiftStructure;
+}
+    1316:	cf 93       	push	r28
+    1318:	df 93       	push	r29
+    131a:	cd b7       	in	r28, 0x3d	; 61
+    131c:	de b7       	in	r29, 0x3e	; 62
+    131e:	80 e8       	ldi	r24, 0x80	; 128
+    1320:	90 e0       	ldi	r25, 0x00	; 0
+    1322:	20 e8       	ldi	r18, 0x80	; 128
+    1324:	30 e0       	ldi	r19, 0x00	; 0
+    1326:	f9 01       	movw	r30, r18
+    1328:	20 81       	ld	r18, Z
+    132a:	23 6c       	ori	r18, 0xC3	; 195
+    132c:	fc 01       	movw	r30, r24
+    132e:	20 83       	st	Z, r18
+    1330:	81 e8       	ldi	r24, 0x81	; 129
+    1332:	90 e0       	ldi	r25, 0x00	; 0
+    1334:	21 e8       	ldi	r18, 0x81	; 129
+    1336:	30 e0       	ldi	r19, 0x00	; 0
+    1338:	f9 01       	movw	r30, r18
+    133a:	20 81       	ld	r18, Z
+    133c:	23 60       	ori	r18, 0x03	; 3
+    133e:	fc 01       	movw	r30, r24
+    1340:	20 83       	st	Z, r18
+    1342:	88 e8       	ldi	r24, 0x88	; 136
+    1344:	90 e0       	ldi	r25, 0x00	; 0
+    1346:	fc 01       	movw	r30, r24
+    1348:	11 82       	std	Z+1, r1	; 0x01
+    134a:	10 82       	st	Z, r1
+    134c:	00 00       	nop
+    134e:	df 91       	pop	r29
+    1350:	cf 91       	pop	r28
+    1352:	08 95       	ret
+
+00001354 <get_lift_position>:
+    1354:	cf 93       	push	r28
+    1356:	df 93       	push	r29
+    1358:	cd b7       	in	r28, 0x3d	; 61
+    135a:	de b7       	in	r29, 0x3e	; 62
+    135c:	86 e2       	ldi	r24, 0x26	; 38
+    135e:	90 e0       	ldi	r25, 0x00	; 0
+    1360:	fc 01       	movw	r30, r24
+    1362:	80 81       	ld	r24, Z
+    1364:	88 2f       	mov	r24, r24
+    1366:	90 e0       	ldi	r25, 0x00	; 0
+    1368:	88 70       	andi	r24, 0x08	; 8
+    136a:	99 27       	eor	r25, r25
+    136c:	89 2b       	or	r24, r25
+    136e:	11 f0       	breq	.+4      	; 0x1374 <get_lift_position+0x20>
+    1370:	80 e0       	ldi	r24, 0x00	; 0
+    1372:	01 c0       	rjmp	.+2      	; 0x1376 <get_lift_position+0x22>
+    1374:	81 e0       	ldi	r24, 0x01	; 1
+    1376:	df 91       	pop	r29
+    1378:	cf 91       	pop	r28
+    137a:	08 95       	ret
+
+0000137c <init_lift>:
+    137c:	cf 93       	push	r28
+    137e:	df 93       	push	r29
+    1380:	cd b7       	in	r28, 0x3d	; 61
+    1382:	de b7       	in	r29, 0x3e	; 62
+    1384:	0e 94 8b 09 	call	0x1316	; 0x1316 <init_lift_pwm>
+    1388:	0e 94 aa 09 	call	0x1354	; 0x1354 <get_lift_position>
+    138c:	80 93 78 02 	sts	0x0278, r24	; 0x800278 <LiftStructure+0x2>
+    1390:	80 91 78 02 	lds	r24, 0x0278	; 0x800278 <LiftStructure+0x2>
+    1394:	80 93 79 02 	sts	0x0279, r24	; 0x800279 <LiftStructure+0x3>
+    1398:	10 92 7a 02 	sts	0x027A, r1	; 0x80027a <LiftStructure+0x4>
+    139c:	10 92 7c 02 	sts	0x027C, r1	; 0x80027c <LiftStructure+0x6>
+    13a0:	10 92 7b 02 	sts	0x027B, r1	; 0x80027b <LiftStructure+0x5>
+    13a4:	10 92 76 02 	sts	0x0276, r1	; 0x800276 <LiftStructure>
+    13a8:	10 92 77 02 	sts	0x0277, r1	; 0x800277 <LiftStructure+0x1>
+    13ac:	10 92 7d 02 	sts	0x027D, r1	; 0x80027d <LiftStructure+0x7>
+    13b0:	00 00       	nop
+    13b2:	df 91       	pop	r29
+    13b4:	cf 91       	pop	r28
+    13b6:	08 95       	ret
+
+000013b8 <autotest_lift>:
+    13b8:	cf 93       	push	r28
+    13ba:	df 93       	push	r29
+    13bc:	cd b7       	in	r28, 0x3d	; 61
+    13be:	de b7       	in	r29, 0x3e	; 62
+    13c0:	10 92 7a 02 	sts	0x027A, r1	; 0x80027a <LiftStructure+0x4>
+    13c4:	10 92 7c 02 	sts	0x027C, r1	; 0x80027c <LiftStructure+0x6>
+    13c8:	10 92 7b 02 	sts	0x027B, r1	; 0x80027b <LiftStructure+0x5>
+    13cc:	10 92 76 02 	sts	0x0276, r1	; 0x800276 <LiftStructure>
+    13d0:	10 92 77 02 	sts	0x0277, r1	; 0x800277 <LiftStructure+0x1>
+    13d4:	81 e0       	ldi	r24, 0x01	; 1
+    13d6:	80 93 7d 02 	sts	0x027D, r24	; 0x80027d <LiftStructure+0x7>
+    13da:	00 00       	nop
+    13dc:	df 91       	pop	r29
+    13de:	cf 91       	pop	r28
+    13e0:	08 95       	ret
+
+000013e2 <set_new_lift_position>:
+    13e2:	cf 93       	push	r28
+    13e4:	df 93       	push	r29
+    13e6:	1f 92       	push	r1
+    13e8:	cd b7       	in	r28, 0x3d	; 61
+    13ea:	de b7       	in	r29, 0x3e	; 62
+    13ec:	89 83       	std	Y+1, r24	; 0x01
+    13ee:	0e 94 a1 0b 	call	0x1742	; 0x1742 <check_lift_bussy>
+    13f2:	88 23       	and	r24, r24
+    13f4:	51 f4       	brne	.+20     	; 0x140a <set_new_lift_position+0x28>
+    13f6:	89 81       	ldd	r24, Y+1	; 0x01
+    13f8:	80 93 79 02 	sts	0x0279, r24	; 0x800279 <LiftStructure+0x3>
+    13fc:	81 e0       	ldi	r24, 0x01	; 1
+    13fe:	80 93 7a 02 	sts	0x027A, r24	; 0x80027a <LiftStructure+0x4>
+    1402:	81 e0       	ldi	r24, 0x01	; 1
+    1404:	80 93 7d 02 	sts	0x027D, r24	; 0x80027d <LiftStructure+0x7>
+    1408:	01 c0       	rjmp	.+2      	; 0x140c <set_new_lift_position+0x2a>
+    140a:	00 00       	nop
+    140c:	0f 90       	pop	r0
+    140e:	df 91       	pop	r29
+    1410:	cf 91       	pop	r28
+    1412:	08 95       	ret
+
+00001414 <lift_isr_routine>:
+    1414:	cf 93       	push	r28
+    1416:	df 93       	push	r29
+    1418:	cd b7       	in	r28, 0x3d	; 61
+    141a:	de b7       	in	r29, 0x3e	; 62
+    141c:	80 91 7d 02 	lds	r24, 0x027D	; 0x80027d <LiftStructure+0x7>
+    1420:	88 2f       	mov	r24, r24
+    1422:	90 e0       	ldi	r25, 0x00	; 0
+    1424:	09 2e       	mov	r0, r25
+    1426:	00 0c       	add	r0, r0
+    1428:	aa 0b       	sbc	r26, r26
+    142a:	bb 0b       	sbc	r27, r27
+    142c:	40 e0       	ldi	r20, 0x00	; 0
+    142e:	50 e0       	ldi	r21, 0x00	; 0
+    1430:	26 e0       	ldi	r18, 0x06	; 6
+    1432:	30 e0       	ldi	r19, 0x00	; 0
+    1434:	84 1b       	sub	r24, r20
+    1436:	95 0b       	sbc	r25, r21
+    1438:	28 17       	cp	r18, r24
+    143a:	39 07       	cpc	r19, r25
+    143c:	08 f4       	brcc	.+2      	; 0x1440 <lift_isr_routine+0x2c>
+    143e:	64 c1       	rjmp	.+712    	; 0x1708 <lift_isr_routine+0x2f4>
+    1440:	83 5c       	subi	r24, 0xC3	; 195
+    1442:	9f 4f       	sbci	r25, 0xFF	; 255
+    1444:	fc 01       	movw	r30, r24
+    1446:	0c 94 0b 0d 	jmp	0x1a16	; 0x1a16 <__tablejump2__>
+    144a:	80 91 77 02 	lds	r24, 0x0277	; 0x800277 <LiftStructure+0x1>
+    144e:	86 30       	cpi	r24, 0x06	; 6
+    1450:	51 f4       	brne	.+20     	; 0x1466 <lift_isr_routine+0x52>
+    1452:	80 ed       	ldi	r24, 0xD0	; 208
+    1454:	97 e0       	ldi	r25, 0x07	; 7
+    1456:	90 93 7c 02 	sts	0x027C, r25	; 0x80027c <LiftStructure+0x6>
+    145a:	80 93 7b 02 	sts	0x027B, r24	; 0x80027b <LiftStructure+0x5>
+    145e:	82 e0       	ldi	r24, 0x02	; 2
+    1460:	80 93 7d 02 	sts	0x027D, r24	; 0x80027d <LiftStructure+0x7>
+    1464:	4a c1       	rjmp	.+660    	; 0x16fa <lift_isr_routine+0x2e6>
+    1466:	80 91 77 02 	lds	r24, 0x0277	; 0x800277 <LiftStructure+0x1>
+    146a:	86 30       	cpi	r24, 0x06	; 6
+    146c:	29 f4       	brne	.+10     	; 0x1478 <lift_isr_routine+0x64>
+    146e:	80 91 77 02 	lds	r24, 0x0277	; 0x800277 <LiftStructure+0x1>
+    1472:	87 30       	cpi	r24, 0x07	; 7
+    1474:	09 f4       	brne	.+2      	; 0x1478 <lift_isr_routine+0x64>
+    1476:	41 c1       	rjmp	.+642    	; 0x16fa <lift_isr_routine+0x2e6>
+    1478:	80 91 77 02 	lds	r24, 0x0277	; 0x800277 <LiftStructure+0x1>
+    147c:	88 2f       	mov	r24, r24
+    147e:	90 e0       	ldi	r25, 0x00	; 0
+    1480:	82 30       	cpi	r24, 0x02	; 2
+    1482:	91 05       	cpc	r25, r1
+    1484:	a1 f1       	breq	.+104    	; 0x14ee <lift_isr_routine+0xda>
+    1486:	83 30       	cpi	r24, 0x03	; 3
+    1488:	91 05       	cpc	r25, r1
+    148a:	2c f4       	brge	.+10     	; 0x1496 <lift_isr_routine+0x82>
+    148c:	00 97       	sbiw	r24, 0x00	; 0
+    148e:	79 f0       	breq	.+30     	; 0x14ae <lift_isr_routine+0x9a>
+    1490:	01 97       	sbiw	r24, 0x01	; 1
+    1492:	e1 f0       	breq	.+56     	; 0x14cc <lift_isr_routine+0xb8>
+    1494:	32 c1       	rjmp	.+612    	; 0x16fa <lift_isr_routine+0x2e6>
+    1496:	84 30       	cpi	r24, 0x04	; 4
+    1498:	91 05       	cpc	r25, r1
+    149a:	09 f4       	brne	.+2      	; 0x149e <lift_isr_routine+0x8a>
+    149c:	66 c0       	rjmp	.+204    	; 0x156a <lift_isr_routine+0x156>
+    149e:	84 30       	cpi	r24, 0x04	; 4
+    14a0:	91 05       	cpc	r25, r1
+    14a2:	0c f4       	brge	.+2      	; 0x14a6 <lift_isr_routine+0x92>
+    14a4:	4d c0       	rjmp	.+154    	; 0x1540 <lift_isr_routine+0x12c>
+    14a6:	05 97       	sbiw	r24, 0x05	; 5
+    14a8:	09 f4       	brne	.+2      	; 0x14ac <lift_isr_routine+0x98>
+    14aa:	6f c0       	rjmp	.+222    	; 0x158a <lift_isr_routine+0x176>
+    14ac:	26 c1       	rjmp	.+588    	; 0x16fa <lift_isr_routine+0x2e6>
+    14ae:	81 e0       	ldi	r24, 0x01	; 1
+    14b0:	80 93 79 02 	sts	0x0279, r24	; 0x800279 <LiftStructure+0x3>
+    14b4:	8a ef       	ldi	r24, 0xFA	; 250
+    14b6:	90 e0       	ldi	r25, 0x00	; 0
+    14b8:	90 93 7c 02 	sts	0x027C, r25	; 0x80027c <LiftStructure+0x6>
+    14bc:	80 93 7b 02 	sts	0x027B, r24	; 0x80027b <LiftStructure+0x5>
+    14c0:	81 e0       	ldi	r24, 0x01	; 1
+    14c2:	80 93 77 02 	sts	0x0277, r24	; 0x800277 <LiftStructure+0x1>
+    14c6:	0e 94 f7 0b 	call	0x17ee	; 0x17ee <set_lift_position_up>
+    14ca:	89 c0       	rjmp	.+274    	; 0x15de <lift_isr_routine+0x1ca>
+    14cc:	80 91 7b 02 	lds	r24, 0x027B	; 0x80027b <LiftStructure+0x5>
+    14d0:	90 91 7c 02 	lds	r25, 0x027C	; 0x80027c <LiftStructure+0x6>
+    14d4:	89 2b       	or	r24, r25
+    14d6:	09 f0       	breq	.+2      	; 0x14da <lift_isr_routine+0xc6>
+    14d8:	79 c0       	rjmp	.+242    	; 0x15cc <lift_isr_routine+0x1b8>
+    14da:	80 ed       	ldi	r24, 0xD0	; 208
+    14dc:	97 e0       	ldi	r25, 0x07	; 7
+    14de:	90 93 7c 02 	sts	0x027C, r25	; 0x80027c <LiftStructure+0x6>
+    14e2:	80 93 7b 02 	sts	0x027B, r24	; 0x80027b <LiftStructure+0x5>
+    14e6:	82 e0       	ldi	r24, 0x02	; 2
+    14e8:	80 93 77 02 	sts	0x0277, r24	; 0x800277 <LiftStructure+0x1>
+    14ec:	6f c0       	rjmp	.+222    	; 0x15cc <lift_isr_routine+0x1b8>
+    14ee:	80 91 7b 02 	lds	r24, 0x027B	; 0x80027b <LiftStructure+0x5>
+    14f2:	90 91 7c 02 	lds	r25, 0x027C	; 0x80027c <LiftStructure+0x6>
+    14f6:	89 2b       	or	r24, r25
+    14f8:	49 f4       	brne	.+18     	; 0x150c <lift_isr_routine+0xf8>
+    14fa:	87 e0       	ldi	r24, 0x07	; 7
+    14fc:	80 93 77 02 	sts	0x0277, r24	; 0x800277 <LiftStructure+0x1>
+    1500:	86 e0       	ldi	r24, 0x06	; 6
+    1502:	80 93 7d 02 	sts	0x027D, r24	; 0x80027d <LiftStructure+0x7>
+    1506:	0e 94 e1 0b 	call	0x17c2	; 0x17c2 <disable_lift>
+    150a:	69 c0       	rjmp	.+210    	; 0x15de <lift_isr_routine+0x1ca>
+    150c:	0e 94 aa 09 	call	0x1354	; 0x1354 <get_lift_position>
+    1510:	80 93 78 02 	sts	0x0278, r24	; 0x800278 <LiftStructure+0x2>
+    1514:	90 91 78 02 	lds	r25, 0x0278	; 0x800278 <LiftStructure+0x2>
+    1518:	80 91 79 02 	lds	r24, 0x0279	; 0x800279 <LiftStructure+0x3>
+    151c:	98 17       	cp	r25, r24
+    151e:	09 f0       	breq	.+2      	; 0x1522 <lift_isr_routine+0x10e>
+    1520:	57 c0       	rjmp	.+174    	; 0x15d0 <lift_isr_routine+0x1bc>
+    1522:	80 91 78 02 	lds	r24, 0x0278	; 0x800278 <LiftStructure+0x2>
+    1526:	81 30       	cpi	r24, 0x01	; 1
+    1528:	09 f0       	breq	.+2      	; 0x152c <lift_isr_routine+0x118>
+    152a:	52 c0       	rjmp	.+164    	; 0x15d0 <lift_isr_routine+0x1bc>
+    152c:	80 ed       	ldi	r24, 0xD0	; 208
+    152e:	97 e0       	ldi	r25, 0x07	; 7
+    1530:	90 93 7c 02 	sts	0x027C, r25	; 0x80027c <LiftStructure+0x6>
+    1534:	80 93 7b 02 	sts	0x027B, r24	; 0x80027b <LiftStructure+0x5>
+    1538:	83 e0       	ldi	r24, 0x03	; 3
+    153a:	80 93 77 02 	sts	0x0277, r24	; 0x800277 <LiftStructure+0x1>
+    153e:	4f c0       	rjmp	.+158    	; 0x15de <lift_isr_routine+0x1ca>
+    1540:	80 91 7b 02 	lds	r24, 0x027B	; 0x80027b <LiftStructure+0x5>
+    1544:	90 91 7c 02 	lds	r25, 0x027C	; 0x80027c <LiftStructure+0x6>
+    1548:	89 2b       	or	r24, r25
+    154a:	09 f0       	breq	.+2      	; 0x154e <lift_isr_routine+0x13a>
+    154c:	43 c0       	rjmp	.+134    	; 0x15d4 <lift_isr_routine+0x1c0>
+    154e:	8a ef       	ldi	r24, 0xFA	; 250
+    1550:	90 e0       	ldi	r25, 0x00	; 0
+    1552:	90 93 7c 02 	sts	0x027C, r25	; 0x80027c <LiftStructure+0x6>
+    1556:	80 93 7b 02 	sts	0x027B, r24	; 0x80027b <LiftStructure+0x5>
+    155a:	84 e0       	ldi	r24, 0x04	; 4
+    155c:	80 93 77 02 	sts	0x0277, r24	; 0x800277 <LiftStructure+0x1>
+    1560:	10 92 79 02 	sts	0x0279, r1	; 0x800279 <LiftStructure+0x3>
+    1564:	0e 94 0f 0c 	call	0x181e	; 0x181e <set_lift_position_down>
+    1568:	35 c0       	rjmp	.+106    	; 0x15d4 <lift_isr_routine+0x1c0>
+    156a:	80 91 7b 02 	lds	r24, 0x027B	; 0x80027b <LiftStructure+0x5>
+    156e:	90 91 7c 02 	lds	r25, 0x027C	; 0x80027c <LiftStructure+0x6>
+    1572:	89 2b       	or	r24, r25
+    1574:	89 f5       	brne	.+98     	; 0x15d8 <lift_isr_routine+0x1c4>
+    1576:	80 ed       	ldi	r24, 0xD0	; 208
+    1578:	97 e0       	ldi	r25, 0x07	; 7
+    157a:	90 93 7c 02 	sts	0x027C, r25	; 0x80027c <LiftStructure+0x6>
+    157e:	80 93 7b 02 	sts	0x027B, r24	; 0x80027b <LiftStructure+0x5>
+    1582:	85 e0       	ldi	r24, 0x05	; 5
+    1584:	80 93 77 02 	sts	0x0277, r24	; 0x800277 <LiftStructure+0x1>
+    1588:	27 c0       	rjmp	.+78     	; 0x15d8 <lift_isr_routine+0x1c4>
+    158a:	80 91 7b 02 	lds	r24, 0x027B	; 0x80027b <LiftStructure+0x5>
+    158e:	90 91 7c 02 	lds	r25, 0x027C	; 0x80027c <LiftStructure+0x6>
+    1592:	89 2b       	or	r24, r25
+    1594:	49 f4       	brne	.+18     	; 0x15a8 <lift_isr_routine+0x194>
+    1596:	87 e0       	ldi	r24, 0x07	; 7
+    1598:	80 93 77 02 	sts	0x0277, r24	; 0x800277 <LiftStructure+0x1>
+    159c:	86 e0       	ldi	r24, 0x06	; 6
+    159e:	80 93 7d 02 	sts	0x027D, r24	; 0x80027d <LiftStructure+0x7>
+    15a2:	0e 94 e1 0b 	call	0x17c2	; 0x17c2 <disable_lift>
+    15a6:	1b c0       	rjmp	.+54     	; 0x15de <lift_isr_routine+0x1ca>
+    15a8:	0e 94 aa 09 	call	0x1354	; 0x1354 <get_lift_position>
+    15ac:	80 93 78 02 	sts	0x0278, r24	; 0x800278 <LiftStructure+0x2>
+    15b0:	90 91 78 02 	lds	r25, 0x0278	; 0x800278 <LiftStructure+0x2>
+    15b4:	80 91 79 02 	lds	r24, 0x0279	; 0x800279 <LiftStructure+0x3>
+    15b8:	98 17       	cp	r25, r24
+    15ba:	81 f4       	brne	.+32     	; 0x15dc <lift_isr_routine+0x1c8>
+    15bc:	86 e0       	ldi	r24, 0x06	; 6
+    15be:	80 93 77 02 	sts	0x0277, r24	; 0x800277 <LiftStructure+0x1>
+    15c2:	10 92 7d 02 	sts	0x027D, r1	; 0x80027d <LiftStructure+0x7>
+    15c6:	0e 94 e1 0b 	call	0x17c2	; 0x17c2 <disable_lift>
+    15ca:	08 c0       	rjmp	.+16     	; 0x15dc <lift_isr_routine+0x1c8>
+    15cc:	00 00       	nop
+    15ce:	95 c0       	rjmp	.+298    	; 0x16fa <lift_isr_routine+0x2e6>
+    15d0:	00 00       	nop
+    15d2:	93 c0       	rjmp	.+294    	; 0x16fa <lift_isr_routine+0x2e6>
+    15d4:	00 00       	nop
+    15d6:	91 c0       	rjmp	.+290    	; 0x16fa <lift_isr_routine+0x2e6>
+    15d8:	00 00       	nop
+    15da:	8f c0       	rjmp	.+286    	; 0x16fa <lift_isr_routine+0x2e6>
+    15dc:	00 00       	nop
+    15de:	8d c0       	rjmp	.+282    	; 0x16fa <lift_isr_routine+0x2e6>
+    15e0:	0e 94 aa 09 	call	0x1354	; 0x1354 <get_lift_position>
+    15e4:	80 93 78 02 	sts	0x0278, r24	; 0x800278 <LiftStructure+0x2>
+    15e8:	90 91 78 02 	lds	r25, 0x0278	; 0x800278 <LiftStructure+0x2>
+    15ec:	80 91 79 02 	lds	r24, 0x0279	; 0x800279 <LiftStructure+0x3>
+    15f0:	98 17       	cp	r25, r24
+    15f2:	21 f0       	breq	.+8      	; 0x15fc <lift_isr_routine+0x1e8>
+    15f4:	83 e0       	ldi	r24, 0x03	; 3
+    15f6:	80 93 7d 02 	sts	0x027D, r24	; 0x80027d <LiftStructure+0x7>
+    15fa:	86 c0       	rjmp	.+268    	; 0x1708 <lift_isr_routine+0x2f4>
+    15fc:	80 91 79 02 	lds	r24, 0x0279	; 0x800279 <LiftStructure+0x3>
+    1600:	81 30       	cpi	r24, 0x01	; 1
+    1602:	21 f4       	brne	.+8      	; 0x160c <lift_isr_routine+0x1f8>
+    1604:	82 e0       	ldi	r24, 0x02	; 2
+    1606:	80 93 76 02 	sts	0x0276, r24	; 0x800276 <LiftStructure>
+    160a:	03 c0       	rjmp	.+6      	; 0x1612 <lift_isr_routine+0x1fe>
+    160c:	81 e0       	ldi	r24, 0x01	; 1
+    160e:	80 93 76 02 	sts	0x0276, r24	; 0x800276 <LiftStructure>
+    1612:	10 92 7a 02 	sts	0x027A, r1	; 0x80027a <LiftStructure+0x4>
+    1616:	10 92 7d 02 	sts	0x027D, r1	; 0x80027d <LiftStructure+0x7>
+    161a:	76 c0       	rjmp	.+236    	; 0x1708 <lift_isr_routine+0x2f4>
+    161c:	80 91 79 02 	lds	r24, 0x0279	; 0x800279 <LiftStructure+0x3>
+    1620:	81 30       	cpi	r24, 0x01	; 1
+    1622:	31 f4       	brne	.+12     	; 0x1630 <lift_isr_routine+0x21c>
+    1624:	0e 94 f7 0b 	call	0x17ee	; 0x17ee <set_lift_position_up>
+    1628:	85 e0       	ldi	r24, 0x05	; 5
+    162a:	80 93 7d 02 	sts	0x027D, r24	; 0x80027d <LiftStructure+0x7>
+    162e:	6c c0       	rjmp	.+216    	; 0x1708 <lift_isr_routine+0x2f4>
+    1630:	82 e3       	ldi	r24, 0x32	; 50
+    1632:	80 93 28 01 	sts	0x0128, r24	; 0x800128 <pwm.2037>
+    1636:	0e 94 d0 0b 	call	0x17a0	; 0x17a0 <set_lift_enble>
+    163a:	80 91 28 01 	lds	r24, 0x0128	; 0x800128 <pwm.2037>
+    163e:	0e 94 b3 0b 	call	0x1766	; 0x1766 <set_lift_pwm_direct>
+    1642:	8a e0       	ldi	r24, 0x0A	; 10
+    1644:	80 93 29 01 	sts	0x0129, r24	; 0x800129 <pwm_timeout.2038>
+    1648:	84 e0       	ldi	r24, 0x04	; 4
+    164a:	80 93 7d 02 	sts	0x027D, r24	; 0x80027d <LiftStructure+0x7>
+    164e:	5c c0       	rjmp	.+184    	; 0x1708 <lift_isr_routine+0x2f4>
+    1650:	80 91 29 01 	lds	r24, 0x0129	; 0x800129 <pwm_timeout.2038>
+    1654:	88 23       	and	r24, r24
+    1656:	09 f0       	breq	.+2      	; 0x165a <lift_isr_routine+0x246>
+    1658:	52 c0       	rjmp	.+164    	; 0x16fe <lift_isr_routine+0x2ea>
+    165a:	80 91 28 01 	lds	r24, 0x0128	; 0x800128 <pwm.2037>
+    165e:	91 e0       	ldi	r25, 0x01	; 1
+    1660:	98 0f       	add	r25, r24
+    1662:	90 93 28 01 	sts	0x0128, r25	; 0x800128 <pwm.2037>
+    1666:	87 38       	cpi	r24, 0x87	; 135
+    1668:	88 f4       	brcc	.+34     	; 0x168c <lift_isr_routine+0x278>
+    166a:	80 91 28 01 	lds	r24, 0x0128	; 0x800128 <pwm.2037>
+    166e:	0e 94 b3 0b 	call	0x1766	; 0x1766 <set_lift_pwm_direct>
+    1672:	84 e1       	ldi	r24, 0x14	; 20
+    1674:	80 93 29 01 	sts	0x0129, r24	; 0x800129 <pwm_timeout.2038>
+    1678:	80 91 7b 02 	lds	r24, 0x027B	; 0x80027b <LiftStructure+0x5>
+    167c:	90 91 7c 02 	lds	r25, 0x027C	; 0x80027c <LiftStructure+0x6>
+    1680:	44 96       	adiw	r24, 0x14	; 20
+    1682:	90 93 7c 02 	sts	0x027C, r25	; 0x80027c <LiftStructure+0x6>
+    1686:	80 93 7b 02 	sts	0x027B, r24	; 0x80027b <LiftStructure+0x5>
+    168a:	39 c0       	rjmp	.+114    	; 0x16fe <lift_isr_routine+0x2ea>
+    168c:	85 e0       	ldi	r24, 0x05	; 5
+    168e:	80 93 7d 02 	sts	0x027D, r24	; 0x80027d <LiftStructure+0x7>
+    1692:	35 c0       	rjmp	.+106    	; 0x16fe <lift_isr_routine+0x2ea>
+    1694:	80 91 7b 02 	lds	r24, 0x027B	; 0x80027b <LiftStructure+0x5>
+    1698:	90 91 7c 02 	lds	r25, 0x027C	; 0x80027c <LiftStructure+0x6>
+    169c:	87 3d       	cpi	r24, 0xD7	; 215
+    169e:	96 40       	sbci	r25, 0x06	; 6
+    16a0:	80 f5       	brcc	.+96     	; 0x1702 <lift_isr_routine+0x2ee>
+    16a2:	0e 94 aa 09 	call	0x1354	; 0x1354 <get_lift_position>
+    16a6:	80 93 78 02 	sts	0x0278, r24	; 0x800278 <LiftStructure+0x2>
+    16aa:	90 91 78 02 	lds	r25, 0x0278	; 0x800278 <LiftStructure+0x2>
+    16ae:	80 91 79 02 	lds	r24, 0x0279	; 0x800279 <LiftStructure+0x3>
+    16b2:	98 17       	cp	r25, r24
+    16b4:	89 f4       	brne	.+34     	; 0x16d8 <lift_isr_routine+0x2c4>
+    16b6:	0e 94 e1 0b 	call	0x17c2	; 0x17c2 <disable_lift>
+    16ba:	80 91 79 02 	lds	r24, 0x0279	; 0x800279 <LiftStructure+0x3>
+    16be:	81 30       	cpi	r24, 0x01	; 1
+    16c0:	21 f4       	brne	.+8      	; 0x16ca <lift_isr_routine+0x2b6>
+    16c2:	82 e0       	ldi	r24, 0x02	; 2
+    16c4:	80 93 76 02 	sts	0x0276, r24	; 0x800276 <LiftStructure>
+    16c8:	03 c0       	rjmp	.+6      	; 0x16d0 <lift_isr_routine+0x2bc>
+    16ca:	81 e0       	ldi	r24, 0x01	; 1
+    16cc:	80 93 76 02 	sts	0x0276, r24	; 0x800276 <LiftStructure>
+    16d0:	10 92 7a 02 	sts	0x027A, r1	; 0x80027a <LiftStructure+0x4>
+    16d4:	10 92 7d 02 	sts	0x027D, r1	; 0x80027d <LiftStructure+0x7>
+    16d8:	80 91 7b 02 	lds	r24, 0x027B	; 0x80027b <LiftStructure+0x5>
+    16dc:	90 91 7c 02 	lds	r25, 0x027C	; 0x80027c <LiftStructure+0x6>
+    16e0:	89 2b       	or	r24, r25
+    16e2:	89 f4       	brne	.+34     	; 0x1706 <lift_isr_routine+0x2f2>
+    16e4:	0e 94 e1 0b 	call	0x17c2	; 0x17c2 <disable_lift>
+    16e8:	83 e0       	ldi	r24, 0x03	; 3
+    16ea:	80 93 76 02 	sts	0x0276, r24	; 0x800276 <LiftStructure>
+    16ee:	10 92 7a 02 	sts	0x027A, r1	; 0x80027a <LiftStructure+0x4>
+    16f2:	86 e0       	ldi	r24, 0x06	; 6
+    16f4:	80 93 7d 02 	sts	0x027D, r24	; 0x80027d <LiftStructure+0x7>
+    16f8:	06 c0       	rjmp	.+12     	; 0x1706 <lift_isr_routine+0x2f2>
+    16fa:	00 00       	nop
+    16fc:	05 c0       	rjmp	.+10     	; 0x1708 <lift_isr_routine+0x2f4>
+    16fe:	00 00       	nop
+    1700:	03 c0       	rjmp	.+6      	; 0x1708 <lift_isr_routine+0x2f4>
+    1702:	00 00       	nop
+    1704:	01 c0       	rjmp	.+2      	; 0x1708 <lift_isr_routine+0x2f4>
+    1706:	00 00       	nop
+    1708:	80 91 7b 02 	lds	r24, 0x027B	; 0x80027b <LiftStructure+0x5>
+    170c:	90 91 7c 02 	lds	r25, 0x027C	; 0x80027c <LiftStructure+0x6>
+    1710:	89 2b       	or	r24, r25
+    1712:	49 f0       	breq	.+18     	; 0x1726 <lift_isr_routine+0x312>
+    1714:	80 91 7b 02 	lds	r24, 0x027B	; 0x80027b <LiftStructure+0x5>
+    1718:	90 91 7c 02 	lds	r25, 0x027C	; 0x80027c <LiftStructure+0x6>
+    171c:	01 97       	sbiw	r24, 0x01	; 1
+    171e:	90 93 7c 02 	sts	0x027C, r25	; 0x80027c <LiftStructure+0x6>
+    1722:	80 93 7b 02 	sts	0x027B, r24	; 0x80027b <LiftStructure+0x5>
+    1726:	80 91 29 01 	lds	r24, 0x0129	; 0x800129 <pwm_timeout.2038>
+    172a:	88 23       	and	r24, r24
+    172c:	39 f0       	breq	.+14     	; 0x173c <lift_isr_routine+0x328>
+    172e:	80 91 29 01 	lds	r24, 0x0129	; 0x800129 <pwm_timeout.2038>
+    1732:	81 50       	subi	r24, 0x01	; 1
+    1734:	80 93 29 01 	sts	0x0129, r24	; 0x800129 <pwm_timeout.2038>
+    1738:	01 c0       	rjmp	.+2      	; 0x173c <lift_isr_routine+0x328>
+    173a:	00 00       	nop
+    173c:	df 91       	pop	r29
+    173e:	cf 91       	pop	r28
+    1740:	08 95       	ret
+
+00001742 <check_lift_bussy>:
+    1742:	cf 93       	push	r28
+    1744:	df 93       	push	r29
+    1746:	cd b7       	in	r28, 0x3d	; 61
+    1748:	de b7       	in	r29, 0x3e	; 62
+    174a:	80 91 7a 02 	lds	r24, 0x027A	; 0x80027a <LiftStructure+0x4>
+    174e:	df 91       	pop	r29
+    1750:	cf 91       	pop	r28
+    1752:	08 95       	ret
+
+00001754 <get_lift_state>:
+    1754:	cf 93       	push	r28
+    1756:	df 93       	push	r29
+    1758:	cd b7       	in	r28, 0x3d	; 61
+    175a:	de b7       	in	r29, 0x3e	; 62
+    175c:	80 91 76 02 	lds	r24, 0x0276	; 0x800276 <LiftStructure>
+    1760:	df 91       	pop	r29
+    1762:	cf 91       	pop	r28
+    1764:	08 95       	ret
+
+00001766 <set_lift_pwm_direct>:
+
+void set_lift_pwm_direct(uint8_t pwm){
+    1766:	cf 93       	push	r28
+    1768:	df 93       	push	r29
+    176a:	1f 92       	push	r1
+    176c:	cd b7       	in	r28, 0x3d	; 61
+    176e:	de b7       	in	r29, 0x3e	; 62
+    1770:	89 83       	std	Y+1, r24	; 0x01
+	if(pwm < 50)
+    1772:	89 81       	ldd	r24, Y+1	; 0x01
+    1774:	82 33       	cpi	r24, 0x32	; 50
+    1776:	10 f4       	brcc	.+4      	; 0x177c <set_lift_pwm_direct+0x16>
+		pwm = 50;
+    1778:	82 e3       	ldi	r24, 0x32	; 50
+    177a:	89 83       	std	Y+1, r24	; 0x01
+	if(pwm > 135)
+    177c:	89 81       	ldd	r24, Y+1	; 0x01
+    177e:	88 38       	cpi	r24, 0x88	; 136
+    1780:	10 f0       	brcs	.+4      	; 0x1786 <set_lift_pwm_direct+0x20>
+		pwm = 135;
+    1782:	87 e8       	ldi	r24, 0x87	; 135
+    1784:	89 83       	std	Y+1, r24	; 0x01
+	OCR1A = pwm;
+    1786:	88 e8       	ldi	r24, 0x88	; 136
+    1788:	90 e0       	ldi	r25, 0x00	; 0
+    178a:	29 81       	ldd	r18, Y+1	; 0x01
+    178c:	22 2f       	mov	r18, r18
+    178e:	30 e0       	ldi	r19, 0x00	; 0
+    1790:	fc 01       	movw	r30, r24
+    1792:	31 83       	std	Z+1, r19	; 0x01
+    1794:	20 83       	st	Z, r18
+}
+    1796:	00 00       	nop
+    1798:	0f 90       	pop	r0
+    179a:	df 91       	pop	r29
+    179c:	cf 91       	pop	r28
+    179e:	08 95       	ret
+
+000017a0 <set_lift_enble>:
+
+void set_lift_enble(){
+    17a0:	cf 93       	push	r28
+    17a2:	df 93       	push	r29
+    17a4:	cd b7       	in	r28, 0x3d	; 61
+    17a6:	de b7       	in	r29, 0x3e	; 62
+	PORTC |= (1 << PORT2);
+    17a8:	88 e2       	ldi	r24, 0x28	; 40
+    17aa:	90 e0       	ldi	r25, 0x00	; 0
+    17ac:	28 e2       	ldi	r18, 0x28	; 40
+    17ae:	30 e0       	ldi	r19, 0x00	; 0
+    17b0:	f9 01       	movw	r30, r18
+    17b2:	20 81       	ld	r18, Z
+    17b4:	24 60       	ori	r18, 0x04	; 4
+    17b6:	fc 01       	movw	r30, r24
+    17b8:	20 83       	st	Z, r18
+}
+    17ba:	00 00       	nop
+    17bc:	df 91       	pop	r29
+    17be:	cf 91       	pop	r28
+    17c0:	08 95       	ret
+
+000017c2 <disable_lift>:
+
+void disable_lift(){
+    17c2:	cf 93       	push	r28
+    17c4:	df 93       	push	r29
+    17c6:	cd b7       	in	r28, 0x3d	; 61
+    17c8:	de b7       	in	r29, 0x3e	; 62
+	OCR1A = 0;
+    17ca:	88 e8       	ldi	r24, 0x88	; 136
+    17cc:	90 e0       	ldi	r25, 0x00	; 0
+    17ce:	fc 01       	movw	r30, r24
+    17d0:	11 82       	std	Z+1, r1	; 0x01
+    17d2:	10 82       	st	Z, r1
+	PORTC &= ~(1 << PORT2);											// lift enable pwm pin off
+    17d4:	88 e2       	ldi	r24, 0x28	; 40
+    17d6:	90 e0       	ldi	r25, 0x00	; 0
+    17d8:	28 e2       	ldi	r18, 0x28	; 40
+    17da:	30 e0       	ldi	r19, 0x00	; 0
+    17dc:	f9 01       	movw	r30, r18
+    17de:	20 81       	ld	r18, Z
+    17e0:	2b 7f       	andi	r18, 0xFB	; 251
+    17e2:	fc 01       	movw	r30, r24
+    17e4:	20 83       	st	Z, r18
+}
+    17e6:	00 00       	nop
+    17e8:	df 91       	pop	r29
+    17ea:	cf 91       	pop	r28
+    17ec:	08 95       	ret
+
+000017ee <set_lift_position_up>:
+
+#ifdef FUTABA_S3003
+void set_lift_position_up(){
+    17ee:	cf 93       	push	r28
+    17f0:	df 93       	push	r29
+    17f2:	cd b7       	in	r28, 0x3d	; 61
+    17f4:	de b7       	in	r29, 0x3e	; 62
+	OCR1A = 50;
+    17f6:	88 e8       	ldi	r24, 0x88	; 136
+    17f8:	90 e0       	ldi	r25, 0x00	; 0
+    17fa:	22 e3       	ldi	r18, 0x32	; 50
+    17fc:	30 e0       	ldi	r19, 0x00	; 0
+    17fe:	fc 01       	movw	r30, r24
+    1800:	31 83       	std	Z+1, r19	; 0x01
+    1802:	20 83       	st	Z, r18
+	PORTC |= (1 << PORT2);											// lift enable pwm pin on
+    1804:	88 e2       	ldi	r24, 0x28	; 40
+    1806:	90 e0       	ldi	r25, 0x00	; 0
+    1808:	28 e2       	ldi	r18, 0x28	; 40
+    180a:	30 e0       	ldi	r19, 0x00	; 0
+    180c:	f9 01       	movw	r30, r18
+    180e:	20 81       	ld	r18, Z
+    1810:	24 60       	ori	r18, 0x04	; 4
+    1812:	fc 01       	movw	r30, r24
+    1814:	20 83       	st	Z, r18
+}
+    1816:	00 00       	nop
+    1818:	df 91       	pop	r29
+    181a:	cf 91       	pop	r28
+    181c:	08 95       	ret
+
+0000181e <set_lift_position_down>:
+	PORTC |= (1 << PORT2);											// lift enable pwm pin on
+}
+#endif
+
+#ifdef FUTABA_S3003
+void set_lift_position_down(){
+    181e:	cf 93       	push	r28
+    1820:	df 93       	push	r29
+    1822:	cd b7       	in	r28, 0x3d	; 61
+    1824:	de b7       	in	r29, 0x3e	; 62
+	OCR1A = 135;
+    1826:	88 e8       	ldi	r24, 0x88	; 136
+    1828:	90 e0       	ldi	r25, 0x00	; 0
+    182a:	27 e8       	ldi	r18, 0x87	; 135
+    182c:	30 e0       	ldi	r19, 0x00	; 0
+    182e:	fc 01       	movw	r30, r24
+    1830:	31 83       	std	Z+1, r19	; 0x01
+    1832:	20 83       	st	Z, r18
+	PORTC |= (1 << PORT2);											// lift enable pwm pin on
+    1834:	88 e2       	ldi	r24, 0x28	; 40
+    1836:	90 e0       	ldi	r25, 0x00	; 0
+    1838:	28 e2       	ldi	r18, 0x28	; 40
+    183a:	30 e0       	ldi	r19, 0x00	; 0
+    183c:	f9 01       	movw	r30, r18
+    183e:	20 81       	ld	r18, Z
+    1840:	24 60       	ori	r18, 0x04	; 4
+    1842:	fc 01       	movw	r30, r24
+    1844:	20 83       	st	Z, r18
+}
+    1846:	00 00       	nop
+    1848:	df 91       	pop	r29
+    184a:	cf 91       	pop	r28
+    184c:	08 95       	ret
+
+0000184e <main>:
+
+#include "includes.h"
+
+static void init_clock();
+
+int main(void){
+    184e:	cf 93       	push	r28
+    1850:	df 93       	push	r29
+    1852:	cd b7       	in	r28, 0x3d	; 61
+    1854:	de b7       	in	r29, 0x3e	; 62
+	init_clock();
+    1856:	0e 94 43 0c 	call	0x1886	; 0x1886 <init_clock>
+	init_gpio();
+    185a:	0e 94 ca 06 	call	0xd94	; 0xd94 <init_gpio>
+	init_lift();
+    185e:	0e 94 be 09 	call	0x137c	; 0x137c <init_lift>
+	init_cell();
+    1862:	0e 94 63 00 	call	0xc6	; 0xc6 <init_cell>
+	init_disk();
+    1866:	0e 94 1d 01 	call	0x23a	; 0x23a <init_disk>
+	init_timers();
+    186a:	0e 94 58 0c 	call	0x18b0	; 0x18b0 <init_timers>
+	init_twi();
+    186e:	0e 94 6b 07 	call	0xed6	; 0xed6 <init_twi>
+	sei();
+    1872:	78 94       	sei
+	cell_update_control_values(true, 100);
+    1874:	64 e6       	ldi	r22, 0x64	; 100
+    1876:	81 e0       	ldi	r24, 0x01	; 1
+    1878:	0e 94 6f 00 	call	0xde	; 0xde <cell_update_control_values>
+	autotest_lift();
+    187c:	0e 94 dc 09 	call	0x13b8	; 0x13b8 <autotest_lift>
+	init_disk_power_on_value();
+    1880:	0e 94 53 01 	call	0x2a6	; 0x2a6 <init_disk_power_on_value>
+
+	while (true){
+	}
+    1884:	ff cf       	rjmp	.-2      	; 0x1884 <main+0x36>
+
+00001886 <init_clock>:
+}
+
+void init_clock(){
+    1886:	cf 93       	push	r28
+    1888:	df 93       	push	r29
+    188a:	cd b7       	in	r28, 0x3d	; 61
+    188c:	de b7       	in	r29, 0x3e	; 62
+	MCUCR = 0;
+    188e:	85 e5       	ldi	r24, 0x55	; 85
+    1890:	90 e0       	ldi	r25, 0x00	; 0
+    1892:	fc 01       	movw	r30, r24
+    1894:	10 82       	st	Z, r1
+	CLKPR=(1<<CLKPCE);
+    1896:	81 e6       	ldi	r24, 0x61	; 97
+    1898:	90 e0       	ldi	r25, 0x00	; 0
+    189a:	20 e8       	ldi	r18, 0x80	; 128
+    189c:	fc 01       	movw	r30, r24
+    189e:	20 83       	st	Z, r18
+	CLKPR=(0<<CLKPCE) | (0<<CLKPS3) | (0<<CLKPS2) | (0<<CLKPS1) | (0<<CLKPS0);
+    18a0:	81 e6       	ldi	r24, 0x61	; 97
+    18a2:	90 e0       	ldi	r25, 0x00	; 0
+    18a4:	fc 01       	movw	r30, r24
+    18a6:	10 82       	st	Z, r1
+}
+    18a8:	00 00       	nop
+    18aa:	df 91       	pop	r29
+    18ac:	cf 91       	pop	r28
+    18ae:	08 95       	ret
+
+000018b0 <init_timers>:
+ {
+	m_delay = t;
+	while(true)
+		if(m_delay == 0)
+			return;
+ }
+    18b0:	cf 93       	push	r28
+    18b2:	df 93       	push	r29
+    18b4:	cd b7       	in	r28, 0x3d	; 61
+    18b6:	de b7       	in	r29, 0x3e	; 62
+    18b8:	84 e4       	ldi	r24, 0x44	; 68
+    18ba:	90 e0       	ldi	r25, 0x00	; 0
+    18bc:	22 e0       	ldi	r18, 0x02	; 2
+    18be:	fc 01       	movw	r30, r24
+    18c0:	20 83       	st	Z, r18
+    18c2:	85 e4       	ldi	r24, 0x45	; 69
+    18c4:	90 e0       	ldi	r25, 0x00	; 0
+    18c6:	23 e0       	ldi	r18, 0x03	; 3
+    18c8:	fc 01       	movw	r30, r24
+    18ca:	20 83       	st	Z, r18
+    18cc:	87 e4       	ldi	r24, 0x47	; 71
+    18ce:	90 e0       	ldi	r25, 0x00	; 0
+    18d0:	2c e7       	ldi	r18, 0x7C	; 124
+    18d2:	fc 01       	movw	r30, r24
+    18d4:	20 83       	st	Z, r18
+    18d6:	8e e6       	ldi	r24, 0x6E	; 110
+    18d8:	90 e0       	ldi	r25, 0x00	; 0
+    18da:	22 e0       	ldi	r18, 0x02	; 2
+    18dc:	fc 01       	movw	r30, r24
+    18de:	20 83       	st	Z, r18
+    18e0:	80 eb       	ldi	r24, 0xB0	; 176
+    18e2:	90 e0       	ldi	r25, 0x00	; 0
+    18e4:	22 e0       	ldi	r18, 0x02	; 2
+    18e6:	fc 01       	movw	r30, r24
+    18e8:	20 83       	st	Z, r18
+    18ea:	81 eb       	ldi	r24, 0xB1	; 177
+    18ec:	90 e0       	ldi	r25, 0x00	; 0
+    18ee:	22 e0       	ldi	r18, 0x02	; 2
+    18f0:	fc 01       	movw	r30, r24
+    18f2:	20 83       	st	Z, r18
+    18f4:	83 eb       	ldi	r24, 0xB3	; 179
+    18f6:	90 e0       	ldi	r25, 0x00	; 0
+    18f8:	20 e5       	ldi	r18, 0x50	; 80
+    18fa:	fc 01       	movw	r30, r24
+    18fc:	20 83       	st	Z, r18
+    18fe:	80 e7       	ldi	r24, 0x70	; 112
+    1900:	90 e0       	ldi	r25, 0x00	; 0
+    1902:	22 e0       	ldi	r18, 0x02	; 2
+    1904:	fc 01       	movw	r30, r24
+    1906:	20 83       	st	Z, r18
+    1908:	00 00       	nop
+    190a:	df 91       	pop	r29
+    190c:	cf 91       	pop	r28
+    190e:	08 95       	ret
+
+00001910 <__vector_14>:
+    1910:	1f 92       	push	r1
+    1912:	0f 92       	push	r0
+    1914:	00 90 5f 00 	lds	r0, 0x005F	; 0x80005f <__TEXT_REGION_LENGTH__+0x7fc05f>
+    1918:	0f 92       	push	r0
+    191a:	11 24       	eor	r1, r1
+    191c:	2f 93       	push	r18
+    191e:	3f 93       	push	r19
+    1920:	4f 93       	push	r20
+    1922:	5f 93       	push	r21
+    1924:	6f 93       	push	r22
+    1926:	7f 93       	push	r23
+    1928:	8f 93       	push	r24
+    192a:	9f 93       	push	r25
+    192c:	af 93       	push	r26
+    192e:	bf 93       	push	r27
+    1930:	ef 93       	push	r30
+    1932:	ff 93       	push	r31
+    1934:	cf 93       	push	r28
+    1936:	df 93       	push	r29
+    1938:	cd b7       	in	r28, 0x3d	; 61
+    193a:	de b7       	in	r29, 0x3e	; 62
+    193c:	80 91 2a 01 	lds	r24, 0x012A	; 0x80012a <m_delay>
+    1940:	90 91 2b 01 	lds	r25, 0x012B	; 0x80012b <m_delay+0x1>
+    1944:	a0 91 2c 01 	lds	r26, 0x012C	; 0x80012c <m_delay+0x2>
+    1948:	b0 91 2d 01 	lds	r27, 0x012D	; 0x80012d <m_delay+0x3>
+    194c:	89 2b       	or	r24, r25
+    194e:	8a 2b       	or	r24, r26
+    1950:	8b 2b       	or	r24, r27
+    1952:	99 f0       	breq	.+38     	; 0x197a <__vector_14+0x6a>
+    1954:	80 91 2a 01 	lds	r24, 0x012A	; 0x80012a <m_delay>
+    1958:	90 91 2b 01 	lds	r25, 0x012B	; 0x80012b <m_delay+0x1>
+    195c:	a0 91 2c 01 	lds	r26, 0x012C	; 0x80012c <m_delay+0x2>
+    1960:	b0 91 2d 01 	lds	r27, 0x012D	; 0x80012d <m_delay+0x3>
+    1964:	01 97       	sbiw	r24, 0x01	; 1
+    1966:	a1 09       	sbc	r26, r1
+    1968:	b1 09       	sbc	r27, r1
+    196a:	80 93 2a 01 	sts	0x012A, r24	; 0x80012a <m_delay>
+    196e:	90 93 2b 01 	sts	0x012B, r25	; 0x80012b <m_delay+0x1>
+    1972:	a0 93 2c 01 	sts	0x012C, r26	; 0x80012c <m_delay+0x2>
+    1976:	b0 93 2d 01 	sts	0x012D, r27	; 0x80012d <m_delay+0x3>
+    197a:	0e 94 0a 0a 	call	0x1414	; 0x1414 <lift_isr_routine>
+    197e:	0e 94 16 03 	call	0x62c	; 0x62c <disk_isr_working_cycle>
+    1982:	0e 94 5f 01 	call	0x2be	; 0x2be <isr_calibrate_motor_pwm>
+    1986:	00 00       	nop
+    1988:	df 91       	pop	r29
+    198a:	cf 91       	pop	r28
+    198c:	ff 91       	pop	r31
+    198e:	ef 91       	pop	r30
+    1990:	bf 91       	pop	r27
+    1992:	af 91       	pop	r26
+    1994:	9f 91       	pop	r25
+    1996:	8f 91       	pop	r24
+    1998:	7f 91       	pop	r23
+    199a:	6f 91       	pop	r22
+    199c:	5f 91       	pop	r21
+    199e:	4f 91       	pop	r20
+    19a0:	3f 91       	pop	r19
+    19a2:	2f 91       	pop	r18
+    19a4:	0f 90       	pop	r0
+    19a6:	00 92 5f 00 	sts	0x005F, r0	; 0x80005f <__TEXT_REGION_LENGTH__+0x7fc05f>
+    19aa:	0f 90       	pop	r0
+    19ac:	1f 90       	pop	r1
+    19ae:	18 95       	reti
+
+000019b0 <__vector_7>:
+
+ISR (TIMER2_COMPA_vect){
+    19b0:	1f 92       	push	r1
+    19b2:	0f 92       	push	r0
+    19b4:	00 90 5f 00 	lds	r0, 0x005F	; 0x80005f <__TEXT_REGION_LENGTH__+0x7fc05f>
+    19b8:	0f 92       	push	r0
+    19ba:	11 24       	eor	r1, r1
+    19bc:	2f 93       	push	r18
+    19be:	3f 93       	push	r19
+    19c0:	4f 93       	push	r20
+    19c2:	5f 93       	push	r21
+    19c4:	6f 93       	push	r22
+    19c6:	7f 93       	push	r23
+    19c8:	8f 93       	push	r24
+    19ca:	9f 93       	push	r25
+    19cc:	af 93       	push	r26
+    19ce:	bf 93       	push	r27
+    19d0:	ef 93       	push	r30
+    19d2:	ff 93       	push	r31
+    19d4:	cf 93       	push	r28
+    19d6:	df 93       	push	r29
+    19d8:	cd b7       	in	r28, 0x3d	; 61
+    19da:	de b7       	in	r29, 0x3e	; 62
+	disk_isr_update_motor_pwm();
+    19dc:	0e 94 85 04 	call	0x90a	; 0x90a <disk_isr_update_motor_pwm>
+	disk_isr_update_led_sync_pwm();
+    19e0:	0e 94 f3 04 	call	0x9e6	; 0x9e6 <disk_isr_update_led_sync_pwm>
+	disk_isr_update_led_data_pwm();
+    19e4:	0e 94 61 05 	call	0xac2	; 0xac2 <disk_isr_update_led_data_pwm>
+	cell_isr_routine();
+    19e8:	0e 94 af 00 	call	0x15e	; 0x15e <cell_isr_routine>
+    19ec:	00 00       	nop
+    19ee:	df 91       	pop	r29
+    19f0:	cf 91       	pop	r28
+    19f2:	ff 91       	pop	r31
+    19f4:	ef 91       	pop	r30
+    19f6:	bf 91       	pop	r27
+    19f8:	af 91       	pop	r26
+    19fa:	9f 91       	pop	r25
+    19fc:	8f 91       	pop	r24
+    19fe:	7f 91       	pop	r23
+    1a00:	6f 91       	pop	r22
+    1a02:	5f 91       	pop	r21
+    1a04:	4f 91       	pop	r20
+    1a06:	3f 91       	pop	r19
+    1a08:	2f 91       	pop	r18
+    1a0a:	0f 90       	pop	r0
+    1a0c:	00 92 5f 00 	sts	0x005F, r0	; 0x80005f <__TEXT_REGION_LENGTH__+0x7fc05f>
+    1a10:	0f 90       	pop	r0
+    1a12:	1f 90       	pop	r1
+    1a14:	18 95       	reti
+
+00001a16 <__tablejump2__>:
+    1a16:	ee 0f       	add	r30, r30
+    1a18:	ff 1f       	adc	r31, r31
+    1a1a:	05 90       	lpm	r0, Z+
+    1a1c:	f4 91       	lpm	r31, Z
+    1a1e:	e0 2d       	mov	r30, r0
+    1a20:	09 94       	ijmp
+
+00001a22 <memcpy>:
+    1a22:	fb 01       	movw	r30, r22
+    1a24:	dc 01       	movw	r26, r24
+    1a26:	02 c0       	rjmp	.+4      	; 0x1a2c <memcpy+0xa>
+    1a28:	01 90       	ld	r0, Z+
+    1a2a:	0d 92       	st	X+, r0
+    1a2c:	41 50       	subi	r20, 0x01	; 1
+    1a2e:	50 40       	sbci	r21, 0x00	; 0
+    1a30:	d8 f7       	brcc	.-10     	; 0x1a28 <memcpy+0x6>
+    1a32:	08 95       	ret
+
+00001a34 <memset>:
+    1a34:	dc 01       	movw	r26, r24
+    1a36:	01 c0       	rjmp	.+2      	; 0x1a3a <memset+0x6>
+    1a38:	6d 93       	st	X+, r22
+    1a3a:	41 50       	subi	r20, 0x01	; 1
+    1a3c:	50 40       	sbci	r21, 0x00	; 0
+    1a3e:	e0 f7       	brcc	.-8      	; 0x1a38 <memset+0x4>
+    1a40:	08 95       	ret
+
+00001a42 <strcpy>:
+    1a42:	fb 01       	movw	r30, r22
+    1a44:	dc 01       	movw	r26, r24
+    1a46:	01 90       	ld	r0, Z+
+    1a48:	0d 92       	st	X+, r0
+    1a4a:	00 20       	and	r0, r0
+    1a4c:	e1 f7       	brne	.-8      	; 0x1a46 <strcpy+0x4>
+    1a4e:	08 95       	ret
+
+00001a50 <_exit>:
+    1a50:	f8 94       	cli
+
+00001a52 <__stop_program>:
+    1a52:	ff cf       	rjmp	.-2      	; 0x1a52 <__stop_program>

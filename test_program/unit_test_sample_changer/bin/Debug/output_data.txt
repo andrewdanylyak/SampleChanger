@@ -1,0 +1,9 @@
+Start test	02.09.2021 13:51:31
+
+	N:1	pos:8	disk:DiskReady	lift:Lift_DOWN	spiner:CellPark 
+	N:2	pos:5	disk:DiskReady	lift:Lift_DOWN	spiner:CellPark 
+	N:3	pos:7	disk:DiskReady	lift:Lift_DOWN	spiner:CellPark 
+Total tests	3
+Total erros	0
+
+End test	02.09.2021 13:52:05
